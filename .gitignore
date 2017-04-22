@@ -1,0 +1,10 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/
+*.exe
+*.zip
+*.rar
+.DS_Store
+/.idea
+/开发工具
+/课件
+
