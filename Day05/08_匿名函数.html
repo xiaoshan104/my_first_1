@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //函数表达式
+    var foo = function (a, b){
+        console.log("这是一个匿名函数");
+    }
+    foo(10, 20);
+    foo = function (){
+        console.log("这是第二个匿名函数");
+    }
+    foo();
+    
+</script>
+</body>
+</html>
+<!--
+具名函数 ：有函数名
+
+匿名函数：没有函数名
+1. 把匿名函数直接赋值给一个变量。 这个变量就可以当做一个函数的函数名来使用。
+
+2. 匿名函数可以作为参数传递！！！
+
+-->

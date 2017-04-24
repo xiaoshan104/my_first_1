@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //匿名函数立即执行，匿名函数自执行. 将来用来封装私有数据
+    var num1 = 30;
+    (function (num1){
+        var a = 10;
+        console.log("匿名函数自执行了..." + num1  + "  " + window.num1);
+    }(20))
+</script>
+</body>
+</html>
