@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数入门2</title>
+</head>
+<body>
+<script type="text/javascript">
+    //声明一个可以计算两个数的和的函数
+    /*
+       多个形参的时候，一般称之为形参列表。多个形参之间用,分割。
+       形参可以理解为普通的变量，变量有一个地方比较特殊：可以接受函数调用的时候
+       传递过来的实参。
+       调用的时候，用实参给形参赋的值！
+       
+       return  作用：把函数的结果返回给调用者！！！
+       
+    * */
+    function add(m, n){
+        var sum = m + n;
+        return sum;
+        console.log("ab");
+    }
+    var sum = add(3, 4);
+    console.log("计算结果是：" + sum);
+    console.log(add(13, 41))
+    
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年4月24日10:17
+    1. 函数名
+    2. 形参
+    3. 返回值
+    
+    return的作用总结：
+     1. 给调用者返回数据。 return可以出现在方法体的任何的地方。
+     2. return在返回数据的同时，结束函数的执行！
+     
+     
+     
+-->

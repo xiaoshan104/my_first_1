@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+     * 判断一个数是不是质数。
+     * 返回true表示是质数，返回false表示不是
+     * @param num 要判断的那个数
+     */
+    function isPrime(num){
+        for(var i = 2; i < num; i++){
+            if(num % i == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    //声明一个函数，函数接受两个参数，输出这两个数之间的所有的质数。
+    function foo(from, to){
+        for(var i = 100; i <= 1000; i++){
+            if(isPrime(i)){  // 可以在一个函数的内部调用另外一个函数
+                console.log(i);
+            }
+        }
+    }
+    foo(100, 1000)
+    
+    /*if(isPrime(2999)){
+        console.log("是");
+    }else{
+        console.log("不是");
+    }*/
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数声明和调用的一些细节</title>
+</head>
+<body>
+<script type="text/javascript">
+    function foo(a, b){
+        if (typeof a != "number") return;
+        if (typeof b != "number") return;
+        
+        var sum = a + b;
+        return sum;
+    }
+    console.log(foo(3));
+    
+    function foo1(){
+        return;
+    }
+    
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年4月24日11:01\
+    js是一种动态语言。
+    1. 传递的实参的个数，可以和形参的个数不一致！
+        如果实参少于形参，则多余的形参没有赋值初始化，他值的就是undefined
+        如果传递的实参多余形参，则多余的参数会存储在一个类数组中！arguments
+   
+   2. return的使用。
+      在js中，return可以有也可以没有。
+       两个作用：a：给调用返回数据   b：结束函数的执行！
+       
+       a:如果直接使用return但是 return后面没有跟任何的数据，则表示返回一个undefined.更多的是
+       为了让函数结束！
+       b:如果一个函数内部没有出现return，就相当于在函数的最后一样有一个return; 返回值就是undefined
+-->
