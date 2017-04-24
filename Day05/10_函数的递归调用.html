@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数的递归调用</title>
+</head>
+<body>
+<script type="text/javascript">
+    /*var i = 0;
+    function foo(){
+        console.log("调用自己");
+        if(i++ == -1) return;
+        foo();
+    }
+    foo();*/
+    /*
+    计算一个数的阶乘！
+    6!=6*5*4*3*2*1
+    7! = 7 * 6!
+    */
+    //求n的阶乘
+    function jiecheng(n){
+        if(n == 1) return 1;
+        return n * jiecheng(n-1);
+    }
+    console.log(jiecheng(12));
+    
+    //使用递归 1+2+3+...+200
+    function sum(n){  // sum(n) = n + sum(n-1)
+        if(n == 1) return 1;
+        return n + sum(n - 1);
+    }
+    console.log(sum(100));
+</script>
+</body>
+</html>
+<!--
+函数的递归调用：就是在函数的内部调用自己
+一：一定要有结束条件。
+二：要逐步的靠近结束条件。
+
+-->

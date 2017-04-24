@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //  ==  涉及到了类型的转换
+    /*console.log("1" == 1);
+     console.log(true == 1);
+     console.log(true == "1");
+ 
+     /!*
+     只设计boolean string number
+     如果两边都是基本类型，但是类型不同：
+        会把他们都转成number之后再去比较。
+     * *!/
+     console.log(2 == true);
+     console.log("2" == 2);
+     console.log("false" == false);
+ 
+     console.log(undefined == false);
+     //    console.log(null == null);
+     console.log(undefined != NaN);
+     */
+//    console.log(false == "false");
+    
+    //  &&   || 可以是任意的数据类型,计算出来的结果也可以是任意的类型
+    console.log(1 && true);
+    console.log(undefined && true);
+    /*
+        ""  0  null undefined NaN
+        先把逻辑运算符的左边转成boolean之后再去判断结果
+        如果第一个可以决定结果，则结果就是第一个数，如果不能，则结果就是第二个数
+    * */
+    console.log("0" && undefined);
+    
+    console.log(0 || "abc");
+    
+    var i = 10;
+    console.log(i++ || i++);
+    console.log(i);
+</script>
+</body>
+</html>
