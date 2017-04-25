@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //构造函数的方式.这个时候的new可以省略，但是不建议省略
+    var arr = new Array("a", "b", "c");//创建一个数组，数组中有三个元素。
+    console.log(arr[arr.length - 1]);
+    console.log(arr);
+    
+    var arr1 = new Array(1, 2);
+    console.log(arr1.length);
+    /*
+    如果在使用构造函数的方式创建数组对象的是，
+        只传入了一个参数，并且这个参数是整数number
+        则这number就表示要创建的数组的长度
+    */
+    var arr2 = new Array(3);
+    console.log(arr2.length);  //3
+    var arr3 = new Array('3');
+    console.log(arr3.length);//1
+    var arr4 = new Array('a');
+    console.log(arr4.length);//1
+    
+    /*
+        js中的数组的length属性，可以直接修改。
+     */
+    var arr5 = [10, 20, 30];
+    arr5.length--;
+    console.log(arr5);
+    console.log(arr5[2]);
+</script>
+</body>
+</html>

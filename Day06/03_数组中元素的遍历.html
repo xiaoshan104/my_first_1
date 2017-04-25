@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组元素的遍历</title>
+</head>
+<body>
+<script>
+    var arr = [10, 20, 3, 5, 7, "a", "b"];
+    //数组元素的遍历
+    //普通的for循环来遍历数组
+    for(var index = 0; index < arr.length; index++){
+//        console.log(arr[index]);
+        if(typeof arr[index] == "number"){
+            arr[index] += 10;
+        }
+    }
+    console.log(arr);
+</script>
+</body>
+</html>

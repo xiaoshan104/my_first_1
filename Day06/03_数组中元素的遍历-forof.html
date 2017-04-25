@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组元素的遍历</title>
+</head>
+<body>
+<script>
+    var arr = [10, 20, 3, 5, 7, "a", "b"];
+    //es6新增的for of 可以直接遍历出来数组中的元素
+    //for of遍历，只能访问数组中的元素，不能修改。
+    for(var ele of arr){  //ele就表示数组中的每一个元素
+        console.log(ele);
+//        ele = 100;
+    }
+    console.log(arr);
+</script>
+</body>
+</html>

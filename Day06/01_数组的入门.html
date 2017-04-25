@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    数组创建的第一种方式：
+    字面量的形式！
+     */
+    var arr = [10, "a"];  //使用字面量声明一个数组。
+    console.log(arr.length); //数组的长度：数组中元素的个数
+    //如何访问数组中的元素：使用数组的下标(索引、index)
+    console.log(arr[0]);  //访问数组中索引为0 的元素
+    console.log(arr[1]);
+    console.log(arr[2]); //当要找的下标的元素不存，则值就是undefined。并不会报错！
+    arr[0] = 20;  //修改数组中指定下标的元素！
+    arr[1] = 30;
+    arr[2] = undefined;
+    arr[10] = 100;  //虽然数组长度是2，但是可以使用超出长度的下标去赋值。
+    console.log(arr.length);
+    console.log(arr);
+    
+</script>
+</body>
+</html>
+<!--
+解决大量的数据存储问题！
+数组：应用最广泛的数据结构
+
+
+-->
