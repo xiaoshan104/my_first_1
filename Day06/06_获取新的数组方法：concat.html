@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取新的数组：数组的连接</title>
+</head>
+<body>
+<script>
+    var arr1 = [10, 20, 30];
+    var arr2 = [40, 50];
+    //专门用来连接数组的方法.返回一个全新的创建的数组。对原数组没有做任何的变更。
+    //concat的参数可以是数组，也可以是普通的元素，并且个数不限制。
+    var arr3 = arr1.concat(arr2, 100, 200, ["a", "b"]);
+    console.log(arr3);
+</script>
+</body>
+</html>

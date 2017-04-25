@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = [10, 20, 3, 10, 5, 7, "a", "b", 10, 3];
+    console.log(arr.indexOf(100)); //从前向后查找，查找元素10在数组中首次出现的下标.如果找不到元素，则返回-1.
+    console.log(arr.indexOf(10, -1));   //参数1：要查找的元素 参数2：开始查找位置  负值 + length
+
+    console.log(arr.lastIndexOf(10)); //从后向前查找
+    console.log(arr.lastIndexOf(10, -9));  //从下标为6的位置开始向前找
+</script>
+</body>
+</html>

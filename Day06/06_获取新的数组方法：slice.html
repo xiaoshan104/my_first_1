@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取新的数组：截取到新的数组</title>
+</head>
+<body>
+<script>
+    var arr = [10, 20, 3, 10, 5, 7, "a", "b", 10, 3];
+    //slice方法：从原始数组中去截取出来一个新的数组，不会影响到原数组
+//    var arr1 = arr.slice(1, 2);// from 包括， to包括
+//    var arr1 = arr.slice(1);// 从1开始截取到末尾。
+    //数组的copy  浅copy
+    var arr1 = arr.slice();// 从1开始截取到末尾。
+    console.log(arr1);
+</script>
+</body>
+</html>

@@ -77,7 +77,8 @@
      * 当天的日期 + 前month - 1 月的总天数
      * 返回值就是具体的天数
      */
-    function sumDays(year, month, day){
+    sumDays(2017, 4, 25)
+    function sumDays(year, month, day){ // 2017  1  25
         //如果传入的年月日不合法，就返回一个NaN
         if (!isLegal(year, month, day)) return NaN;
         //如果传入的是一月份，则直接返回日期就代表今年的第几天了。
@@ -96,7 +97,6 @@
     function caculateDays(year, month){  // 2017 6    6月的总天数 +
         if (month == 1) return 31;
         return daysPerMonth(year, month) + caculateDays(year, month - 1);
-
     }
 
     /**

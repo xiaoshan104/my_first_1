@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = [1, 2];
+    // instanceof 测试一个对象是否属于某个类型
+    console.log(arr instanceof Array);
+    console.log([] instanceof Array);
+    console.log({} instanceof Array);
+    console.log(1 instanceof Array);
+    
+    //es6新增的 Array.isArray(参数)  检测一个对象是不是数组
+    console.log(Array.isArray(arr));
+    console.log(Array.isArray(1));
+</script>
+</body>
+</html>
+<!--
+typeof : 的结果一定是字符串
+number string boolean undefined object function
+
+不能用typeof去测数组
+
+
+-->

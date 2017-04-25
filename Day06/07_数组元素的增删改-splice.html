@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = [10, 20, 3, 10, 5, 7, "a", "b", 10, 3];
+    // 添加  删除  替换   直接修改了arr中的元素
+    //    arr.splice(1, 2); //删除：只需要两个参数. 从下标为1的位置开始删除，删除2个元素
+    //    arr.splice(1); //从下标为1的位置开始删到末尾。
+    //    arr.splice(1, 0, "a", "b"); //从第三个位置开始，表示要添加的元素.
+    var arr1 = arr.splice(1, 2, "a", "b"); //从第三个位置开始，表示要添加的元素.
+    console.log(arr);
+    console.log(arr1);
+    //总结：参数1：开始的下标 参数2：删除的元素的个数  参数3开始：要添加的元素
+    //返回值：就是删除的那些元素组成的新数组
+</script>
+</body>
+</html>

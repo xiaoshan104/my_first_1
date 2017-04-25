@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组元素的遍历</title>
+</head>
+<body>
+<script>
+    var arr = [10, 20, 3, 5, 7, "a", "b"];
+    //传入一个回调函数。每遍历出来一个元素，这个回调函数就被执行一次！
+    arr.forEach(function (ele, index){
+        console.log(ele, index);
+    });
+</script>
+</body>
+</html>
