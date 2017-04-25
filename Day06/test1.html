@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="input1">
+<button id="btn">按钮</button>
+<p id="p"></p>
+<script type="text/javascript">
+    
+    /*var btn = document.getElementById("btn");
+     var input = document.getElementById("input1");
+     var p = document.getElementById("p");
+     btn.onclick = function (){
+     
+     }*/
+    console.log(Math.random());  // [0,1)
+    // [10, 50]
+    console.log(parseInt(Math.random() * 41) + 10);
+
+    //生成一个  [from, to]之间的随机整数
+    function randomInt(from, to){  //  2  9
+        return parseInt(Math.random() * (to - from + 1) + from);
+    }
+
+    
+    
+</script>
+</body>
+</html>
