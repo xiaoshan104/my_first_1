@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    /**
+        判断传入的年份是不是闰年
+     */
+    function isLeapYear(year){
+        return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+    }
+    /**
+     * 在页面中显示指定范围的闰年，并且把闰年现实中页面中
+     * 每五个年份换一行
+     * @param from
+     * @param to
+     */
+    function writeAllLeapYear(from, to){
+        for(var year = from, count = 0; year <= to; year++){
+            if(isLeapYear(year)){
+                document.write(year + "&nbsp;&nbsp;")
+                count++;
+                if(count % 10 == 0){
+                    document.write("<br>")
+                }
+            }
+        }
+    }
+    writeAllLeapYear(1000, 2050);
+    /**
+     * 输入一个年月日，判断是否为合法的年月日
+     *
+     * 返回true是合法
+     * false就是不合法
+     * */
+    function isLegal(year, month, day){
+        //首先判断月份是否合法，不合法，直接返回false
+        if(month > 12 || month < 1) return false;
+        switch (month){
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                if(day > 31 || day < 1) return false;
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                if(day > 30 || day < 1) return false;
+                break;
+            case 2:
+                if(isLeapYear(year)){
+                    if(day > 29 || day < 1) return false;
+                }else{
+                    if(day > 28 || day < 1) return false;
+                }
+                break;
+        }
+        return true;
+        
+    }
+    if(isLegal(2017, 2, 28)){
+        console.log("合法");
+    }else{
+        console.log("不合法");
+    }
+    /**
+     * 根据传入的年月日，判断这个一天是当年的第几天
+     *
+     * 当天的日期 + 前month - 1 月的总天数
+     * 返回值就是具体的天数
+     */
+    function sumDays(year,month,day){
+        //如果传入的年月日不合法，就返回一个NaN
+        if(!isLegal(year, month, day)) return NaN;
+        //如果传入的是一月份，则直接返回日期就代表今年的第几天了。
+        if(month == 1) return day;
+        //如果不是1月，则返回当前月份之前的所有的月份的总天数+今天的日期
+        return day + caculateDays(year, month - 1);  //  2017 3 20
+    }
+    /**
+     * 计算前month个月的总天数
+     *
+     * 是第month月的天数 + 前(month - 1)月的总天数
+     * @param year
+     * @param month
+     */
+    function caculateDays(year, month){  // 2017 6    6月的总天数 +
+        if(month == 1) return 31;
+        return daysPerMonth(year, month) + caculateDays(year, month - 1);
+    }
+    /**
+     * 计算出来指定月份的总天数
+     * @param year
+     * @param month
+     */
+    function daysPerMonth(year, month){
+        switch (month){
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                return 31;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                return 30;
+            case 2:
+                if(isLeapYear(year)){
+                    return 29;
+                }else{
+                    return 28;
+                }
+        }
+    }
+    console.log(sumDays(2017, 3, -21));  // 31 + 28 + 21
+
+    /**
+     * 返回传入的两个数中的最大值
+     * @param a
+     * @param b
+     * @returns {*}
+     */
+    function max(a, b){
+        return a > b ? a : b;
+    }
+    function min(a, b){
+        return a < b ? a : b;
+    }
+</script>
+</body>
+</html>
