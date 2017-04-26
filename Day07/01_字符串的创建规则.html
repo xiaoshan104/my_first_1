@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串创建</title>
+</head>
+<body>
+<script>
+    //用字面的方式去创建字符串
+    var s = "ab'c";
+    console.log(typeof s);
+    // 使用字符串转换函数.转换得到的字符串，是基本类型的字符串
+    var s2 = String(true);
+    console.log(typeof s2);
+    console.log(s2);
+    console.log(typeof (123 + ""))  //把其他类型与 空字符串进行拼接。
+    
+    
+    //创建字符串对象： new String(). 了解，以后不会使用
+    var s3 = new String(123);
+    console.log(typeof s3);
+    console.log(s3.toString());
+    
+    var s = 123 + 123 + "";
+    console.log(s);
+    var s4 = 123 - - "123";
+    console.log(s4);
+    
+    var s= "abc你好";
+    console.log(s.length);//字符串中字符的个数
+</script>
+</body>
+</html>

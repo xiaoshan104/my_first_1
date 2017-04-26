@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var s = 'abc你好啊abc';
+//    console.log(s.charAt(0))   // s[0]
+    console.log(s.charCodeAt(3));  //获取指定位置的字符的编码。
+    
+    //返回编码表示的那个字符。
+    var c = String.fromCharCode(20321);
+    console.log(c);
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年4月26日16:23
+    a  97
+    b  98
+    
+    只能认识128个字符
+    ascii码
+    
+    iso8859-1: 存储256个字符
+        兼容ascii
+       
+    gb2312: 2个字节   65535个
+            就可以输入汉字 只支持简体中文
+            
+    big5: 支持繁体中文
+    
+    gbk：支持简体和繁体
+    
+    unicode：统一码
+        只提出了标准，但是没有具体的实现。
+        
+        utf-8: 变长编码
+        utf-16
+        utf-32
+    
+    
+    
+-->

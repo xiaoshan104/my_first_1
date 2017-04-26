@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*var arr1 = [1, 2];
+    var arr2 = [1, 2];
+    console.log(arr1 == arr2);*/
+    var a = "1,2";
+    var arr1 = [1, 2];  // toString  "1,2"
+    console.log(a == arr1);
+
+    console.log("" == []);  // true
+    console.log(null == []);  //
+</script>
+</body>
+</html>
+<!--
+如果 == ===两边都是对象，那么比较的就是地址值。
+
+== 如果有一方不是对象，则会进行类型的转换！！
+
+obj == a
+
+== 两边如果一边是对象，一边基本类型，
+ 1. 则会首先调用对象的valueOf方法，如果返回值是
+    基本类型，则用返回的这个基本类型去和另外一个比较。
+ 2. 如果valueOf返回的不是基本类型
+    则调用这个对象的toString方法，然后用toString方法返回的字符串去参与比较。
+    
+两个不同的基本类型进行比较：
+    ...
+    
+-->

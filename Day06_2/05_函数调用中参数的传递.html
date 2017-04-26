@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function foo(a, arr){
+        a = 20;
+        arr = [100, 200, 300]
+    }
+    
+    var a = 10;
+    var arr = [10, 20, 30];
+    foo(a, arr);
+
+    console.log(a);  // 10  20
+    console.log(arr[0]);  //10   100
+    //在js中，函数调用的时候，参数的传递永远是值传递！！！
+    /*
+    基本类型就是把基本类型的值复制一份，传递到形参
+    对象类型(引用类型)把对象的地址值复制一份，传递到形参！
+     */
+</script>
+</body>
+</html>
