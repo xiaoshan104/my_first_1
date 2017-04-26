@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>排序</title>
+</head>
+<body>
+<script>
+    //冒泡  选择  插入  归并  快速
+    var arr = [10, 2, 3, 11, 6, 9, 8, 20, 1, 100, 22];
+    //进行升序排列
+    for (var j = 0; j < arr.length - 1; j++){  //外循环是控制参与排序的元素的个数
+        for (var i = 0; i < arr.length - 1 - j; i++){
+            if (arr[i] > arr[i + 1]){
+                //两个变量交换
+                /*var temp = arr[i];
+                 arr[i] = arr[i + 1];
+                 arr[i + 1] = temp;*/
+                //加法
+                /*arr[i] = arr[i] + arr[i + 1];
+                 arr[i + 1] = arr[i] - arr[i + 1];
+                 arr[i] = arr[i] - arr[i + 1];*/
+                //异或
+                /*arr[i] = arr[i] ^ arr[i + 1];
+                arr[i + 1] = arr[i] ^ arr[i + 1];
+                arr[i] = arr[i] ^ arr[i + 1];*/
+                //解构
+                [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+            }
+        }
+    }
+    console.log(arr);
+</script>
+</body>
+</html>

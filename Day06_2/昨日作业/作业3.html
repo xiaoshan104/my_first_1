@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 300px;
+            height: 100px;
+            background-color: pink;
+            color: #47ff3d;
+            font-size: 60px;
+            text-align: center;
+            line-height: 100px;
+            letter-spacing: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<a href="javascript:;" id="btn">看不清，换一个</a>
+<script type="text/javascript">
+    var box = document.getElementById("box");
+    var btn = document.getElementById("btn");
+    var chars = [0, 1, 2, 3, 4, 5, 6, "a", "b", "c", "d", "A"];
+    function showRandomNumber(){
+        var nums = [];
+        for (var i = 0; i < 5; i++){
+            //生成随机的下标，然后从数组中去元素
+            var index = randomInt(0, chars.length - 1);
+            nums.push(chars[index]);
+        }
+        box.innerHTML = nums.join("");
+    }
+    showRandomNumber();
+
+    btn.onclick = function (){
+        showRandomNumber();
+    }
+    /**
+     返回随机的 [from, to] 之间的整数(包括from，也包括to)
+     */
+    function randomInt(from, to){
+        return parseInt(Math.random() * (to - from + 1) + from);
+    }
+
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年4月26日08:36
+    生成验证码：
+-->

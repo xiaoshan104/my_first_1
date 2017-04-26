@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var arr = new Array(400);  //数组的长度就是400
+    for (var i = 0; i < arr.length; i++){
+        arr[i] = randomInt(10, 50);
+    }
+    //counts[0]记录10出现的次数 counts[40] 50出现的次数
+    var counts = new Array(41);
+    //个counts的每个元素默认赋值为0
+    counts.fill(0); //把每个元素赋值为0  es6新增
+
+    for (var num = 10; num <= 50; num++){
+        arr.forEach(function (ele, index){
+            if (ele == num){
+                counts[num - 10]++;
+            }
+        })
+    }
+
+    counts.forEach(function (ele, index){
+        console.log(index + 10 + " >>>  " + ele);
+    })
+    /**
+     返回随机的 [from, to] 之间的整数(包括from，也包括to)
+     */
+    function randomInt(from, to){
+        return parseInt(Math.random() * (to - from + 1) + from);
+    }
+
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年4月26日08:36
+    随机生成400个 [10,50]的整数，然后统计每个数字出现的次数。把结果写入到页面中。
+-->
