@@ -3,8 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Math对象</title>
+    <style>
+        div{
+            transform: rotateX(30deg);
+        }
+    </style>
 </head>
 <body>
+<script>
+    console.log(Math.PI);
+    console.log(Math.E);
 
+    console.log(Math.abs(-6));  // absolute 绝对值
+
+    //返回传入的所有参数的最大值。
+    var max = Math.max(12, 23, 67, 88);
+    console.log(max);
+    var arr = [12, 23, 67, 88];
+    //展开运算符   ...  可以把展开数组，把数组中的每个元素分别传入
+    console.log(Math.max(...arr));
+    console.log(Math.min(...arr));
+    //返回大于等于参数的最小整数
+    console.log(Math.ceil(-12.3));
+    //小于等于参数的最大整数
+    console.log(Math.floor(-12));
+
+    //四舍五入
+    console.log(Math.round(12.49));
+
+    console.log(Math.pow(1000, -3));  //
+    console.log(Math.pow(1000, 1 / 3));
+
+    //求平方根
+    console.log(Math.sqrt(100));  // Math.pow(100, 1/2)
+    /*
+     角度：  一周360度    90度
+     弧度：半径为1的弧的长度
+     360  2pi
+     90   0.5pi
+     */
+    console.log(Math.sin(0));
+    
+    //把弧度转换成角度
+    function toDegree(arc){
+        return arc / (2 * Math.PI) * 360;
+    }
+    
+    //把角度转换成弧度
+    function toArc(degree){
+        return degree / 360 * (2 * Math.PI);
+    }
+    console.log(toDegree(Math.PI / 6));
+    console.log(toArc(180));
+</script>
 </body>
 </html>
