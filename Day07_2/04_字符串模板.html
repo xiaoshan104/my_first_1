@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="./昨日作业/util.js"></script>
+    <style>
+        div{
+            width : 200px;
+            height : 200px;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    var box = document.getElementById("box");
+    //bc : rgb(100, 100, 100)
+    /*box.style.backgroundColor = "rgba("
+        + randomInt(0, 255) + ", "
+        + randomInt(0, 255) + ","
+        + randomInt(0, 255) + ","
+        + randomInt(0.3, 1) + ")"*/
+    
+    //字符串模板. 反引号.  方便插入变量和表达式的值
+    
+    box.style.backgroundColor = `
+        rgba(${randomInt(0, 255)},
+            ${randomInt(0, 255)},
+            ${randomInt(0, 255)},
+            ${Math.random() * 0.4 + 0.6})`;
+    
+    /*var num = 10;
+    var s = `${num *   2        } 是个好数字`;
+    console.log(s);*/
+</script>
+</body>
+</html>
