@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="p"></p>
+<button id="btn1">清除定时器</button>
+<script>
+    var p = document.getElementById("p");
+    var num = 0;
+    //每隔一段时间执行一次传入的函数
+    var intervalId = setInterval(function (){
+        p.innerHTML = num++;
+    }, 10);
+
+    btn1.onclick = function (){
+        //清除指定的定时器
+        clearInterval(intervalId)
+    }
+</script>
+</body>
+</html>
+<!--
+js中有两种定时器：
+setTimeout
+
+setInterval
+
+
+-->

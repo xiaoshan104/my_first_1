@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">打开新的窗口</button>
+<button id="btn2">关闭打开的窗口</button>
+<script>
+//    otherWindow = window.open("http://www.yztcedu.com", "_blank", "width=400, height=400, left=1300,top=300")
+    
+    var btn = document.getElementById("btn");
+    //调用window对象的属性和方法的时候，window可以省略
+    var otherWindow = [];
+    btn.onclick = function (){
+        /*
+         参数1：打开的新窗口的url
+         参数2：_self _blank(默认是_blank)
+         参数3：打开的新窗口的一些特性。
+         
+         返回值：新打开的那个window
+         */
+        var temp = window.open("http://www.yztcedu.com", "_blank", "width=400, height=400, left=1300,top=300")
+        otherWindow.push(temp);
+    }
+
+    var btn2 = document.getElementById("btn2");
+    btn2.onclick = function (){
+        for(var w of otherWindow){
+            w.close();
+        }
+        otherWindow.length = 0;
+        //关闭这个window
+//        otherWindow.close();
+//        window.close();
+    }
+</script>
+</body>
+</html>

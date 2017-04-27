@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //5s钟之后，执行传递的函数
+    var id = setTimeout(function (){
+        var other = window.open("test.html", "_blank", "width=200, height=200");
+        setTimeout(function (){
+            other.close();
+        }, 2000)
+
+    }, 5000);
+//    clearTimeout(id)
+</script>
+</body>
+</html>
+<!--
+js中有两种定时器：
+setTimeout
+
+setInterval
+
+
+-->

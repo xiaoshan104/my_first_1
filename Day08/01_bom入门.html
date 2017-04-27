@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //创建的任何的全局变量，都会成为window对象的一个属性。
+    var a = 10;
+    console.log(a);
+    console.log(window.a);
+    function foo(){
+        b = 10;
+        var c = 20;
+    }
+    foo();
+    console.log(window.b);
+    console.log(window.c);
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年4月27日14:59
+    
+-->
