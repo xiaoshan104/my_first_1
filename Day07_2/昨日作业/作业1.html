@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="util.js"></script>
+</head>
+<body>
+<script>
+    var arr = [];
+    for(var i = 0; i < 20; i++){
+        arr.push(randomInt(10, 1000));
+    }
+    var arr1 = arr.slice(0, 10).sort(function (a, b){
+        return a - b;
+    })
+    var arr2 = arr.slice(10, 20).sort(function (a, b){
+        return b - a;
+    })
+    var arr3 = arr1.concat(arr2);
+//    arr.splice(0, arr.length);  //清空原来的数组
+    arr.length = 0; //清空原来的数组
+//    arr.push(...arr3);
+//    Array.prototype.push.apply(arr, arr3);
+    
+    for(var ele of arr3){
+        arr.push(ele)
+    }
+    console.log(arr);
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年4月27日08:19
+    一个数组中有20个元素，对前10个元素使用升序，后10个元素使用降序。元素都是整数。
+-->

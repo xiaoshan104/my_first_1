@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = [
+        [1, 2, 3],
+        [3, 4, 2],
+        [3, 4, 2]
+    ];
+    
+    var temp = [];
+    for(var i = 0; i < arr.length; i++){
+        temp = temp.concat(arr[i]);
+    }
+    console.log(temp);
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年4月27日08:20
+    把一个二维数组中的元素全部转存入入一个一唯数组中。
+   //例如：有如下数组
+   var arr1 = [
+       [1, 2,3],
+       [3, 4, 2]
+   ]
+   //转存后的一唯数组应该是下面这样的：
+   var arr2 = [1,2,3,3,4,2]
+-->

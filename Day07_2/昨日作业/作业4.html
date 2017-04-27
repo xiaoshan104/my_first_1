@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function myReverse(s){
+        var arr = [];
+        for(var c of s){
+//            arr.unshift(c);
+            arr.push(c)
+        }
+//        return arr.join("");
+        return arr.reverse().join("");
+    }
+    console.log(myReverse("iOS Android HTML5 Java"));
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年4月27日08:21
+    定义一个函数：传入一个任意字符串，返回这个逆序排列的字符串。
+    例如：
+    传入："iOS Android HTML5 Java"
+    返回："avaJ 5LMTH diordnA SOi"s
+-->
