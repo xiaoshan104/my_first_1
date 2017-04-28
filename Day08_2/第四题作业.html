@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //分解质因数：   90 = 2 * 3 * 3 * 5
+    /*
+     90 = 2 * 3 * 15
+     */
+    /*var num = 2389000;
+     document.write(num + " = ");
+     for(var i = 2; i <= num; i++){
+     if(num % i == 0){
+     if(i == num){
+     document.write(i);
+     }else{
+     document.write(i + " * ");
+     }
+     num /= i;
+     i--;
+     }
+     }*/
+    
+    /* for (var i = 1; i <= 9; i++){
+     for (var j = 1; j <= i; j++){
+     document.write(`${j} *  ${i }= ${i * j}&nbsp;&nbsp;`)
+     }
+     document.write("<br>")
+     }*/
+    var taozi = 6;  //记录桃子的数量
+    var monkeys = 5;
+    //标号，放在循环前面，配合break可用直接退出这个循环。
+    http:for (; ; taozi++){
+        var counts = taozi;
+        for (var m = 1; m <= monkeys; m++){
+            if (counts % 5 == 1){
+                if (m == monkeys){
+                    console.log("桃子的数量是：" + taozi);
+                    break http;
+                }
+                counts = (counts - 1) / 5 * 4;
+            }else{
+                break;
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
