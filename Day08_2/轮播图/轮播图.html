@@ -56,10 +56,10 @@
         if (left % 1000 == 0){  //一旦一张完整的图片展示出来，取消定时器
             clearInterval(id);
             setTimeout(function (){//3s之后启动新的定时器
-                id = setInterval(step, 10);
+                id = setInterval(step, 2);
             }, 1000);
         }
-    }, 10);
+    }, 2);
 </script>
 </body>
 </html>

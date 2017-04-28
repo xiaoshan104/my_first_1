@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn1">assign</button>
+<button id="btn2">replace</button>
+<button id="btn3">reload</button>
+<script type="text/javascript">
+    /*//   http://localhost:8080/1702/Day08_2/02_location.html?_ijt=gbvfecvcv2rub5c8mgn6lr4to0
+    //   协议://主机名:port/路径/资源?key=value&key1=value
+    document.write("protocol: " + location.protocol + "<br />");	// 协议  http
+    document.write("hostname: " + location.hostname + "<br />");		//主机名  localhost  127.0.0.1
+    document.write("host: " + location.host +　"<br />");  //主机和端口
+    document.write("port: " + location.port + "<br />");	//端口
+    document.write("pathname: " + location.pathname + "<br />");	// 路径名
+    document.write("search: " + location.search + "<br />");	// 查询参数
+    document.write("href: " + location.href + "<br />");	//完整url*/
+    
+    document.getElementById("btn1").onclick = function (){
+        //加载一个新的url，但是刚才的页面已经放入了history. 可以后退回去
+        location.assign("http://www.yztcedu.com");
+    }
+    document.getElementById("btn2").onclick = function (){
+        //加载一个新的url，但是刚才的页面不会放入history。  无法后退回去
+        location.replace("http://www.yztcedu.com")
+    }
+    document.getElementById("btn3").onclick = function (){
+        //重新加载当前页面. 参数：true表示，强制从服务器端加载。false或者不传，从本地缓存加载。
+        location.reload()
+    }
+    
+</script>
+</body>
+</html>
