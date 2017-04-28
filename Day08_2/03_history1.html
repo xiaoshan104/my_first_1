@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>第1个页面</div>
+<a href="03_history2.html">去第二个页面</a>
+<button id="btn1">前进</button>
+<button id="btn2">后退</button>
+
+<script type="text/javascript">
+    btn1.onclick = function (){
+        history.forward();
+    }
+    btn2.onclick = function (){
+        history.back();
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>第0个页面</div>
+<a href="03_history1.html">去第一个页面</a>
+<button id="btn1">前进</button>
+<button id="btn2">后退</button>
+<button id="btn3">去指定的页面</button>
+
+<script type="text/javascript">
+    btn1.onclick = function (){
+        history.forward();
+    }
+    btn2.onclick = function (){
+
+    }
+    btn3.onclick = function (){
+        //正的是向前走的页面。  1相当于forward 1次
+        history.go(2)
+    }
+</script>
+</body>
+</html>
