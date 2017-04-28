@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //b叫剩余参数。必须是最后一个参数。 ...用在函数声明，表示剩余参数
+    function foo(a, ...b){
+        console.log(b);
+        console.log(arguments);
+    }
+    //...用在函数调用的时候，表示展开运算符
+    foo(100, ...[200, 300, 400, 50000]);
+</script>
+</body>
+</html>

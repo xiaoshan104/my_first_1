@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+     array-like  :类数组
+     在任何的函数内部，都有默认的变量：arguments。
+     1. 存储了实际传过来的所有参数
+     2. arguments是一个类数组
+     3. 在非严格模式下形参和arguments中的元素是保持着一种动态相等。
+        在严格模式下，形参和arguments中的元素不保持动态相等。
+        一般用于让arguments保持参数的原始值！
+     4. arguments中有一个参数，表示当前函数。arguments.callee
+     */
+    function foo(a){
+        "use strict"
+        //arguments
+//        console.log(arguments instanceof Array);
+//        console.log(arguments);
+        /*for(var i = 0; i < arguments.length; i++){
+         console.log(arguments[i]);
+         }*/
+        console.log(a == arguments[0]);
+        a = 1;
+        console.log(arguments[0]);
+        arguments[0] = 1000;
+//        console.log(a);
+        console.log(arguments[0]);
+    }
+    foo(100, 200, 300, 100);
+
+    var jc1 = function (n){
+        console.log(arguments.callee === jc1);
+        if (n == 1) return 1;
+
+        return n * arguments.callee(n - 1);
+    }
+    console.log(jc1(6));
+
+</script>
+</body>
+</html>
