@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        #outer {
+            width: 1000px;
+            height: 600px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #inner {
+            width: 6000px;
+            height: 600px;
+            position: absolute;
+            left: -50px;
+            top: 0;
+        }
+        
+        img {
+            width: 1000px;
+            height: 600px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <div id="inner">
+        <img src="./images/banner1.png" alt="">
+        <img src="./images/banner2.png" alt="">
+        <img src="./images/banner3.png" alt="">
+        <img src="./images/banner4.png" alt="">
+        <img src="./images/banner5.png" alt="">
+        <img src="./images/banner1.png" alt="">
+    </div>
+</div>
+<script>
+    var inner = document.getElementById("inner");
+    var left = 0;
+    var id = setInterval(function step(){
+        left -= 8;
+        inner.style.left = left + "px";
+        
+        if(left == -5000){
+            left = 0;
+        }
+        if (left % 1000 == 0){  //一旦一张完整的图片展示出来，取消定时器
+            clearInterval(id);
+            setTimeout(function (){//3s之后启动新的定时器
+                id = setInterval(step, 10);
+            }, 1000);
+        }
+    }, 10);
+</script>
+</body>
+</html>

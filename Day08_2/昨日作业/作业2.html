@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var s = "11$12$3$8$9$10$30$50$60";
+    //先把里面的数组存入数组
+    var arr = s.split("$");
+    for(var i = 0; i < arr.length; i++){
+//        arr[i] = +arr[i];
+        arr[i] = Number(arr[i]);
+    }
+    arr.sort(function (a, b){
+        return b - a;
+    })
+    var max = Math.max(...arr);
+    var min = Math.min(...arr);
+    var sum = 0;
+    for(var n of arr){
+        sum += n;
+    }
+    console.log(sum / arr.length);
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年4月28日08:50
+    有如下字符串
+11$12$3$8$9$10$30$50$60
+   要求：把字符串中的数字转存到数组中并对数组降序，然后求最大值，最小值，平均值。
+-->

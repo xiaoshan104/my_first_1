@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px auto;
+            text-align: center;
+            line-height: 200px;
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">开始倒计时</button>
+<p id="p"></p>
+<script>
+    var count = 10;
+    var btn = document.getElementById("btn");
+    var p = document.getElementById("p");
+    btn.onclick = function (){
+        p.innerHTML = count;
+        var id = setInterval(function (){
+            p.innerHTML = --count;
+            if(count == 0){
+                clearInterval(id);
+//                alert("💣马上爆炸")
+                p.innerHTML = "💣马上爆炸"
+            }
+        }, 1000)
+    }
+
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年4月28日08:50
+    输入一个分钟数，开始倒计时。倒计时结束，弹出"计时结束!",中间可以点击按钮停止倒计时。
+-->

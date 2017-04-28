@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function foo(s){
+        var arr = s.split("");
+        for(var i = 1; i < arr.length; i++){
+            if(arr[i] >= "A" && arr[i] <= "Z"){
+//                var temp = " " + arr[i].toLowerCase();  //  " m"
+//                arr.splice(i, 1, temp);
+                
+                arr.splice(i, 1, " ", arr[i].toLowerCase())
+            }
+        }
+        return arr.join("");
+    }
+    console.log(foo("HelloMyWorldHaoAreYou!"));
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年4月28日08:49
+    将字符中单词用空格隔开
+定义一个函数，接受一个字符串。已知传入的字符串中只有字母，每个单词的首字母大写，请将每个单词用空格隔开 只保留第一个单词的首字母大写
+传入:"HelloMyWorld"
+返回:"Hello my world"
+-->
