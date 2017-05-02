@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#">
+    <input type="text" name="user">
+    <input type="text" name="user" id="user2">
+    <input type="text" name="pwd">
+    <input type="text" >
+    <input type="submit">
+    
+</form>
+
+<script>
+    var us = document.getElementsByName("user");
+    console.log(us[0]);
+    console.log(us[1]);
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月2日10:00
+    document:文档节点
+    用于去查找节点，查找元素节点
+    
+    1. document.getElementById("box");
+        通过id属性的值查找。返回满足条件的第一个元素
+        
+    2. document.getElementsByTagName("div")
+        通过标签的名来获取页面中的元素。返回的是多个标签。
+        并不是真正的数组，但是我们可以向操作数组一样操作他。  （类数组）
+        
+    3. document.getElementsByClassName("c1");
+        通过类名来获取页面中的元素。返回的也是多个标签
+        
+    4. document.getElementsByName("user")
+        主要用来查找表单元素。因为name属性的值可以充分，所以返回的也是多个标签。
+-->

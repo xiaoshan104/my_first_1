@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">这个是文本节点</div>
+<!--你好-->
+<script>
+    var box = document.getElementById("box");
+    /*console.log(box.nodeName);  //获取节点名
+    console.log(box.nodeValue);  //获取节点的value
+    console.log(box.nodeType);  //获取节点的类型
+    */
+    
+    //获取某个元素的属性节点：参数是属性名
+    /*var attNode = box.getAttributeNode("id");
+    console.log(attNode.nodeName);  //获取节点名
+    console.log(attNode.nodeValue);  //获取节点的value
+    console.log(attNode.nodeType);  //获取节点的类型*/
+    
+    /*var textNode = box.childNodes[0];
+    console.log(textNode.nodeName);  //获取节点名
+    console.log(textNode.nodeValue);  //获取节点的value
+    console.log(textNode.nodeType);*/
+    
+    //document就是指的文档节点
+    console.log(document.nodeName);  //获取节点名
+    console.log(document.nodeValue);  //获取节点的value
+    console.log(document.nodeType);
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月2日09:35
+    用三个特性来描述节点：
+    
+    nodeName
+        对元素节点： 标签名或元素名
+        对属性节点:  属性的名
+        对文本节点： #text
+        
+        对文档节点： #document
+    nodeValue
+        对元素节点:  null
+        对属性节点:  属性的值
+        对文本节点： 文本的内容
+        
+        对文档节点： null
+    nodeType
+        对元素节点: 1
+        对属性节点：2
+        对文本节点：3
+        
+        对文档节点：9
+-->

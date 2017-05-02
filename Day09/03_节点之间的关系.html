@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body> <div id="box">div元素</div> <p>p元素</p>
+</body>
+<script>
+    /*var allChild = document.body.childNodes;
+    for(var i = 0; i < allChild.length; i++){
+        if(allChild[i].nodeType == 1){
+            console.log(allChild[i]);
+        }
+    }*/
+
+    /*var box = document.getElementById("box");
+    console.log(box.childNodes);*/
+//    console.log(document.body.firstChild);
+//    console.log(document.body.lastChild);
+
+    var box = document.getElementById("box");
+//    console.log(box.nextSibling.previousSibling);  //下一个兄弟节点
+//    console.log(box.previousSibling);
+    console.log(box.parentNode);
+</script></html>
+<!--
+    作者：李振超  2017年5月2日11:43
+        childNodes : 所有的子节点。包括各种节点。
+        firstChild : 第一个字节点 。可以是任何类型的
+        lastChild ： 最后一个子节点
+        nextSibling : 下一个兄弟节点
+        previousSibling ： 上一个兄弟节点
+        parentNode : 父节点
+-->

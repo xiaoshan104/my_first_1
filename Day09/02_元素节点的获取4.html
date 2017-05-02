@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    
+</head>
+<body>
+<div>
+    <p id="p">
+        <a href="#">百度一下</a>
+        <a href="#">百度一下2</a>
+    </p>
+    <a href="#">腾讯一下</a>
+    <p>
+        <a href="#">育知一下</a>
+    </p>
+</div>
+<a href="#">阿里一下</a>
+<script>
+    /*
+        三个特殊节点的简易获取方式：
+        html        document.documentElement
+        body        document.body
+        head        document.head
+     */
+    console.log(document.documentElement);
+    console.log(document.body);
+    console.log(document.head);
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月2日10:00
+    document:文档节点
+    用于去查找节点，查找元素节点
+    
+    1. document.getElementById("box");
+        通过id属性的值查找。返回满足条件的第一个元素
+        
+    2. document.getElementsByTagName("div")
+        通过标签的名来获取页面中的元素。返回的是多个标签。
+        并不是真正的数组，但是我们可以向操作数组一样操作他。  （类数组）
+        
+    3. document.getElementsByClassName("c1");
+        通过类名来获取页面中的元素。返回的也是多个标签
+        
+    4. document.getElementsByName("user")
+        主要用来查找表单元素。因为name属性的值可以充分，所以返回的也是多个标签。
+        
+    5. document.querySelector("dvi p a")
+        返回满足选择器的第一个元素。  选择器支持css的所有选择器
+        
+    6. document.querySelectorAll("div p a")
+        返回满足选择器的所有元素。
+    
+    7. 三个特殊节点的简易获取方式：
+        html        document.documentElement
+        body        document.body
+        head        document.head
+-->

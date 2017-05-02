@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box"><p class="c1"></p></div>
+<div id="box1" class="c1"></div>
+<p class="c1c2">这个是个p</p>
+
+<script>
+    /*var div = document.getElementById("box");
+    console.log(div);*/
+    
+    // array-like.
+    /*var divs = document.getElementsByTagName("div")
+    console.log(divs[0]);
+    console.log(divs[1]);*/
+    
+    var cs = document.getElementsByClassName("c1");
+    for(var i = 0; i < cs.length; i++){
+        console.log(cs[i]);
+    }
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月2日10:00
+    document:文档节点
+    用于去查找节点，查找元素节点
+    
+    1. document.getElementById("box");
+        通过id属性的值查找。返回满足条件的第一个元素
+        
+    2. document.getElementsByTagName("div")
+        通过标签的名来获取页面中的元素。返回的是多个标签。
+        并不是真正的数组，但是我们可以向操作数组一样操作他。  （类数组）
+        
+    3. document.getElementsByClassName("c1");
+        通过类名来获取页面中的元素。返回的也是多个标签
+-->

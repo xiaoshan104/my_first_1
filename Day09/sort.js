@@ -4,9 +4,11 @@
 
 var a = (function (){
     var a = [];
+
     function randomInt(from, to){
         return parseInt(Math.random() * (to - from + 1) + from);
     }
+
     for (var i = 0; i < 100000; i++){
         a.push(randomInt(0, 10000000))
     }
@@ -89,8 +91,8 @@ function sort(a, temp, lo, hi){
  */
 function quickSort(a, lo, hi){
     // if (lo >= hi) return;
-    if(hi - lo <= 15){
-        insertionSort(a,lo,hi);
+    if (hi - lo <= 15){
+        insertionSort(a, lo, hi);
         return;
     }
     var j = quickPartition(a, lo, hi);
@@ -124,6 +126,12 @@ function quickPartition(a, lo, hi){
     exch(a, lo, j);
     return j;
 }
+/**
+ * 交换数组中的数据
+ * @param a
+ * @param m
+ * @param n
+ */
 function exch(a, m, n){
     var temp = a[m];
     a[m] = a[n];
