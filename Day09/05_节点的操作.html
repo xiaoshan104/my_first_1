@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //创建一个文本节点
+    var text = document.createTextNode("这是一个快乐的文本");
+    //创建一个元素节点
+    var div = document.createElement("div");
+    //把节点添加到父容器中。
+    div.appendChild(text);
+    //添加元素到容器中
+    document.body.appendChild(div);
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月2日14:34
+    创建元素节点：
+        document.createElement(元素名)
+-->

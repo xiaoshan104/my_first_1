@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div id="box">div元素
+    <a href=""></a>
+</div>
+
+<p>p元素</p>
+<script>
+    /*var cs = document.body.children;
+     console.log(cs);*/
+    //    console.log(document.body.firstElementChild);
+    //    console.log(document.body.lastElementChild);
+
+    var box = document.querySelector("#box");
+    //    console.log(box.nextElementSibling.nextElementSibling);
+    //    console.log(box.previousElementSibling);
+    console.log(box.parentElement);
+    console.log(document.body.childElementCount);
+</script>
+</body>
+
+</html>
+<!--
+    作者：李振超  2017年5月2日14:19
+        children :只获取子元素。
+        firstElementChild : 第一个元素子节点
+        lastElementChild :最后一个元素子节点
+        nextElementSibling : 下一个元素兄弟节点
+        previousElementSibling :上一个元素兄弟节点
+        parentElement  : 和parentNode完全一样。
+        childElementCount : 子元素的个数
+-->

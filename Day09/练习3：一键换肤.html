@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一键换肤</title>
+    <style>
+        .day{
+            /*background-color: #fff;*/
+            background-image: url("8.jpg");
+        }
+        .night{
+            /*background-color: #000000;*/
+            background-image: url("9.jpeg");
+            color: white;
+            font-size: 30px;
+            
+        }
+    </style>
+</head>
+<body class="night">
+
+<button>换成日间模式</button>
+<button>换成夜间模式</button>
+<div>这是文字</div>
+<script>
+    var btns = document.getElementsByTagName("button");
+    btns[0].onclick = function (){
+        document.body.setAttribute("class", "day");
+    }
+    btns[1].onclick = function (){
+        document.body.setAttribute("class", "night");
+    }
+</script>
+</body>
+</html>

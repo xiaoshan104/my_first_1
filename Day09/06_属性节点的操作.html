@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box" class="a"></div>
+<script>
+    var box = document.getElementById("box");
+    /*给元素设置属性  参数1：属性的名  参数2：属性的值
+        如果属性不存在，则添加，如果已经存在了则修改属性的值！
+     */
+    box.setAttribute("class", "box1");
+    
+    //删除属性  参数：要删除的属性的属性名
+//    box.removeAttribute("id");
+    
+    //获取属性的值。  参数：属性名  返回值：这个属性的属性值
+    var attValue = box.getAttribute("class");
+    
+    console.log(attValue);
+</script>
+</body>
+</html>

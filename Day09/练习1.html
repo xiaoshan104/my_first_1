@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="languages">
+    <li>java</li>
+    
+    <li>php</li>
+    <li id="js">javaScript</li>
+    <li>python</li>
+    
+</ul>
+
+<script>
+    //要求：在 id=js的li的后面插入一个li。  li的内容是文本
+
+    var js = document.getElementById("js");
+    var next = js.nextElementSibling;
+    var parent = js.parentNode;
+    
+    var text = document.createTextNode("c++");
+    var li = document.createElement("li");
+    li.appendChild(text);
+    parent.insertBefore(li, next);
+//    parent.insertBefore(li, null); //参数2如果是null，就相当于 parent.appendChild(子节点)
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月2日14:34
+    创建元素节点：
+        document.createElement(元素名)
+    创建文本节点：
+        document.createTextNode(文本内容)
+    追加节点： 追加成功后，子节点会成为父节点的lastChild
+        parent.appendChild(子节点)
+    
+    插入到指定的节点之前：
+        parent.insertBefore(new, old)
+        
+    
+-->

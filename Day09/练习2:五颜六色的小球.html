@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background-color: #000;
+        }
+        div{
+            position: absolute;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<script>
+    /**
+     * 创建div，并把div添加到指定的父容器中
+     */
+    function createCircle(parentNode){
+        var div = document.createElement("div");
+        var wh = randomInt(20, 150);
+        
+        div.style.width = wh + "px";
+        div.style.height = wh + "px";
+        div.style.backgroundColor
+            = `rgba(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(0, 255)}, ${Math.random() * 0.6 + 0.4})`;
+        div.style.left = randomInt(0, 1200) + "px";
+        div.style.top = randomInt(0, 700) + "px";
+        
+        parentNode.appendChild(div);
+    }
+    
+    for(var i = 0; i < 100; i++){
+        createCircle(document.body);
+    }
+    
+
+    /**
+     作者:李振超      2017年5月2日 16:14
+     返回随机的 [from, to] 之间的整数(包括from，也包括to)
+     */
+    function randomInt(from, to) {
+        return parseInt(Math.random() * (to - from + 1) + from);
+    }
+    
+</script>
+</body>
+</html>
