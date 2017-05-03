@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var form = document.createElement("form");
+    form.setAttribute("action", "#");
+    form.setAttribute("method", "GET");
+    
+    var text1 = document.createTextNode("用户:");
+    form.appendChild(text1);
+    
+    var input1 = createInput("text");
+    form.appendChild(input1);
+    
+    form.appendChild(document.createElement("br"));
+    
+    var text2 = document.createTextNode("密码:");
+    form.appendChild(text2);
+
+    var input2 = createInput("password");
+    form.appendChild(input2);
+
+    form.appendChild(document.createElement("br"));
+    
+    var input3 = createInput("submit");
+    form.appendChild(input3);
+    
+    document.body.appendChild(form);
+    
+    function createInput(type){
+        var input = document.createElement("input");
+        input.setAttribute("type", type);
+        return input;
+    }
+    
+    
+    var form2 = form.cloneNode(true);
+    form2.appendChild(createInput("reset"))
+    document.body.appendChild(form2);
+</script>
+</body>
+</html>

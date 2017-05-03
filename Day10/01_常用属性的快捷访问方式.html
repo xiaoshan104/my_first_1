@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wh {
+            width: 200px;
+            height: 200px;
+            
+        }
+        
+        .bc {
+            background-color: pink;
+            
+        }
+    </style>
+</head>
+<body>
+<div id="box" class="wh abc">div的内容</div>
+<input type="text" id="input1" value="哈哈哈">
+<input type="checkbox" id="input2" value="哈哈哈">打篮球
+<button id="btn">获取表单元素的value</button>
+<script type="text/javascript">
+    var box = document.getElementById("box");
+    
+    /*console.log(box.id);
+     box.id = "abc";*/
+//    console.log(box.className);
+//    box.className = box.className + " bc";
+//    box.classList.add("bc");  //给classList添加一个class
+//    box.title = "你好"
+
+    var input1 = document.getElementById("input1");
+    var input2 = document.getElementById("input2");
+    btn.onclick = function (){
+//        alert(+input1.value + 100)
+        alert(input2.checked)
+    }
+    
+    
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月3日09:22
+    标签.id :  直接访问id属性
+    标签.className : 获取标签的class属性的值
+    box.classList : 获取标签所有的class组成的列表
+    box.title
+    
+    input1.value : 获取表单元素的value值. 得到的是字符串。
+    input2.checked : 获取单选或多选框的选中状态。  选中就是true，不选中就是false
+-->
