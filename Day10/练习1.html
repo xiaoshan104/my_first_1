@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width : 200px;
+            height : 200px;
+            background-color : pink;
+            border: 100px solid #000;
+            padding: 100px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">div变大</button>
+<div></div>
+<script type="text/javascript">
+    var btn = document.querySelector("button");
+    var div = document.querySelector("div");
+    //每点击一次让div的宽度和高度各增加20px
+    btn.onclick = function (){
+        /*var w = getStyleValue(div, "width");
+        console.log(w);
+        div.style.width = parseFloat(w) + 20 + "px";*/
+        
+        //获取元素实际的宽。包括padding和border在内了
+        console.log(div.offsetWidth);
+        console.log(div.offsetHeight);
+        div.style.width = div.offsetWidth + 20 + "px"
+    }
+
+    function getStyleValue(obj, propName){
+        return window.getComputedStyle
+            ? window.getComputedStyle(obj, null)[propName]
+            : obj.currentStyle[propName];
+    }
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月3日15:23
+    
+-->

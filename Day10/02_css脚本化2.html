@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css脚本化</title>
+    <link rel="stylesheet" type="text/css" href="02.css"/>
+</head>
+<body>
+<div id="box"></div>
+
+<script type="text/javascript">
+    //    var box = document.querySelector("div");
+    var box = document.getElementById("box");
+
+    function getStyleValue(obj, propName){
+        /*if (window.getComputedStyle){ //如果不是undefined，一定不是在ie678
+            return window.getComputedStyle(obj, null)[propName];
+        }else{
+            return obj.currentStyle[propName];
+        }*/
+        return window.getComputedStyle
+            ? window.getComputedStyle(obj, null)[propName]
+            : obj.currentStyle[propName];
+    }
+
+    var w = getStyleValue(box, "width");
+    console.log(w);
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月3日14:17
+    三种样式表：
+    
+    1. 行内样式表
+        var style = div.style 获取到行内样式表
+        style.css属性  访问和修改样式表中的属性
+    2. 内部样式表
+    3. 外部样式表
+        var style = window.getComputedStyle(div, null);
+        外部样式标准的属性，只能读取，不能修改。
+        只支持在ie9+和其他浏览器上
+        
+        ie678:
+        obj.currentStyle
+        
+     访问样式属性的时候：
+        可以使用
+        style.width
+        style["width"]
+        
+        var a = "width";
+        style.a  X
+        style[a]  ✔️
+-->
