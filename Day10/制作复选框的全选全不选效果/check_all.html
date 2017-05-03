@@ -104,14 +104,61 @@
 </table>
 <input type="checkbox" id="revers">反选
 <script>
+    var count = 0;  //记录产品被选中的个数
     var all = document.getElementById("all");
     var ps = document.getElementsByName("product");
     all.onclick = function (){
         var checked = all.checked;
+        if(checked){  //如果全新按钮是选中，则count 就是产品的数量
+            count = ps.length;
+        }else{  //否则就是0
+            count = 0;
+        }
         for(var i = 0; i < ps.length; i++){
             ps[i].checked = checked;
         }
     }
+    
+    for(let i = 0; i < ps.length; i++){
+        ps[i].onclick = function (){
+            //当点击每个产品的时候，判断产品是否被选中，
+            if(ps[i].checked){  //如果被选中个，则count++
+                count++;
+            }else{  //否则count--
+                count--;
+            }
+            //判断count的值是否与产品的数量相等
+            if(count == ps.length){ //如果相等，代表所有产品全部选中。
+                all.checked = true;
+            }else{
+                all.checked = false;
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    /*for(let i = 0; i < ps.length; i++){
+        ps[i].onclick = function (){
+            if(!ps[i].checked){
+                //单个产品不被选中
+                all.checked = false;
+            }else{
+                var count = 0;
+                //单个产品被选中
+                for(let j = 0; j < ps.length; j++){
+                    if(ps[j].checked){
+                        count++;
+                    }
+                }
+                if(count == ps.length){
+                    all.checked = true;
+                }
+            }
+        }
+    }*/
 </script>
 </body>
 
