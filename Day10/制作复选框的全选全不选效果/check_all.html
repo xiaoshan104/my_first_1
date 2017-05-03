@@ -135,8 +135,25 @@
             }
         }
     }
-    
-    
+
+    //反选的功能
+    revers.onclick = function (){
+        for(let i = 0; i < ps.length; i++){
+            //把每个产品的原来的状态取反之后再赋值回去
+            ps[i].checked = !ps[i].checked
+            if(ps[i].checked) { //如果新状态是选中，则count++
+                count++;
+            }else{
+                count--
+            };
+        }
+        
+        if(count == ps.length){ //如果相等，代表所有产品全部选中。
+            all.checked = true;
+        }else{
+            all.checked = false;
+        }
+    }
     
     
     

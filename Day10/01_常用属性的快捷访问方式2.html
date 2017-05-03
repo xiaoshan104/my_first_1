@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <a href="n#">你好</a>
+</div>
+<script>
+    var box = document.getElementById("box");
+//    console.log(box.outerText);
+    box.outerText = "<p>这个是个p</p>"
+    
+//    box.outerHTML = "<p>你好</p>"
+    /*console.log(box.outerHTML);
+    console.log(box.innerHTML);*/
+    
+    
+//    box.innerHTML = "";
+    /*console.log(box.innerText);
+     console.log(box.innerHTML);*/
+    //    box.innerText = "<p><a href=#>百度一下</a></p>"
+
+</script>
+
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月3日09:22
+    标签.id :  直接访问id属性
+    标签.className : 获取标签的class属性的值
+    box.classList : 获取标签所有的class组成的列表
+    box.title
+    
+    input1.value : 获取表单元素的value值. 得到的是字符串。
+    input2.checked : 获取单选或多选框的选中状态。  选中就是true，不选中就是false
+    
+    box.tagName   ： 获取标签名  对html来说，和nodeName完全一样！！！
+    
+    ele.innerHTML : 如果直接访问，获取的是元素中的所有的内容转换成的字符串。
+        在设置innerHTML的时候，如果字符串中有标签，会自动进行解析！！！
+        
+    ele.innerText : 如果直接访问获取，获取的是元素中的文本，不会获取到标签。
+        设置的时候，所有的标签都会当做普通的字符串进行处理！
+        
+    ele.outerHTML :
+        相比于innerHTML，只差别一个当前元素自己
+        
+    ele.outerText :
+        相比于innerText，只差别一个当前元素自己
+-->
