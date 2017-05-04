@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        #outer{
+            width : 400px;
+            height : 400px;
+            background-color : pink;
+            overflow:auto;
+        }
+        #inner{
+            width : 2000px;
+            height : 2000px;
+            background-color :gray;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <div id="inner"></div>
+</div>
+<script>
+    var outer = document.getElementById("outer");
+    /*outer.onscroll = function (){
+        console.log(outer.scrollTop);  //表示滚动条滚动的距离。 scrollTop还可以设置。
+    }*/
+    var id = setInterval(function (){
+        var a = outer.scrollTop;
+        outer.scrollTop += 10;
+        var b = outer.scrollTop;
+        if(a == b){
+            clearInterval(id);
+        }
+        console.log(outer.scrollTop);
+    }, 100)
+</script>
+
+</body>
+</html>

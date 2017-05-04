@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input{
+            outline: rgba(255, 0, 0, 0.51);
+        }
+        .error{
+        
+        }
+    </style>
+</head>
+<body>
+<input type="text"><i></i>
+<script>
+    var user = document.querySelector("input");
+    var info = document.querySelector("i");
+    user.onblur = function (){
+        //  4  15
+        var userName = user.value;
+        if(userName.length < 4 || userName.length > 15){
+            info.innerHTML = "你的用户名不符号规则";
+            info.className = "error";
+            user.focus();  //让input获取焦点
+        }else{
+            info.innerHTML = "✅"
+            info.className = "";
+        }
+    }
+</script>
+</body>
+</html>

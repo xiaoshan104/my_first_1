@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <input type="text">
+</div>
+<script>
+    var input = document.querySelector("input");
+    /*input.onfocus = function (){
+        console.log("我获取了焦点...");
+    }
+    input.onblur = function (){
+        console.log("我失去了焦点...");
+    }*/
+    var div = document.querySelector("div");
+    
+    input.addEventListener("focus", function (){
+        console.log("input....");
+    })
+    div.addEventListener("focus", function (){
+        console.log("div....");
+    })
+</script>
+</body>
+</html>
+<!--
+  不冒泡的
+    onfocus 获得焦点
+    onblur  失去焦点
+    
+  冒泡版本： 使用dom0无法监听到。只能用dom2
+    onfocusin
+    onfoucsout
+
+-->

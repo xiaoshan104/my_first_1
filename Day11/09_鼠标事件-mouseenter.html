@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width : 600px;
+            height : 200px;
+            background-color : #CCCCCC;
+            
+        }
+        p{
+            width : 200px;
+            height : 600px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p></p>
+</div>
+<script>
+    var p = document.querySelector("p");
+    p.onmouseenter = function (){
+        p.style.backgroundColor = "pink";
+        p.style.width = 400 + "px";
+    }
+    p.onmouseleave = function (){
+        p.style.backgroundColor = "gray";
+        p.style.width = 200 + "px";
+    }
+
+    var div = document.querySelector("div");
+    div.onmouseenter = function (){
+        console.log("div收到 enter事件");
+    }
+    div.onmouseleave = function (){
+        console.log("div收到 leave事件");
+    }
+</script>
+</body>
+</html>
+<!--
+   这两个事件是冒泡的
+        mouseover
+        mouseout
+   
+   
+   这两个不冒泡：
+       onmouseenter
+       onmouseleave
+
+-->
