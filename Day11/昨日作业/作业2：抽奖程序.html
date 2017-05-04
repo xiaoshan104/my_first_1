@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box, body, html{
+            width : 100%;
+            height : 100%;
+            
+        }
+        #box{
+            background-color: gray;
+        }
+        div div{
+            width : 100px;
+            height : 50px;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 50px;
+            font-size: 30px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script type="text/javascript">
+    var names = ["张三1", "张三2", "张三3"
+        , "张三4", "张三5", "张三6"
+        , "张三7", "张三8", "张三9"];
+    for(var name of names){
+        createDiv(document.getElementById("box"),name);
+    }
+    //抽奖：抽出来中奖人的下标
+    var indexs = [];
+    for(var i = 0; i < 3; i++){
+        while(true){
+            var index = randomInt(0, names.length - 1);
+            if(indexs.indexOf(index) == -1){//等于-1表示不存在，这次的生成有效
+                indexs.push(index);
+                console.log(index);
+                break;
+            }
+        }
+        
+    }
+    //
+    var divs = document.getElementById("box").children;
+    for(var i = 0; i < indexs.length; i++){
+        divs[indexs[i]].style.backgroundColor = "pink";
+    }
+    
+    
+    //先把所有的人显示在页面
+    function createDiv(parent, text){
+        var div = document.createElement("div");
+        div.innerHTML = text;
+        parent.appendChild(div);
+    }
+
+    /**
+     作者:李振超      2017年5月4日 09:17
+     返回随机的 [from, to] 之间的整数(包括from，也包括to)
+     */
+    function randomInt(from, to) {
+        return parseInt(Math.random() * (to - from + 1) + from);
+    }
+    
+    
+</script>
+
+</body>
+</html>

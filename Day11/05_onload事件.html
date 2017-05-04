@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        //方法1：给window的onload属性设置函数。建议使用这种
+        window.onload = function () {	// 函数在页面执行完毕之后自动执行。
+            alert("页面加载完毕")
+        };
+    </script>
+</head >
+<!--方法2： HTML事件处理： 给body 的onload属性直接设置 JavaScript代码， 也可以调用函数-->
+<body onload="alert('你好')">:
+</body>
+</html>

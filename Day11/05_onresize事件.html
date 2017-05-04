@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        window.onload = function (){
+            var p = document.querySelector("p");
+            //当窗口的尺寸发生变化的时候触发这个事件
+            window.onresize = function (){
+                var w = window.innerWidth;
+                var h = window.innerHeight;
+                p.innerHTML = "宽度：" + w + ", 高度：" + h;
+            }
+        }
+    </script>
+</head >
+<body>
+<p></p>
+</body>
+</html>
