@@ -3,8 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        div{
+            width : 200px;
+            height : 200px;
+            background-color : pink;
+        }
+    </style>
 </head>
 <body>
-
+<div></div>
+<script>
+    var div = document.querySelector("div");
+    div.onmousedown = function (){
+        console.log("你按下了鼠标....");
+    }
+    div.onmouseup = function (){
+        console.log("你松开了鼠标....");
+    }
+    div.onmousemove = function (){
+        console.log("你正在移动鼠标....");
+    }
+    
+</script>
 </body>
 </html>

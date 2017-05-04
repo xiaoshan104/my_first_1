@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width : 200px;
+            height : 200px;
+            background-color : pink;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="box" ></div>
+<script>
+    var speed = 20;
+    document.body.onkeydown = function (event){
+        var keyCode = event.keyCode;
+        var left = box.offsetLeft;
+        var top = box.offsetTop;
+        switch(keyCode){
+            case 65:
+            case 37:
+                left -=speed;
+                box.style.left = left + "px";
+                break;
+            case "W".charCodeAt(0):
+            case 38 :
+                top -=speed;
+                box.style.top = top + "px";
+                break;
+            case 39 :
+                left +=speed;
+                box.style.left = left + "px";
+                break;
+            case 40 :
+                top +=speed;
+                box.style.top = top + "px";
+                break;
+        }
+        
+       
+    }
+</script>
+</body>
+</html>

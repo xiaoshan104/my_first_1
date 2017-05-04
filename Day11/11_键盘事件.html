@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text">
+<script>
+    var input = document.querySelector("input")
+    //任意键
+    /*input.onkeydown = function (event){
+//        console.log("你按下了键盘的任意键...");
+        console.log(event);
+    }*/
+    //字符键
+    input.onkeypress = function (){
+        console.log("你按下了非功能键。。。。");
+    }
+    //松开了任意键
+    input.onkeyup = function (){
+        console.log("你松开了任意键");
+    }
+</script>
+</body>
+</html>
