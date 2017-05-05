@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        div {
+            width: 800px;
+            height: 600px;
+            background-color: #1e3364;
+            margin: 100px auto;
+            position: relative;
+            
+        }
+        
+        p {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            border-radius: 50%;
+            position: absolute;
+            left: 200px;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">原路返回</button>
+<div><p></p></div>
+<script>
+    var div = document.querySelector("div");
+    var p = document.querySelector("p");
+    var divLeft = div.offsetLeft;
+    var divTop = div.offsetTop;
+    //p所允许的最大left和top值
+    var maxLeft = div.offsetWidth - p.offsetWidth;
+    var maxTop = div.offsetHeight - p.offsetHeight;
+
+    var lefts = [];
+    var tops = [];
+    div.onmousemove = function (e){
+        var left = e.clientX - divLeft - p.offsetWidth / 2;
+        var top = e.clientY - divTop - p.offsetHeight / 2;
+
+        //限制左边界和上边界
+        left = left <= 0 ? 0 : left;
+        top = top <= 0 ? 0 : top;
+        //限制右边界和下边界
+        left = left >= maxLeft ? maxLeft : left;
+        top = top >= maxTop ? maxTop : top;
+
+        p.style.left = left + "px";
+        p.style.top = top + "px";
+        lefts.push(left);
+        tops.push(top);
+    }
+    /**
+     * 让p原路返回
+     */
+    function goBack(){
+        var id = setInterval(function (){
+            if (lefts.length == 0){
+                clearInterval(id);
+            }
+            var left = lefts.pop();
+            var top = tops.pop();
+            p.style.left = left + "px";
+            p.style.top = top + "px";
+        }, 30)
+
+    }
+    btn.onclick = function (){
+        goBack();
+    }
+</script>
+</body>
+</html>

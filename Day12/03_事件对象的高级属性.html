@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width : 200px;
+            height : 200px;
+            background-color : pink;
+            margin: 100px;
+        }
+        p{
+            width : 100000px;
+            height : 100000px;
+            background-color:gray;
+            margin: 0 auto;
+            
+        }
+    </style>
+</head>
+<body>
+<div><p></p></div>
+<script>
+    var div = document.querySelector("div");
+    var p = document.querySelector("p");
+    p.onclick = function (e){
+        console.log(e.offsetX, e.offsetY);
+        console.log(e.screenX, e.screenY);
+        console.log(e.clientX, e.clientY);
+        console.log(e.pageX, e.pageY);
+        console.log(p.offsetWidth);
+        console.log(p.offsetHeight);
+        console.log(p.offsetLeft);
+        console.log(p.offsetTop);
+    }
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月5日14:07
+    事件对象的一些坐标：
+        鼠标的触发点相关
+        
+        e.offsetX
+        e.offsetY
+            触发点相对于target元素的左上角的坐标
+        
+        screenX、screenY：  很少用到
+            触发点相对于屏幕的坐标原点的坐标
+        
+        client、clientY:  用的的最多
+            触发点相对于浏览器可视区域原点的坐标
+         
+        pageX、pageY：
+            触发点相对于文档区域原点的左边
+        
+        
+            
+         
+-->

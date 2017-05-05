@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>放大镜效果</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        #fdj {
+            width: 900px;
+            margin: 0 auto;
+        }
+        
+        #small {
+            box-sizing: border-box;
+            border: 1px solid #000;
+            float: left;
+            width: 350px;
+            height: 350px;
+            background-color: pink;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #small #pop {
+            left: 0;
+            top: 0;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: rgba(100, 100, 100, 0.4);
+            display: none;
+        }
+        
+        #big {
+            box-sizing: border-box;
+            border: 1px solid #000;
+            float: left;
+            width: 550px;
+            height: 550px;
+            overflow: hidden;
+            display: none;
+            position: relative;
+        }
+        #big img{
+            position: absolute;
+            left:0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="fdj">
+    <div id="small">
+        <img src="img/small.jpg" alt="">
+        <div id="pop"></div>
+    </div>
+    <div id="big">
+        <img src="img/big.jpg" alt="">
+    </div>
+</div>
+<script>
+    var small = document.getElementById("small");
+    var pop = document.getElementById("pop");
+    var big = document.getElementById("big");
+    var img = document.querySelector("#big img");
+
+    small.onmouseover = function (){
+        //显示pop
+        pop.style.display = "block";
+        big.style.display = "block"
+    }
+    small.onmouseout = function (){
+        //隐藏pop
+        pop.style.display = "none";
+        big.style.display = "none";
+    }
+    small.onmousemove = function (event){
+        //计算pop所允许的最大left和最大top
+        var maxLeft = small.offsetWidth - pop.offsetWidth;
+        var maxTop = small.offsetHeight - pop.offsetHeight;
+        //计算pop的left的和top值
+        var popLeft = event.clientX - small.offsetLeft - pop.offsetWidth / 2;
+        var popTop = event.clientY - small.offsetTop - pop.offsetHeight / 2;
+        //左边界
+        popLeft = popLeft < 0 ? 0 : popLeft;
+        //上边界
+        popTop = popTop < 0 ? 0 : popTop;
+        //右边界
+        popLeft = popLeft > maxLeft ? maxLeft : popLeft;
+        //下边界
+        popTop = popTop > maxTop ? maxTop : popTop;
+
+        pop.style.left = popLeft + "px";
+        pop.style.top = popTop + "px";
+        
+        img.style.left = -popLeft / maxLeft * 250 + "px"
+        img.style.top = -popTop / maxTop * 250 + "px"
+    }
+
+</script>
+</body>
+</html>
