@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        #banner {
+            margin: 100px
+        }
+        
+        #small {
+            width: 350px;
+            height: 350px;
+            background-color: gray;
+            position: relative;
+            border: 1px solid #000;
+            float: left;
+        }
+        
+        #small > div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            opacity: 0.4;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+        }
+        
+        #big {
+            float: left;
+            border: 1px solid #000;
+            width: 550px;
+            height: 550px;
+            overflow: hidden;
+            position: relative;
+            display: none;
+        }
+        
+        #big > img {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    
+    </style>
+</head>
+<body>
+<div id="banner">
+    <div id="small">
+        <img src="./img/small.jpg" alt="">
+        <div id="popup"></div>
+    </div>
+    <div id="big">
+        <img src="./img/big.jpg" alt="" id="bigImg">
+    </div>
+</div>
+<script type="text/javascript">
+    var small = document.getElementById("small");
+    var big = document.getElementById("big");
+    var popup = document.getElementById("popup");
+    var bigImg = document.getElementById("bigImg");
+
+    //
+    small.onmouseenter = function (){
+        popup.style.display = "block";
+        big.style.display = "block"
+    }
+    small.onmouseleave = function (){
+        popup.style.display = "none";
+        big.style.display = "none";
+    }
+    
+    
+    //移动popup
+    small.onmousemove = function (e){
+        var maxLeft = small.offsetWidth - popup.offsetWidth;
+        var maxTop = small.offsetHeight - popup.offsetHeight;
+        var left = e.clientX - small.offsetLeft - popup.offsetWidth / 2;
+        var top = e.clientY - small.offsetTop - popup.offsetHeight / 2;
+
+        //限制边界
+        left = left <= 0 ? 0 : left;
+        top = top <= 0 ? 0 : top;
+        left = left >= maxLeft ? maxLeft : left;
+        top = top >= maxTop ? maxTop : top;
+        
+        popup.style.left = left + "px";
+        popup.style.top = top + "px";
+        
+        //big中img的运动
+        bigImg.style.left = -left / maxLeft * (bigImg.offsetWidth - big.offsetWidth) + "px";
+        bigImg.style.top = -top / maxTop * (bigImg.offsetHeight - big.offsetHeight) + "px";
+    }
+</script>
+</body>
+</html>
