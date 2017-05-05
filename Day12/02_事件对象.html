@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width : 200px;
+            height : 200px;
+            background-color : pink;
+            
+        }
+        p{
+            width : 100px;
+            height : 200px;
+            background-color : gray;
+            
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <p>
+        <button id="btn">按钮</button>
+    </p>
+</div>
+<script>
+    /*//处理函数的参数就是将来发生的点击事件封装成的对象
+    btn.onclick = function (e){
+        console.log(e.bubbles);  //事件是否冒泡
+        console.log(e.cancelable);  //是否允许取消事件的默认行为
+        console.log(e.currentTarget);  // 当前事件处理程序注册的那个元素
+        console.log(e.target);  // 总是点击区域的最内侧的那个元素
+        console.log(e.detail);  //
+        console.log(e.eventPhase);  //事件处理所在的阶段：1 捕获  2 处于目标  3  冒泡
+    }*/
+    
+    btn.onclick = function (e){
+        e.stopPropagation();  //停止事件的进一步向其他元素传播
+        console.log("btn...");
+        
+    }
+    function foo(e){
+        console.log("div...");
+//        e.stopPropagation();
+        e.stopImmediatePropagation();
+    }
+    box.addEventListener("click", foo, true);
+    box.addEventListener("click", function (){
+        console.log("div第二个事件处理。。。。。。");
+    }, true)
+</script>
+</body>
+</html>

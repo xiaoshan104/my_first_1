@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dom2级别数据处理程序</title>
+</head>
+<body>
+<div><button>案例</button></div>
+<script type="text/javascript">
+    var btn = document.querySelector("button");
+    var div = document.querySelector("div");
+    /**
+     * 参数1：事件类型  不用带on
+     * 参数2：事件处理程序
+     * 参数3：是一个布尔值，表示是否在捕获阶段执行事件处理程序.
+     * true表示捕获阶段处理。false或者不传，表示冒泡阶段。
+     * 一般情况，不是特别需要，都是使用冒泡阶段。
+     *
+     * 同一个事件类型，可以注册多个事件处理程序
+     * 执行顺序就是添加顺序
+     */
+    function foo(){
+        console.log("按钮....");
+    }
+    btn.addEventListener("click", foo);
+    /*
+    参数1：事件类型
+    参数2：要移除的事件处理程序。
+        必须是已经注册过的。
+     */
+    btn.removeEventListener("click", foo)
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月5日10:18
+    dom0级事件处理程序的缺点：
+    一个事件只能有一个事件处理程序！
+    
+   dom2:
+    事件都把on统统的去掉
+    
+-->
