@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        #calendar {
+            width: 700px;
+            margin: 100px auto;
+            text-align: center;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        ul li {
+            float: left;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            border-right: 1px solid white;
+            box-sizing: border-box;
+        }
+        
+        ul li:nth-child(7n) {
+            border-right: none;
+        }
+    
+        ul#days li:hover{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div id="calendar">
+    <div id="selectYearMonth">
+        <select id="year">
+        </select>年
+        <select id="month">
+        </select>月
+    </div>
+    <ul>
+        <li>星期日</li>
+        <li>星期一</li>
+        <li>星期二</li>
+        <li>星期三</li>
+        <li>星期四</li>
+        <li>星期五</li>
+        <li>星期六</li>
+    </ul>
+    <ul id="days">
+    
+    </ul>
+</div>
+<script>
+    var yearSelect = document.getElementById("year");
+    var monthSelect = document.getElementById("month");
+    var daysUl = document.getElementById("days");
+    //初始化所有的年份
+    for (var year = 1900; year < 9999; year++){
+        createOption(year, year, yearSelect)
+    }
+    //初始化所有的月份
+    for (var month = 1; month <= 12; month++){
+        createOption(month, month, monthSelect)
+    }
+
+    //创建一个时间，来表示当前的年月
+    var now = new Date();
+    yearSelect.value = now.getFullYear();
+    monthSelect.value = now.getMonth() + 1;
+
+    showDays(yearSelect.value, monthSelect.value);
+
+    yearSelect.onchange = function (){
+        showDays(yearSelect.value, monthSelect.value);
+    }
+    monthSelect.onchange = function (){
+        showDays(yearSelect.value, monthSelect.value);
+    }
+
+    /**
+     * 显示指定的年月的所有日期
+     * month: 1 - 12
+     */
+    function showDays(year, month){
+        daysUl.innerHTML = "";
+        //计算出来这个月的1日是星期几
+        var date = new Date(year, month - 1, 1);  //
+        var emptyLiCounts = date.getDay();
+        for (var i = 0; i < emptyLiCounts; i++){
+            let li = createLi("", daysUl);
+            li.onmousemove = function (){
+                li.style.backgroundColor = "white";
+            }
+        }
+        //从1日开始插入。  计算这个月有多少天？
+        var d = new Date(year, month, 0);
+        var days = d.getDate();
+        for(var i = 1; i <= days; i++){
+            createLi(i, daysUl);
+        }
+    }
+    /**
+     *  创建一个li，并把创建的li添加到指定的父容器中
+     */
+    function createLi(text, parent){
+        var li = document.createElement("li");
+        li.innerHTML = text;
+        parent.appendChild(li);
+        return li;
+    }
+
+    /**
+     * 创建一个option，并把创建的option添加到指定的select中
+     */
+    function createOption(value, text, select){
+        var opt = document.createElement("option");
+        opt.value = value;
+        opt.innerHTML = text;
+        select.appendChild(opt)
+    }
+    
+    
+</script>
+</body>
+</html>
