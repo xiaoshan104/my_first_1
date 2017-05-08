@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   //捕获组
+    var reg = /girl/gi;
+    var s = "giRl a girLfalsfjldsgirlfadslfjaldsjgirlladsjfladsjGIRL";
+    
+    var r ;
+    while((r = reg.exec(s)) != null){
+        console.log(r);
+    }
+    
+    /*var r = reg.exec(s);
+    while(r != null){
+        console.log(r[0]);
+        r = reg.exec(s);
+    }*/
+    
+   
+</script>
+</body>
+</html>
+<!--
+g：模式修饰符，全局匹配
+    如果有g表示从上次匹配的位置开始去匹配.一旦匹配到末尾，则下次重新从头开始匹配
+    如果没有g表示不是全局匹配，每次都是从头开始匹配
+    
+    正则表达式中：lastIndex这个属性，记录了下次开始查找的位置！
+        如果不是全局查找，lastIndex永远是0
+
+
+exec: 返回值是一个数组：
+        两个特殊的属性：
+            index：匹配的字符串的开始下标
+            input：exec方法传入的字符串
+-->
