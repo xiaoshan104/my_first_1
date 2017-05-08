@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var date = new Date();
+    // 获取具体的年份
+    console.log(date.getYear())  //被废弃了。
+    //    date.setFullYear(2019)  //设置具体的年份
+    console.log(date.getFullYear());  //获取年份用这个。
+
+    //    date.setMonth(11);  //如果设置的范围超出了 0-11，自动变为上一年或者下一年的月份
+    //获取月份.  月份是从0-11.  0表示1月份  11表示12月份
+    console.log(date.getMonth());
+
+    //    date.setDate(32);
+    //获取日，表示的是当月的第几天
+    console.log(date.getDate());
+//    console.log(date.getMonth());
+//    console.log(date.getFullYear());
+    
+    //获取星期几。  0-6.  只有获取，没设置。
+    console.log(date.getDay());
+    
+//    date.setHours(25)
+    //获取小时: 0-23
+    console.log(date.getHours());
+    console.log(date.getDate())
+
+//    date.setMinutes(60)   //设置分钟
+    console.log(date.getMinutes());
+    console.log(date.getHours());
+
+//    date.setSeconds(120);
+    console.log(date.getSeconds());
+
+//    date.setMilliseconds(100);
+    console.log(date.getMilliseconds());  // 0 - 999
+    
+    
+</script>
+</body>
+</html>

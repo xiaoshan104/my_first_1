@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var date = new Date();
+    //默认转的字符串是根据欧美人的习惯。
+    console.log(date.toString());
+    //根据操作系统的时间的格式转
+    console.log(date.toLocaleString());
+    console.log(date.toLocaleDateString());
+    console.log(date.toLocaleTimeString());
+    
+    //valueOf：时间对象的valueOf返回这个时间表示的那个毫秒值  和 getTime完全一样
+    console.log(date.valueOf());
+    console.log(date.getTime());
+    
+    //两个时间对象可以直接相减.  计算耗时
+    var msg = ""
+    var date1 = new Date();
+    for(var i = 0; i < 100000; i++){
+        msg += i;
+    }
+    var date2 = new Date();
+    console.log(date2 - date1);
+</script>
+</body>
+</html>
+<!--
+ valueOf:
+ getTime:
+
+
+2017年2月29日 3：2：1
+
+-->
