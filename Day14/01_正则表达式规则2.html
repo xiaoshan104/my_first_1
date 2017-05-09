@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var reg;
+//    reg = /\s/gi;   // space :空白字符串
+//    reg = /\S/gi;   // 非空白
+//    reg = /^[a-c]/gi;  // 写在正则表达式的开始，表示以什什么开头
+//    reg = /[abc]$/gi;  // 把$放在最后，表示以什什么结尾。
+//    reg = /^[1-9]\d\d\d$/gi;  //判断是否为四位数
+    reg = /^1[35678]\d\d\d\d\d\d\d\d\d$/gi;
+    console.log(reg.test("18566666662"));
+</script>
+</body>
+</html>
+<!--
+正则表达式的创建：
+1. 使用构造函数  new RegExp("", "")
+2. 字面量的方式   /xx/gi;
+
+test
+
+exec
+
+规则：
+[abc] 匹配单个字符串 匹配a或者b或者c
+.  匹配任意字符  不包括换行
+[^a-z] ^放在方括号中，表示非
+-->

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var reg;
+    //检测一个字符串是否全部是数字
+//    var reg = /[a-z0-9]/g;
+
+//    var reg = /\./g;
+//    var reg = /[^a-z]/gi;
+//    var reg = /\d/gi;  //  [0-9]  digital
+//    reg = /\D/gi;   //不是数字   [^0-9]
+//    reg = /\w/gi;   // word 匹配单词字符  数字字母下划线  [0-9a-zA-Z_]
+    reg = /\W/gi;   // 匹配非单词字符。
+    console.log(reg.test("a"));
+</script>
+</body>
+</html>
+<!--
+正则表达式的创建：
+1. 使用构造函数  new RegExp("", "")
+2. 字面量的方式   /xx/gi;
+
+test
+
+exec
+
+规则：
+[abc] 匹配单个字符串 匹配a或者b或者c
+.  匹配任意字符  不包括换行
+[^a-z] ^放在方括号中，表示非
+-->

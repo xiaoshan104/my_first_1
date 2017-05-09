@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var reg;
+    //    reg = /^1[345678]\d{9}$/gi;
+
+    //    reg = /a?/gi;  //  //  ?  0个或1个
+    //    reg = /a*/gi;   //  * 0个或多个
+
+    //    reg = /a+/gi;  // + 1个或多个
+    //    reg = /a{2}/gi;  // {m} 正好m个
+//    reg = /a{3,}/gi;  // {m,} 大于等于m个
+    reg = /a{1,3}/gi;  // {m,n} 大于等于m个 小于等于n个
+
+    console.log(reg.exec("aabaaaaaa"));
+    console.log(reg.lastIndex);
+
+    console.log(reg.exec("aabaaaaaa"));
+    console.log(reg.lastIndex);
+    console.log(reg.exec("aabaaaaa"));
+    console.log(reg.lastIndex);
+
+</script>
+</body>
+</html>
+<!--
+    默认情况下，数量词的匹配都是 贪婪模式匹配。
+    
+    
+-->
