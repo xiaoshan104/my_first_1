@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*var s = "a123bcfadsf77dabc";
+    console.log(s.search(/\d+/gi))
+    console.log(s.search(/\d+/gi))*/
+    
+    var s = "how many time";
+//    var reg = /\d+/gi;
+    reg = /[a-z]+/gi;
+    var rs = s.match(reg);
+    console.log(rs);
+</script>
+</body>
+</html>
+<!--
+search :中正则表达式 的  g全局是忽略
+    总是从0开始查找。查找到第一个匹配正则表达式的位置
+    如果找到则返回下标，否则返回 -1
+
+var r;
+    while((r = reg.exec(s)) != null){
+        console.log(r[0]);
+    }
+
+match :会把所有的满足正则表达式的字符串放入一个数组中返回
+    如果不用全局，则最多找到1个,则返回的数组会多出两个属性： index 、input
+    
+    
+-->
