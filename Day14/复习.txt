@@ -1,0 +1,91 @@
+数据类型：
+    基本数据类型
+        Number  Boolean String Null Undefined
+
+    复杂数据类型、对象类型、引用数据类型
+        Array Date Math document window   Object
+运算符：
+    ++  --
+
+    复合运算符：+= /=  *=  %=
+
+    || &&   !
+
+    ? :
+    > < >=  <=
+
+    ==  ===
+
+    都是基本类型
+        都去向number方向转换，转完再去比
+
+    都是对象
+        直接比较地址值
+
+    一边是对象一边是基本类型
+        先valueOf，如果是基本类型，就去比较
+        如果不是，就调用toString,然后再去比较
+
+类型的转换：
+    转换函数
+
+    parseInt
+    parseFloat
+
+语句：
+   if
+
+   switch
+
+   while
+   for
+   do ... while()
+
+函数：
+    三个要素：
+        函数名：见名知意
+        参数：
+        返回值
+
+    声明提前：
+
+    var a
+    function b(){}
+
+    函数的递归：
+
+数组：
+    slice：
+    splice:
+
+BOM:
+    open
+    window
+    document
+
+    setInterval
+    setTimeout
+
+    声明的任何全局变量，都会成为window对象的属性
+
+DOM：
+
+Event:
+
+    ele:
+        offsetWidth....
+
+    e:
+        offsetX...
+        clientX
+        pageX
+        screenX..
+
+RegExp:
+    test
+    exec
+
+    search:
+    match
+    replace
+    split

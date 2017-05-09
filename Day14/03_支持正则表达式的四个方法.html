@@ -7,14 +7,31 @@
 <body>
 <script>
     /*var s = "a123bcfadsf77dabc";
-    console.log(s.search(/\d+/gi))
-    console.log(s.search(/\d+/gi))*/
+     console.log(s.search(/\d+/gi))
+     console.log(s.search(/\d+/gi))*/
     
-    var s = "how many time";
-//    var reg = /\d+/gi;
-    reg = /[a-z]+/gi;
-    var rs = s.match(reg);
-    console.log(rs);
+    /* var s = "how many time";
+     //    var reg = /\d+/gi;
+     reg = /[a-z]+/gi;
+     var rs = s.match(reg);
+     console.log(rs);*/
+    
+    /*//替换字符串
+     var s = "aaaxxxx";
+     var reg = /aaa/gi;
+     var s1 = s.replace(reg, "*");
+     console.log(s1);*/
+    //消除叠词
+    /*var s = "我今今天天天天要请你们吃吃吃吃吃饭"
+    console.log(s);
+    var s1 = s.replace(/(.)\1+/gi, "$1");
+    console.log(s1);*/
+    //  /(a((a)b)c)de/gi
+    
+    var s = ".....10.3.155.188......";
+//    console.log(s.match(/\d+/gi))
+    var r = s.split(/\./gi, 4);  //切出来的数组的允许的最大长度
+    console.log(r);
 </script>
 </body>
 </html>
@@ -31,5 +48,12 @@ var r;
 match :会把所有的满足正则表达式的字符串放入一个数组中返回
     如果不用全局，则最多找到1个,则返回的数组会多出两个属性： index 、input
     
-    
+s.replace(reg, "*");
+       替换所有的
+       
+       对捕获组的引用：
+        1. 正则表达式中用  \n
+        2. 在替换字符中引用：  $n
+        
+s.split
 -->

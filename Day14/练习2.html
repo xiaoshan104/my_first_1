@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单验证</title>
+</head>
+<body>
+<form action="#" name="form1">
+    用户名:<input type="text" name="user"><i></i><br>
+    密码:<input type="password" name="pwd1"><i></i><br>
+    重复密码:<input type="password" name="pwd2"><i></i><br>
+    <input type="submit" value="注册">
+</form>
+<script>
+    //获取页面中指定name属性的值的form
+    var form1 = document.forms.form1;
+    var input1Check = function (){
+        var reg = /^[a-z_]\w{4,14}$/gi;
+        var i = form1.user.nextElementSibling;
+        var result = checkInput(form1.user, reg, function (result){
+            if (result){
+                i.innerHTML = "👌"
+            }else{
+                i.innerHTML = "❌"
+            }
+        })
+        return result;
+
+    }
+    var input2Check = function (){
+        var i = form1.pwd1.nextElementSibling;
+        var reg = /^\w\w{7,}$/gi;
+        var result = checkInput(form1.pwd1, reg, function (result){
+            if (result){
+                i.innerHTML = "👌"
+            }else{
+                i.innerHTML = "❌"
+            }
+        })
+        return result;
+    }
+    var input3Check = function (){
+        var i = form1.pwd2.nextElementSibling;
+        if (form1.pwd2.value == form1.pwd1.value){
+            i.innerHTML = "✅两次密码一致"
+            return true;
+        }else{
+            i.innerHTML = "❎两次密码不一致"
+            return false;
+        }
+    }
+
+    function checkInput(input, reg, onChecked){
+        var result = reg.test(input.value);
+        onChecked(result);
+        return result;
+    }
+   
+    //当input失去焦点的时候去验证用户的输入是否满足要求
+    form1.user.onblur = input1Check;
+    form1.pwd1.onblur = input2Check;
+    form1.pwd2.onblur = input3Check;
+    //表单提交事件
+    form1.onsubmit = function (event){
+        if (!(input1Check() && input2Check() && input3Check())){
+            event.preventDefault();
+        }
+    }
+</script>
+</body>
+</html>
+
