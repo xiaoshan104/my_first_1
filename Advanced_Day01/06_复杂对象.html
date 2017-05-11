@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var school = {
+        city : "深圳",
+        schoolName : "育知同创",
+        classes : [
+            {
+                className : "H1702",
+                students : [
+                    "李四",
+                    "凤姐",
+                    "志玲"
+                ]
+            },
+            {
+                className : "H1701",
+                students : [
+                    "张三",
+                    "王五",
+                    "德华"
+                ]
+            }
+        ]
+    }
+    
+    //查找一个学生，并把这个学生的所有相关信息展示出来。
+    
+    function searchStudent(name){
+        var classes = school.classes;  //拿到所有的班级
+        for(var clazz of classes){
+            var students = clazz.students;
+            for(var stuName of students){
+                if(name == stuName){
+                   var s = {};
+                   s.schoolName = school.schoolName;
+                   s.className = clazz.className;
+                   s.name = stuName;
+                   s.speakSelf = function (){
+                       console.log(s.schoolName, s.className, s.name);
+                   }
+                   return s;
+                }
+            }
+        }
+    }
+    var s1 = searchStudent("志玲");
+    s1.speakSelf();
+</script>
+</body>
+</html>
