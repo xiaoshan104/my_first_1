@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person(){
+        this.age = 20;
+    }
+    var p = new Person();
+    console.log(p.age);
+    
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月11日16:39
+    
+    构造函数和普通函数的区别
+    
+    相同点：
+        1. 都是函数。 从写法没有任何的区别。
+        2. 函数内的代码都会在调用的执行。
+        
+    不同点：
+       就看调用方式。
+       对同一个函数来说，使用new那么就是在把这个函数
+       当做构造函数使用在创建对象。
+       如果不是使用new调用函数，则就是一个普通的函数。
+       
+       对构造函数来说，总是会有一个默认的返回值  this
+-->
