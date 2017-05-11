@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象属性的访问</title>
+</head>
+<body>
+<script>
+    var obj = {
+        name: "李四",
+        age: 20,
+        eat: function (){
+            console.log("吃");
+        }
+    }
+    
+    //for in    用来遍历对象的属性的属性名
+   /* for(var p in obj){
+        var v = obj[p];
+        if(typeof v == "function"){
+            v();
+        }else{
+            console.log(v);
+        }
+    }*/
+   
+   
+</script>
+</body>
+</html>
+<!--
+
+访问属性的方式：
+    .语法    属性名不能使用变量
+    []语法：  既可以支持直接写属性名，也支持变量
+          []中，如果不写引号，就表示一个变量
+          
+    
+ 获取属性的值
+ 设置属性的值
+ 动态的添加属性
+ 删除属性
+ 
+
+-->
