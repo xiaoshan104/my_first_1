@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function Person(opt){
+        this._init(opt);
+    }
+    Person.prototype = {
+        _init: function (opt){
+            this.sex = opt.sex;
+            this.name = opt.name;
+            this.age = opt.age;
+
+        },
+        constructor: Person,
+        eat: function (){
+            console.log(this.name);
+        },
+        speak: function (){
+            console.log(this.age);
+        },
+        foo(){
+
+        },
+        foo1(){
+
+        }
+    }
+    var p1 = new Person({
+        name: "lis",
+        age: 20,
+        sex: "男"
+    });
+    var p2 = new Person({
+        age: 220,
+        name: "abc",
+        sex: "女"
+    });
+    p1.speak();
+    p2.speak();
+</script>
+</body>
+</html>

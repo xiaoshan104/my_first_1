@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习</title>
+</head>
+<body>
+<script>
+
+    function Circle(x, y, r){
+        this.x = x;
+        this.y = y;
+        this.r = r;
+        if (!Circle.prototype.area){
+            Circle.prototype.area = function (){
+                return Math.PI * this.r * this.r;
+            }
+        }
+        if (!Circle.prototype.perimeter){
+            Circle.prototype.perimeter = function (){
+                return 2 * Math.PI * this.r;
+            }
+        }
+        if (!Circle.prototype.relation){
+            Circle.prototype.relation = function (other){
+                var distance = Math.sqrt((this.x - other.x) ** 2 + (this.y - other.y) ** 2);
+                if (distance > this.r + other.r){
+                    return "相离"
+                }else if (distance == this.r + other.r){
+                    return "外切"
+                }else if (distance < this.r + other.r && distance > Math.abs(this.r - other.r)){
+                    return "相交"
+                }else if (distance == Math.abs(this.r - other.r)){
+                    return "内切"
+                }else{
+                    return "内含"
+                }
+            }
+        }
+    }
+
+    var c1 = new Circle(0, 20, 10);
+    var c2 = new Circle(0, 2, 10);
+    console.log(c1.area());
+    console.log(c2.area());
+
+    var rel = c1.relation(c2);
+    console.log(rel);
+</script>
+</body>
+</html>
+<!--
+动态原型，是为了解决组合模式封装性不好的问题。
+
+]-->
