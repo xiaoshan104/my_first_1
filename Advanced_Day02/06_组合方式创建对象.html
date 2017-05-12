@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //组合方式创建对象
+    function Person(name, age){
+        this.name = name;
+        this.age = age;
+    }
+    Person.prototype.eat = function (){
+        console.log(this.name + " 在吃");
+    }
+    Person.prototype.speak = function (){
+        console.log(this.name + " 在说");
+    }
+    Person.prototype.sleep = function (){
+        console.log(this.name + " 在睡觉");
+    }
+    
+    var p1 = new Person("李四", 20)
+    var p2 = new Person("李四1", 30)
+    p1.eat();
+    p2.eat()
+</script>
+</body>
+</html>
+<!--
+属性在构造函数内添加
+方法定义在原型上
+
+-->

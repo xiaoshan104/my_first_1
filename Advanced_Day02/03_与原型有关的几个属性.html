@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person(name){
+        this.name = name;
+    }
+    //给Person的prototype属性，赋值一个新的原型对象。
+    Person.prototype = {age: 100, constructor: Person};
+    var p1 = new Person("Lisi");
+    /*console.log(p1.hasOwnProperty("name"));
+     console.log(p1.hasOwnProperty("age"));
+     console.log(p1.hasOwnProperty("aaa"));
+     
+     console.log("age" in p1);
+     console.log("name" in p1);
+     console.log("aaa" in p1);*/
+    //查找属性的位置
+    var pro = "sss";
+    console.log(searchProperty(p1, "age111"));
+    function searchProperty(obj, proName){
+        if (obj.hasOwnProperty(proName)){
+            return "在对象上";
+        }else if (proName in obj){
+            return "在原型上";
+        }
+        return "不存在";
+    }
+    
+    /*if(p1.hasOwnProperty(pro)){
+     console.log("在对象上");
+     }else if(pro in p1){
+     console.log("在原型上");
+     }else{
+     console.log("不存在");
+     }*/
+    
+    
+    /*if(!(pro in p1)){
+     console.log("不存在");
+     }else if(p1.hasOwnProperty(pro)){
+     console.log("存在于对象上");
+     }else{
+     console.log("存在于原型上");
+     }*/
+
+</script>
+</body>
+</html>
+<!--
+hasOwnProperty :如果在当前对象上，则返回true
+ 如果在原型上，或者不存在，则返回false
+
+
+-->

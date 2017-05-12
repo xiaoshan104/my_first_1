@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person(name, age){
+        this.name = name;
+        this.age = age;
+        this.eat = function (){
+            console.log("吃" + this.name);
+        }
+    }
+    var p1 = new Person("李四", 20)
+    var p2 = new Person("张三", 30)
+    
+    
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月12日14:51
+    字面量
+   // new Object  {}
+    构造函数方法
+    原型方式
+    
+    原型方式的
+        缺点：
+            属性共享
+        优点：
+            方法共享
+     
+     构造函数的：
+        缺点：
+            方法没有共享
+        优点：
+            属性没有共享
+    
+    
+-->
