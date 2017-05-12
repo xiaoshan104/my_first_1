@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var obj1 = {name: "abc", age: 20};
+    var p1 = new Person("李四");
+    var p2 = new Person("张三");
+    function Person(name){
+        this.name = name;
+    }
+    
+    function foo(obj){
+        obj.name = "aaaa";
+    }
+    foo(obj1);
+    console.log(obj1.name);
+    
+    var a = 10;
+    function foo(a){
+        
+        a = 20;
+    }
+    foo(a);
+    console.log(a);
+</script>
+</body>
+</html>
