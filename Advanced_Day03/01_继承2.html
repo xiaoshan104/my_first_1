@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person(name, age, sex){
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
+    Person.prototype.speak = function (){
+        console.log("我的是名字是：" + this.name);
+    }
+    
+    Student.prototype = new Person();
+    Student.prototype.say = function (){
+        console.log("我的校名：" + this.school);
+    }
+    
+    function Student(school, name, age, sex){
+        //函数借调:告诉函数内部的this的重新指向
+        Person.call(this, name, age, sex)
+        this.school = school;
+    }
+    var s1 = new Student("清华大学", "王五", 40, "男");
+    var s2 = new Student("清华大学1", "王五1", 410, "男1");
+    console.log(s1);
+    console.log(s2);
+
+</script>
+</body>
+</html>
+<!--
+组合继承：
+    属性使用构造函数的借调
+    
+    方法仍然使用原型继承
+
+-->

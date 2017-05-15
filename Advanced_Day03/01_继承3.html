@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //    var arr = [20, 30, 40, 10, 4, 200, 23]
+    /*var m = Math.max.apply(Math, arr);
+     console.log(m);*/
+    
+    /*var m = Math.min.apply(Math, arr);
+     console.log(m);*/
+
+    /*var s = "a,b,c";
+     var arr = ["a", ",", "b", ",", ",", ",", ",", "c"];
+ 
+     var arr1 = String.prototype.split.call(arr, /,+/gi);
+     console.log(arr1);*/
+    
+    /*var arr = ["a", "b", "c"];
+    arr.reverse();
+    console.log(arr);*/
+    /*var s = "abc";
+    Array.prototype.reverse.call(s);*/
+    
+    //检测对象的类型
+    function Person(){
+    
+    }
+    var arr = [];
+    console.log(Object.prototype.toString.call(arr));
+    console.log(Object.prototype.toString.call(1));
+    console.log(Object.prototype.toString.call(true));
+    console.log(Object.prototype.toString.call(null));
+    console.log(Object.prototype.toString.call(undefined));
+    console.log(Object.prototype.toString.call(function (){}));
+    console.log(Object.prototype.toString.call(/i/gi));
+    console.log(Object.prototype.toString.call(new Person()));
+    console.log(Object.prototype.toString.call(window));
+    
+    var r =Object.prototype.toString.call(arr);
+    var reg = / (\w+)/gi;
+    var a = reg.exec(r);
+    console.log(a[1]);
+    
+</script>
+</body>
+</html>
+<!--
+组合继承：
+    属性使用构造函数的借调
+    
+    方法仍然使用原型继承
+
+-->

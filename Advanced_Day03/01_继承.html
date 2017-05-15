@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Father(name, sex){
+        this.sex = sex;
+        this.name = name;
+    }
+    Father.prototype.eat = function (){
+        console.log("Father 中的吃");
+    }
+    Father.prototype.speak = function (){
+        console.log("Father 中的说");
+    }
+    
+    var f = new Father("abc", "男");
+    
+    function Son(age){
+        this.age = age;
+    }
+    Son.prototype = f;  //替换子类型的原型。
+    Son.prototype.constructor = Son;
+    var s = new Son(20);
+
+    console.log(s instanceof Son);
+    console.log(s instanceof Father);
+    console.log(s instanceof Object);
+    console.log(s.toString());
+
+    console.log("-----");
+    console.log(Father.prototype.isPrototypeOf(s));
+    console.log(Son.prototype.isPrototypeOf(new Father()));
+    console.log(f.isPrototypeOf(s));
+</script>
+</body>
+</html>
