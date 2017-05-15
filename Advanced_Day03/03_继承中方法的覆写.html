@@ -5,6 +5,28 @@
     <title>Title</title>
 </head>
 <body>
-
+<script>
+    function Father(){
+    }
+    Father.prototype.speak = function (){
+        console.log("父类型的 speak");
+    }
+    function Son(name, age){
+        this.name = name;
+        this.age = age;
+    }
+    
+    Son.prototype = new Father();
+    //方法的覆写  override
+    Son.prototype.speak = function (){  //实例方法
+        console.log("子类型的speak");
+    }
+    Son.prototype.toString = function (){
+        return this.name + "  "  + this.age;
+    }
+    var s1 = new Son("abc", 20);
+    s1.speak();
+    console.log(s1.toString());
+</script>
 </body>
 </html>

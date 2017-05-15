@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*var arr = [1, 10]
+    console.log(arr.toString());
+    console.log(arr.valueOf() == arr);
+    
+    var a = 1;  // new Number(1)
+    console.log(a.toString());
+    console.log(a.valueOf());*/
+    /*function Person(){
+    }*/
+    /*Person.prototype.valueOf = function (){
+        return "object";
+    }*/
+    /*
+    var p1 = new Person();
+    var p2 = new Person();
+    console.log(p1 == "[object Object]");  // [object Object]
+    console.log(p2 == "[object Object]");  // [object Object]
+    console.log(p1 == p2);
+    */
+    
+    
+    
+</script>
+</body>
+</html>
+<!--
+Object.prototype
+    toString: 默认返回：  [object Object]
+    valueOf:  默认返回：  对象自己
+    
+----------------------------------------
+
+==
+    两个不同基本类型的比较：
+        把基本类型都向number转，然后再比较
+        ""  "0"
+    对象和基本类型的比较的时候使用：
+        先调用valueOf方法，如果返回值是基本类型就用这个返回值去比较
+        否则调用toString，然后用toString的返回值去比较
+        
+    两个对象判断相等：只判断地址值！！！！
+    
+--------------------------------------
+===
+  基本类型：
+    先判断类型，类型不等就算不等
+    类型相等，再看内容
+  对象：
+    值判断地址值！
+   
+    基本类型和对象永远不会等！
+-->

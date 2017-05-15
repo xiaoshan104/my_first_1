@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   
+    function Person(){
+    }
+    Person.foo = function (){
+        console.log("abc");
+    }
+    
+    function Student(){
+    
+    }
+    Student.prototype = new Person();
+
+    var fun = new Function("alert('你好')");
+    fun();
+    
+    
+    
+    /*var arr = ["a"];
+    Array.isArray(arr);*/
+
+    /*console.log(Object.prototype.toString.call(function (){
+        
+    }));*/
+</script>
+</body>
+</html>
+<!--
+定义在构造函数上的方法，称之为静态方法。
+静态方法只能直接通过 构造函数名.静态方法()调用
+不能通过创建的实例调用。
+
+
+-->
