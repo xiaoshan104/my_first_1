@@ -6,14 +6,12 @@
 </head>
 <body>
 <script>
-    var p = {
-        age: 10,
-        foo: function (){
-            
-        }
-    }
-    p.foo();
-    
+   var p = {
+       foo : function (){
+           console.log(this);
+       }
+   }
+   p.foo.call(undefined);
 </script>
 </body>
 </html>
@@ -42,6 +40,34 @@ new绑定
     
     
 显示绑定bind >显示绑定call、apply  > 隐式和默认
-
-
+--------------
+绑定丢失问题：
+    1. 回调函数的绑定丢失问题
+        var p = {
+            age : 10,
+            foo : function (){
+                console.log(this.age);
+            }
+        }
+    
+        setInterval(p.foo, 2000);
+        
+        
+        
+         var p = {
+            age : 10,
+            foo : function (){
+                console.log(this.age);
+            }
+        }
+    
+    /*setInterval(p.foo.bind(p), 2000);*/
+    
+        function foo(f){
+            f();
+        }
+        foo(p.foo.bind(p))
+    
+    2. 显示 绑定传入undefined和null的时候的问题
+        this就会变成默认绑定 (window)
 -->
