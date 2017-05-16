@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+<script>
+    var btns = document.getElementsByTagName("button");
+    for (let i = 0; i < btns.length; i++){
+        btns[i].onclick = function (){
+            alert(i)
+        }
+    }
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月16日14:45
+    for(var i = 0; i < btns.length; i++){
+        btns[i].index = i;
+        btns[i].onclick = function (){
+            alert(this.index);
+        }
+    }
+    
+    for (var i = 0; i < btns.length; i++){
+        btns[i].onclick = (function (i){
+            return function (){
+                alert(i);
+            }
+        })(i)
+    }
+    
+    
+-->

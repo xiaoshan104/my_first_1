@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第一题</title>
+</head>
+<body>
+<script>
+    function Farmer(baseSalary){
+        this.baseSalary = baseSalary;
+    }
+    Farmer.prototype.showMyMoney = function (){
+        console.log("我的钱是：" + this.baseSalary);
+    }
+    
+    function Teacher(baseSalary, classFees){
+        Farmer.call(this, baseSalary);
+        this.classFees = classFees;
+    }
+    Teacher.prototype = new Farmer(0);
+    Teacher.prototype.constructor = Teacher;
+    Teacher.prototype.showMyMoney = function (){
+        console.log("我是老师，我的钱多：" + (this.baseSalary + this.classFees));
+    }
+    
+    var teacher = new Teacher(2000, 100);
+    teacher.showMyMoney();
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月16日08:28
+    1、有农民(farmer),教师(teacher),科学家(scientist),服务生(attendant)
+   a: 其中农民,服务生只有基本工资.
+   b: 教师除基本工资外,还有课酬(元/天)
+   c: 科学家除基本工资外,还有年终奖
+   D: 使用原型继承的方式完成时上面的功能。
+-->

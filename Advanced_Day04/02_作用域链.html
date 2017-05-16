@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    
+    var a = 10;
+    function foo(){
+        var b = 20;
+        function foo1(){
+            var c = 30;
+        }
+        
+        console.log(a);
+        console.log(b);
+        a = 100;
+    }
+    foo();
+    console.log(a);
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月16日10:56
+    原型链：
+        是我们查找对象的属性或方法的时候的路径
+    
+    作用域链：
+        是我们查找变量或函数的时候的路径
+-->

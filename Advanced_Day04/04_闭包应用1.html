@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //返回外部函数中定义的局部变量
+    function outer(){
+        var num = 5;
+        function inner(){
+            return num;
+        }
+        num++;
+        return inner;
+    }
+    var num = outer()()
+    console.log(num);
+</script>
+</body>
+</html>
