@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var name = "李四";
+    function foo(){
+        console.log(this.name);
+    }
+    var p = {
+        name : "张三",
+        foo : foo
+    }
+    p.foo();
+    foo();
+
+    /*var name = "李四";
+    var p1 = {
+        name: "abc",
+        foo: function (){
+            console.log(this.name);
+        }
+    }
+    var p2 = {
+        name: "张三",
+        foo: p1.foo
+    }
+    p2.foo();*/
+</script>
+</body>
+</html>
+<!--
+默认绑定
+    当我们直接调用一个函数的时候，这个函数作用的this就是默认绑定，
+    默认绑定在window中
+    注意： 在严格模式下（"use strict"），默认绑定在undefined
+    
+    function foo(){
+        console.log(this);
+    }
+    foo();  //直接调用。 默认绑定
+
+隐式绑定
+    使用  对象a.方法() 这就是隐式绑定。
+        方法中的this绑定在前面的对象a中
+new绑定
+
+显示绑定
+
+
+
+-->

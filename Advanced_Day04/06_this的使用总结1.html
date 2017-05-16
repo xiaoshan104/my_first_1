@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var p = {
+        age: 10,
+        foo: function (){
+            
+        }
+    }
+    p.foo();
+    
+</script>
+</body>
+</html>
+<!--
+默认绑定
+    当我们直接调用一个函数的时候，这个函数作用的this就是默认绑定，
+    默认绑定在window中
+    注意： 在严格模式下（"use strict"），默认绑定在undefined
+    
+    function foo(){
+        console.log(this);
+    }
+    foo();  //直接调用。 默认绑定
+
+隐式绑定
+    使用  对象a.方法() 这就是隐式绑定。
+        方法中的this绑定在前面的对象a中
+new绑定
+    this指代将来创建出来的那个对象！！！
+
+显示绑定
+    call、apply
+        只有这次调用的时候this显示绑定
+    bind
+        显示 绑定， 调用函数的bind方法，会返回一个新的绑定后的函数！！！
+    
+    
+显示绑定bind >显示绑定call、apply  > 隐式和默认
+
+
+-->
