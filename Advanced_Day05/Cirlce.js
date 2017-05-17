@@ -5,9 +5,9 @@ function Circle(parent){
     this.color = `rgba(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(0, 255)}, ${Math.random() * 0.5 + 0.5})`;
     this.left = randomInt(0, 1200);
     this.top = randomInt(0, 600);
-    this.speedX = randomInt(-30, 30);
+    this.speedX = randomInt(-10, 10);
     this.speedX = Math.abs(this.speedX) < 4 ? 5 : this.speedX;
-    this.speedY = randomInt(-30, 30);
+    this.speedY = randomInt(-10, 10);
     this.speedY = Math.abs(this.speedY) < 4 ? 5 : this.speedY;
 }
 Circle.prototype = {
@@ -49,8 +49,6 @@ Circle.prototype = {
 
             div.style.left = left + "px";
             div.style.top = top + "px";
-
-
         }, 20)
     }
 }

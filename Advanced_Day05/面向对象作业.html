@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #content {
+            margin: 100px auto;
+            box-sizing: border-box;
+            width: 700px;
+            height: 400px;
+        }
+        
+        #content > div {
+            box-sizing: border-box;
+            float: left;
+            border: 1px solid #000;
+            height: 100%;
+            width: 300px;
+        }
+        
+        #content > div:nth-child(2) {
+            width: 100px;
+            text-align: center;
+            
+        }
+        
+        #content p {
+            width: 300px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            border-bottom: 1px solid #000;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        
+        button {
+            width: 80px;
+            height: 35px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+            font-size: 25px;
+            line-height: 35px;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    <div id="left">
+        <p>凤姐</p>
+        <p>志玲</p>
+        <p>亦菲</p>
+        <p>冠希</p>
+        <p>德华</p>
+        <p>芙蓉</p>
+    </div>
+    <div id="controls">
+        <button id="first">首位</button>
+        <button id="up">⬆️</button>
+        <button id="toLeft">⬅️</button>
+        <button id="allToLeft">⬅️️⬅️</button>
+        <button id="toRight">➡️</button>
+        <button id="allToRight">➡️➡️</button>
+        <button id="down">⬇️</button>
+        <button id="last">最后</button>
+    </div>
+    <div id="right"><p>哈哈哈6</p></div>
+</div>
+<script type="text/javascript" src="./作业.js"></script>
+<script>
+    var leftObj = new LeftContent(document.getElementById("left"));
+    var rightObj = new RightContent(document.getElementById("right"));
+
+    up.onclick = function (){
+        leftObj.up();
+        rightObj.up();
+    }
+    down.onclick = function (){
+        leftObj.down();
+        rightObj.down();
+    }
+    first.onclick = function (){
+        leftObj.first();
+        rightObj.first();
+    }
+    last.onclick = function (){
+        leftObj.last();
+        rightObj.last();
+    }
+    toLeft.onclick = function (){
+        rightObj.toLeft(document.getElementById("left"));
+    }
+    allToLeft.onclick = function (){
+        rightObj.all2Left(document.getElementById("left"));
+    }
+
+    toRight.onclick = function (){
+        leftObj.toRight(document.getElementById("right"));
+    }
+    allToRight.onclick = function (){
+        leftObj.all2Right(document.getElementById("right"));
+    }
+</script>
+</body>
+</html>
