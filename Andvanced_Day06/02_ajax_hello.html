@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //步骤一：创建XMLHttpRequest对象。    打开浏览器
+    var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+    /*步骤三：
+        监听xrh的响应状态的变化：
+        0 ： new 了，但是没有调用open
+        1: open还没有send
+        2：数据已经发送出去，但是还没有开始接受数据
+        3：开始接受数据，但是还没有接受完毕。
+        4：接受完毕
+     */
+    xhr.onreadystatechange = function (){
+        if(xhr.readyState == 4){
+            if(xhr.status == 200){
+                console.log(xhr.responseText);
+            }else{
+                console.log("服务器传输有误，请重试");
+            }
+        }
+    }
+    //步骤二：调用xhr的open方法。         输入url地址  http://127.0.0.1:8080/a/a.xml
+    xhr.open("GET", "02_ajax_hello.html", true)  //参数1：请求方法GET或者POST  参数2：请求地址  参数3：是否异步。true表示异步，false表示同步。
+    //步骤四：  传输的数据。如果是get请求，就传入一个null，如果是post请求，就传入数据。
+    xhr.send(null)
+    
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月17日16:42
+    var xhr;
+    if(window.XMLHttpRequest){
+        xhr = new XMLHttpRequest();
+    }else{
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    
+-->
