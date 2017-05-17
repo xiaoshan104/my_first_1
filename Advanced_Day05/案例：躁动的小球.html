@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>躁动的小球</title>
+    <style>
+        html,body{
+            height: 100%;
+            background-color: #000000;
+        }
+        #container{
+            width : 1000px;
+            height : 700px;
+            background-color : pink;
+            overflow: hidden;
+            
+        }
+        div{
+            position: absolute;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script type="text/javascript" src="./Cirlce.js"></script>
+<script>
+    for (var i = 0; i < 30; i++){
+        var c = new Circle(container);
+        c.drawCircle();
+        c.run();
+    }
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月17日08:51
+    面向对象分析：
+        每一个小球都是一个对象
+        
+        属性：
+            parent
+            div
+            半径
+            left
+            top
+            color
+            speedX
+            speedY
+         
+        方法：
+            run：
+            showCircle
+            
+    
+-->
