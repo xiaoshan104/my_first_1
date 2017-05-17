@@ -3,6 +3,7 @@
  面向对象分析：
 
  */
+//基类开始
 function BaseContent(div){
     this.div = div;
     this._init();
@@ -48,6 +49,7 @@ BaseContent.prototype = {
         }
     }
 }
+//基类结束
 
 //---左边的开始
 function LeftContent(div){
@@ -75,10 +77,13 @@ LeftContent.prototype.all2Right = function (rightDiv){  // 4 four for   2 two to
 }
 //左边的结束
 
+
+//右边开始
 function RightContent(div){
     BaseContent.call(this, div);
 }
 RightContent.prototype = new BaseContent();
+
 RightContent.prototype.toLeft = function (leftDiv){
     var p = this.selectedP;
     p.style.backgroundColor = 'white'
@@ -96,5 +101,5 @@ RightContent.prototype.all2Left = function (leftDiv){  // 4 four for   2 two to
     while(this.div.firstElementChild){
         leftDiv.appendChild(this.div.firstElementChild);
     }
-
 }
+//右边结束
