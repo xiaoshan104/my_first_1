@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="./my_ajax2.js"></script>
+</head>
+<body>
+<form action="./data4.php" method="post"
+      enctype="application/x-www-form-urlencoded">
+    <input type="text" name="user"><i></i> <br>
+    <input type="password" name="pwd"><i></i><br>
+    <input type="submit" value="提交">
+</form>
+<script type="text/javascript">
+    var form = document.forms[0];
+    form.onsubmit = function (e){
+        e.preventDefault();  //阻止表单的默认提交行为。
+        var userInput = form.user;
+        var pwdInput = form.pwd;
+        
+        var user = userInput.value;
+        var pwd = pwdInput.value;
+        
+        if(user.search(/^\S\S{4,14}$/gi) != -1){
+            userInput.nextElementSibling.innerHTML = "用户名合法"
+        }else{
+            userInput.nextElementSibling.innerHTML = "用户名不合法"
+            return;
+        }
+         if(pwd.search(/.{5,}/gi) != -1){
+             pwdInput.nextElementSibling.innerHTML = "密码合法"
+        }else{
+             pwdInput.nextElementSibling.innerHTML = "密码不合法"
+             return;
+        }
+        ajax.post({
+            url : "./data4.php",
+            onSuccess : function (result){
+                document.body.innerHTML = result;  // a += 2
+            },
+            data : `user=${user}&pwd=${pwd}`
+        })
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript" src="./my_ajax2.js"></script>
+<script>
+    ajax.get({
+        url : "./data3.php?user=zs&pwd=abc",
+        onSuccess : function (result){
+            console.log(result);
+        }
+    })
+</script>
+</body>
+</html>

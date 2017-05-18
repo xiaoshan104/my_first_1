@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript" src="./my_ajax2.js"></script>
+<script>
+    ajax.post({
+        url : "./data4.php",
+        onSuccess : function (result){
+            console.log(result);
+        },
+        onFail: function (resul){
+        
+        },
+        data : "user=zs&pwd=aaa"
+    } )
+</script>
+</body>
+</html>
