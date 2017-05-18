@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+    xhr.open("GET", "./data3.xml", true);
+    xhr.onreadystatechange = function() {
+        if(xhr.readyState === 4) {
+            if(xhr.status === 200) {
+                var doc = xhr.responseXML;
+                /*var name1 =doc.getElementById("1")
+//                console.log(name1.innerHTML);
+                var textNode = name1.firstChild;
+                console.log(textNode.nodeValue);*/
+                var girls = doc.getElementsByTagName("girl");
+                for(var g of girls){
+                    console.log(g.firstChild.nodeValue);
+                }
+            }
+        }
+    };
+    xhr.send(null);
+</script>
+</body>
+</html>

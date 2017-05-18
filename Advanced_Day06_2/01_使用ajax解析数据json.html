@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>请求数据</button>
+<p id="p"></p>
+<script>
+    var btn = document.querySelector("button");
+    btn.onclick = function (){
+        //第一步：创建一个XMLHttpRequest对象
+        var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+        //第二补：调用xhr的open方法     /data1.txt  http://localhost:8080/data1.txt
+        xhr.open("GET", "./data2.json", true);
+        //第三步：监听响应的状态
+        xhr.onreadystatechange = function (){
+            if(xhr.readyState == 4){
+                if(xhr.status == 200){ // 200 ok  404 资源没找到  500服务器错误
+                    //专门的类，把json格式的字符串解析成js对象
+                    var msg = xhr.responseText;
+                    var obj = JSON.parse(msg);
+                    p.innerHTML = obj.name + " " + obj.age
+                    var boys = obj.boys;
+                    for(var g of boys){
+                        console.log(g);
+                    }
+                }else{
+                    //进行一些错误处理
+                }
+            }
+        }
+        //第四步：发送请求
+        xhr.send(null);
+    }
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月18日09:31
+    请求json数据：
+    json对象：
+        {
+            "name"："李四",
+            "age" : 20,
+            "girls : ["lisi", "a"],
+            "school" : {
+            
+            }
+        }
+    
+    json数组：
+        [
+            {}，
+            {},
+            "李四",
+            20
+        ]
+        可以放json对象，也可以放字符串
+-->

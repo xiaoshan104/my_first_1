@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?><!--xml的文档声明-->
+<user>
+    <name id="1">李四</name>
+    <age>20</age>
+    <sex>男</sex>
+    <girls>
+        <girl>志林</girl>
+        <girl>abc</girl>
+    </girls>
+</user>
