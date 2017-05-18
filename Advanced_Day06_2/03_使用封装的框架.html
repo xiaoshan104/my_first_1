@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript" src="./my_ajax2.js"></script>
+<script>
+    /*ajax.get("data2.json", function (data){
+     
+     var obj = JSON.parse(data);
+     console.log(obj);
+     })*/
+    /*ajax.get("./data3.json", function (result){
+     console.log(result);
+     }, function (failText){
+     console.log(failText);
+     });*/
+
+    ajax.get({
+        onSuccess: function (resut){
+            console.log(resut);
+        },
+        url: "./data21.json",
+        onFail: function (result){
+            console.log("你失败了");
+        },
+        foo : function (){
+            
+        }
+    })
+</script>
+</body>
+</html>
