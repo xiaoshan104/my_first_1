@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>服务端打破同源</title>
+    <script type="text/javascript" src="./my_ajax.js"></script>
+</head>
+<body>
+<script>
+    ajax.get({
+        url : 'http://localhost:8888/1702/Advanced_Day07/data4.php',
+        onSuccess : function (result){
+            console.log(result);
+        }
+    })
+</script>
+</body>
+</html>
+<!--
+服务器端打破同源
+
+
+-->

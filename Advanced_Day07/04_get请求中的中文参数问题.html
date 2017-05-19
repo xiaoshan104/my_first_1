@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>get请求中的中文参数问题</title>
+    <script type="text/javascript" src="my_ajax.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    var url = "./data5.php?user={'a' : '你你'}";
+    url = encodeURI(url);
+    console.log(url);
+    
+    ajax.get({
+//        url : encodeURI("./data5.php?user=你好"),
+        url : "./data5.php?user=" +  encodeURIComponent("你好"),
+        onSuccess : function (result){
+            console.log(result);
+        }
+    })
+    http://127.0.0.1:8888/1702/Advanced_Day07/04_get%E8%AF%B7%E6%B1%82%E4%B8%AD%E7%9A%84%E4%B8%AD%E6%96%87%E5%8F%82%E6%95%B0%E9%97%AE%E9%A2%98.html
+</script>
+</body>
+</html>
