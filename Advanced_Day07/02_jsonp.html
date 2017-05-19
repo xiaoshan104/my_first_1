@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="p"></p>
+<script>
+    function foo(obj){
+       p.innerHTML = obj.name
+    }
+</script>
+<script type="text/javascript"
+        src="http://localhost:8888/1702/Advanced_Day07/data2.json"></script>
+</body>
+<script>
+    console.log(obj);
+</script>
+</html>
+<!--
+script标签理论上可以加载任何的数据，而且不受同元策略的限制。
+但是如果把数据加载完成之后，他自己会认为自己加载的是js代码，然后就会自动的去执行这些js代码
+
+jsonp:  json with padding
+1. json是我们常用的打破同源策略的方法  ---跨域
+-->
