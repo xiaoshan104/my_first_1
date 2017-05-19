@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="./data4.php" method="post"
+      enctype="application/x-www-form-urlencoded">
+    <input type="text" name="user"><i></i> <br>
+    <input type="password" name="pwd"><i></i><br>
+    <input type="submit" value="提交">
+</form>
+<script type="text/javascript" src="./my_ajax1.js"></script>
+<script>
+    var form0 = document.querySelector("form");
+    form0.onsubmt = function (e){
+        e.preventDefault();
+        var fd = new FormData(form0);
+        fd.append("a", "aaaa");
+        ajax.post({
+            url : "./data6.php",
+            data : fd,   // user=aa&pwd=aa
+            onSuccess : function (result){
+                console.log(result);
+            }
+        })
+    }
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">点我</button>
+<button id="clear">清除</button>
+<script>
+    var frameId;
+    btn.onclick = function (){
+        frameId = requestAnimationFrame(function step (){
+            console.log(new Date().getTime());
+            frameId = requestAnimationFrame(step)
+        })
+        
+    }
+    clear.onclick = function (){
+        cancelAnimationFrame(frameId)
+    }
+</script>
+</body>
+</html>
