@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        div {
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            border-radius: 50%;
+            margin-left: 400px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    var div = document.getElementsByTagName("div")[0];
+    var duration = 1000;
+    var r = 100;
+    var startTime = new Date();
+    var p;
+    requestAnimationFrame(function step(){
+        p = Math.min(1, (new Date() - startTime) / duration);
+        
+        var tx = r * Math.sin(2 * Math.PI * p);
+        var ty = r - r * Math.cos(2 * Math.PI * p);
+        div.style.transform = `translate(${tx}px, ${ty}px)`
+        
+        if(p == 1){
+            startTime = new Date();
+        }
+        requestAnimationFrame(step)
+        
+    })
+
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月22日09:12
+    把位移看出时间的一个函数
+    
+    if (p < 1){
+            requestAnimationFrame(step);
+        }else{
+            startTime = new Date();
+            requestAnimationFrame(step)
+        }
+-->

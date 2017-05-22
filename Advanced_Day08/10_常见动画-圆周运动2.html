@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            border-radius: 50%;
+            margin-left: 400px;
+            margin-top: 100px;
+            transform: rotateZ(10deg);
+            transform-origin: 100px 100px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    var div = document.getElementsByTagName("div")[0];
+    var duration = 5000;
+    var r = 100;
+    var startTime = new Date();
+    var p;
+    var isLoop = false;  // 表示是否循环运动
+    requestAnimationFrame(function step(){
+        p = Math.min(1, (new Date() - startTime) / duration);
+
+        div.style.transform = `rotateZ(${-360 * p}deg)`
+        
+        if (p == 1){
+            if (isLoop){
+                startTime = new Date();
+            }else{
+                return;
+            }
+        }
+        requestAnimationFrame(step);
+
+    })
+
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月22日09:12
+    把位移看出时间的一个函数
+    
+    if (p < 1){
+            requestAnimationFrame(step);
+        }else{
+            startTime = new Date();
+            requestAnimationFrame(step)
+        }
+        
+    if(p == 1){
+            if(isLoop){
+                startTime = new Date();
+                requestAnimationFrame(step);
+            }else{
+                return;
+            }
+        }else{
+            requestAnimationFrame(step);
+        }
+-->

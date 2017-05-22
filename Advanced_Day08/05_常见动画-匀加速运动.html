@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    var div = document.getElementsByTagName("div")[0];
+    var duration = 1000;
+    var dis = 1000;
+    var startTime = new Date();
+    var p;
+    requestAnimationFrame(function step(){
+        
+        p = Math.min(1, (new Date() - startTime) / duration);
+        //  s = S * p^2
+        div.style.transform = `translateX(${dis * p * p }px)`;
+        
+        if (p < 1){
+            requestAnimationFrame(step);
+        }
+    })
+
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月22日09:12
+    把位移看出时间的一个函数
+-->

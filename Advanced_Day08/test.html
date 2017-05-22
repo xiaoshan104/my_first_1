@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript" src="./my_ajax1.js"></script>
+<script>
+    ajax.get({
+        url : encodeURI("http://wthrcdn.etouch.cn/weather_mini?city=深圳"),
+        onSuccess : function (result){
+            console.log(result);
+        }
+    })
+</script>
+</body>
+</html>
