@@ -11,25 +11,18 @@
         }
     </style>
     <script type="text/javascript" src="./easing.js"></script>
+    <script type="text/javascript" src="./my_animator.js"></script>
 </head>
 <body>
 <div></div>
 <script>
     var div = document.querySelector("div");
-    var duration = 5000,
-        dis = 1000,
-        startTime = new Date(),
-        p;
-    requestAnimationFrame(function step(){
-        p = Math.min(1, (new Date() - startTime) / duration);
-        var ease = Easing.linear(p);
-        
-        div.style.transform = `translateX(${dis * ease}px)`
-        
-        if(p < 1){
-            requestAnimationFrame(step);
-        }
+    
+    var animator = new Animator(300, Easing.bounce, function (ease){
+        div.style.transform = `translateX(${100 * ease}px)`
     });
+    
+    animator.start();
 </script>
 </body>
 </html>
