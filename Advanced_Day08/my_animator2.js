@@ -41,7 +41,7 @@ Animator.prototype = {
                 }
             }
             that.animationId = requestAnimationFrame(step);
-        })
+        });
     },
     stop: function (){
         console.log("a");
