@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+    <script type="text/javascript" src="./easing.js"></script>
+    <script type="text/javascript" src="./my_animator3.js"></script>
+</head>
+<body>
+<button>停止执行动画</button>
+<div></div>
+<script>
+    var div = document.querySelector("div");
+
+    var animator = new Animator({
+        duration: 2000,
+        easing: Easing.bounce,
+        doSomething: function (ease){
+            div.style.transform = `translate(${1000 * ease}px, 0px)`
+        }
+    });
+    animator.start(false);
+
+    setTimeout(function (){
+        new Animator({
+            duration: 3000,
+            easing: Easing.linear,
+            doSomething(ease){
+                div.style.transform = `translate(1000px, ${600 * ease}px)`
+            }
+        }).start();
+    }, 3000)
+
+</script>
+</body>
+</html>
