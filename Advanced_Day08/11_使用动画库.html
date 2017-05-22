@@ -11,18 +11,24 @@
         }
     </style>
     <script type="text/javascript" src="./easing.js"></script>
-    <script type="text/javascript" src="./my_animator.js"></script>
+    <script type="text/javascript" src="./my_animator2.js"></script>
 </head>
 <body>
+<button>停止执行动画</button>
 <div></div>
 <script>
     var div = document.querySelector("div");
     
-    var animator = new Animator(300, Easing.bounce, function (ease){
-        div.style.transform = `translateX(${100 * ease}px)`
+    var animator = new Animator(1000, Easing.bounce, function (ease){
+        div.style.transform = `translateX(${1000 * ease}px)`
     });
-    
-    animator.start();
+    animator.start(true);
+
+    var btn = document.querySelector("button");
+    btn.onclick = function (){
+
+        animator.stop();
+    }
 </script>
 </body>
 </html>

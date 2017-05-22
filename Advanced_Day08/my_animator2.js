@@ -17,27 +17,34 @@ function Animator(duration, easing, doSomething){
 }
 Animator.prototype = {
     start: function (isLoop){
+        /*if(typeof this.duration != "number") return;
+         if(typeof this.easing != "function") return;
+         if(typeof this.doSomething != "function") return;*/
+        if (typeof this.duration != "number"
+            || typeof this.easing != "function"
+            || typeof this.doSomething != "function")   return;
+
         var duration = this.duration,
             easing = this.easing,
             doSomething = this.doSomething,
             startTime = new Date(),
             p;
-        requestAnimationFrame(function step(){
+        var that = this;
+        this.animationId = requestAnimationFrame(function step(){
             p = Math.min(1, (new Date() - startTime) / duration);
-
             doSomething(easing(p));
-
             if (p == 1){
-                if(isLoop){
+                if (isLoop){
                     startTime = new Date();
                 }else{
                     return;
                 }
             }
-            requestAnimationFrame(step);
+            that.animationId = requestAnimationFrame(step);
         })
     },
     stop: function (){
-
+        console.log("a");
+        cancelAnimationFrame(this.animationId);
     }
 }
