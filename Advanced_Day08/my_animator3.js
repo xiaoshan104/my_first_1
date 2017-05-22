@@ -46,7 +46,6 @@ Animator.prototype = {
 
     },
     stop: function (){
-        console.log("a");
         cancelAnimationFrame(this.animationId);
     }
 }

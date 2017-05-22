@@ -4,7 +4,7 @@ function Animator(durations, easings, doSomethings){
     this.doSomethings = doSomethings;
 }
 Animator.prototype = {
-    start(){
+    start(loop){
         var durations = this.durations,
             easings = this.easings,
             doSomethings = this.doSomethings,
@@ -18,12 +18,16 @@ Animator.prototype = {
             var doSomething = doSomethings[currentIndex];
             p = Math.min(1, (new Date() - startTime) / duration);
             doSomething(easing(p));
-            if(p == 1){  //表示一个动画执行结束了
-                if(currentIndex == counts - 1){
-                    return;
+            if (p == 1){  //表示一个动画执行结束了
+                startTime = new Date();
+                if (currentIndex == counts - 1){  //最后一个动画执行完毕
+                    if (loop){
+                        currentIndex = 0;
+                    }else{
+                        return;
+                    }
                 }else{
                     currentIndex++;
-                    startTime = new Date();
                 }
             }
             requestAnimationFrame(step);
