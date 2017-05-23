@@ -1,4 +1,5 @@
 var lunbo = {
+    div: document.getElementById("lunbotu"),
     imgs: document.querySelectorAll("#imgs li"), /*参与轮播的图片*/
     preAndNext: document.querySelectorAll("#prevAndNext li"), /*手动轮播的按钮*/
     imgsInof: [
@@ -39,9 +40,51 @@ var lunbo = {
             zIndex: 1
         },
     ],
+    init(){
+        var parent = this.preAndNext[0].parentNode;
+        var that = this;
+        this.div.onmouseenter = function (){
+            //关闭自动轮播
+            clearTimeout(that.timeoutId);
+            new Animator({
+                duration: 500,
+                easing: Easing.linear,
+                doSomething(ease){
+                    parent.style.opacity = ease;
+                }
+            }).start();
+        };
+        this.div.onmouseleave = function (){
+            that.autoPlay();
+            new Animator({
+                duration: 500,
+                easing: Easing.linear,
+                doSomething(ease){
+                    parent.style.opacity = 1 - ease;
+                }
+            }).start();
+        };
+        this.preAndNext[1].onclick = function (){
+            that.imgsInof.push(that.imgsInof.shift());
+            that.toPotion();
+        };
+        this.preAndNext[0].onclick = function (){
+            that.imgsInof.unshift(that.imgsInof.pop())
+            that.toPotion();
+
+        }
+
+    },
     /*开始定义方法*/
     autoPlay(){
-        this.toPotion();
+        var imgsInfo = this.imgsInof;
+        var that = this;
+        this.timeoutId = setTimeout(function step(){
+            that.toPotion();
+            imgsInfo.unshift(imgsInfo.pop())
+            that.timeoutId = setTimeout(step, 2000)
+        }, 200)
+
     },
     toPotion(){
         var imgs = this.imgs;
@@ -71,4 +114,5 @@ var lunbo = {
         }
     }
 }
+lunbo.init();
 lunbo.autoPlay();

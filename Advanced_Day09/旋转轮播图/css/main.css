@@ -5,7 +5,7 @@
 }
 #lunbotu{
     width : 1000px;
-    height : 600px;
+    height : 500px;
     position: relative;
     margin: 100px auto;
 }
@@ -34,6 +34,7 @@
     left: 0;
     top: 100px;
     z-index: 10;
+    opacity: 0;
 }
 #lunbotu > ul:nth-child(2) li{
     float: left;
