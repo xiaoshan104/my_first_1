@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作业</title>
+    <style>
+        button {
+            margin-top: 100px;
+        }
+    </style>
+    <script type="text/javascript" src="./my_animator3.js"></script>
+    <script type="text/javascript" src="./easing.js"></script>
+</head>
+<body>
+<img src="./四叶风扇.png" alt="" width="300" height="300">
+<div>
+    <button>打开风扇</button>
+    <button>1档</button>
+    <button>2档</button>
+    <button>3档</button>
+    <button>关闭风扇</button>
+</div>
+<script type="text/javascript" src="./fan.js"></script>
+<script>
+    var btns = document.getElementsByTagName("button");
+    new ElectricFan({
+        img : document.querySelector("img"),
+        openBtn : btns[0],
+        one : btns[1],
+        two : btns[2],
+        three : btns[3],
+        closeBtn : btns[4],
+    })
+</script>
+</body>
+</html>

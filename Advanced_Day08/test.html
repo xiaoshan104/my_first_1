@@ -7,12 +7,18 @@
 <body>
 <script type="text/javascript" src="./my_ajax1.js"></script>
 <script>
-    ajax.get({
-        url : encodeURI("http://wthrcdn.etouch.cn/weather_mini?city=深圳"),
-        onSuccess : function (result){
-            console.log(result);
-        }
-    })
+   var arr = [1, 2];
+   arr.valueOf = function (){
+       return true;
+   }
+   /*
+    true：
+    解析： 一边是对象，一边是字符串。则会把对象转换成基本类型。
+    先看valueOf ，默认返回的是 布尔值 true，然后把true转换成number  1，
+    右边是字符串，然后把字符串转换number 1
+    所以true
+    */
+   console.log(arr == "1");
 </script>
 </body>
 </html>

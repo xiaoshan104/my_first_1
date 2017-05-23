@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        
+        div {
+            width: 250px;
+            height: 141px;
+            overflow: hidden;
+            position: absolute;
+        }
+        
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="div">
+    <img src="./bird.png" alt="">
+</div>
+<script>
+    var img = document.querySelector("img");
+    var i = 0;
+    var dir = 1;
+    var deg = 0;
+    setInterval(function (){
+        img.style.left = -i % 4 * 250 + "px";
+        img.style.top = -i % 2 * 141 + "px";
+        i++;
+        if (div.offsetLeft >= div.parentNode.offsetWidth || div.offsetLeft <= -250){
+            dir *= -1;
+            deg += 180
+            console.log(deg);
+            div.style.transform = `rotateY(${deg}deg)`
+        }
+        div.style.left = div.offsetLeft + 30 * dir + "px";
+    }, 120)
+</script>
+</body>
+</html>
