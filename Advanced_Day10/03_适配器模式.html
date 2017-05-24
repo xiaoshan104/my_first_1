@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>适配器模式</title>
+    <script type="text/javascript" src="./my_ajax1.js"></script>
+</head>
+<body>
+<div id="box1"></div>
+<div id="box2"></div>
+<script>
+    ajax.get({
+        url : "./data1.json",
+        onSuccess(result){
+            showResult(box1, JSON.parse(result))
+        }
+    })
+    
+    function showResult(div, obj){
+        div.innerHTML = obj.name
+    }
+
+    ajax.get({
+        url : "./data2.json",
+        onSuccess(result){
+            showResultAdapter(box2, JSON.parse(result))
+        }
+    })
+    //把新的数据，转换成老的数据，然后就可以使用老的接口了。
+    function showResultAdapter(box2, obj){
+        showResult(box2, obj.data);
+    }
+</script>
+</body>
+</html>
