@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function King(name){
+        this.name = name;
+        var that = this;
+        King = function (name){
+            that.name = name;
+            return that;
+        }
+    }
+    console.log(King)
+    var k1 = new King("李四")
+    console.log(King)
+
+    var k2 = new King("张三");
+    console.log(k1 == k2);
+    console.log(k1.name);
+    console.log(k2.name);
+</script>
+</body>
+</html>
+<!--
+    更换构造函数的方法
+-->

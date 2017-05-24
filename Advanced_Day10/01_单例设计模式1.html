@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var createKing = (function (){
+        function King(name){
+            this.name = name
+        }
+        var k;
+        return function (name){
+            if (!k){
+                k = new King(name);
+            }
+            k.name = name;
+            return k;
+        }
+    })();
+    var k1 = createKing("康熙");
+    var k2 = createKing("雍正");
+    var k3 = createKing("乾隆");
+    console.log(k1 == k3)
+    console.log(k1.name)
+    console.log(k2.name)
+    console.log(k3.name)
+
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月24日09:26
+    最简单的单例：
+        对象字面量
+-->

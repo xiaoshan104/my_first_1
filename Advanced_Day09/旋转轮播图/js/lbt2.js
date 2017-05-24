@@ -44,7 +44,7 @@ var lunbo = {
         var parent = this.preAndNext[0].parentNode;
         var that = this;
         this.div.onmouseenter = function (){
-            //关闭自动轮播
+            //当鼠标进入轮播图区域的时候，关闭自动轮播.
             clearTimeout(that.timeoutId);
             new Animator({
                 duration: 500,
@@ -54,6 +54,7 @@ var lunbo = {
                 }
             }).start();
         };
+
         this.div.onmouseleave = function (){
             that.autoPlay();
             new Animator({
@@ -71,19 +72,17 @@ var lunbo = {
         this.preAndNext[0].onclick = function (){
             that.imgsInof.unshift(that.imgsInof.pop())
             that.toPotion();
-
         }
-
     },
     /*开始定义方法*/
     autoPlay(){
         var imgsInfo = this.imgsInof;
         var that = this;
         this.timeoutId = setTimeout(function step(){
-            that.toPotion();
             imgsInfo.unshift(imgsInfo.pop())
+            that.toPotion();
             that.timeoutId = setTimeout(step, 2000)
-        }, 200)
+        }, 1000)
 
     },
     toPotion(){
