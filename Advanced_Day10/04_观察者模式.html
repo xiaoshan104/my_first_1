@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>观察者模式</title>
+</head>
+<body>
+<button id="btn">发布信息</button>
+<script>
+    /*被观察者  发布者  ：*/
+    var publisher = {
+        registerObserver(observer){/*注册观察者*/
+            this.observer = observer;
+        },
+        publish(){  /*发布信息*/
+            this.observer();
+        }
+    }
+    publisher.registerObserver(function (){  //传入的这个函数就是观察者。
+        console.log("终于有房子降价了");
+    })
+    
+    btn.onclick = function (){
+        publisher.publish();
+    }
+    
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月24日14:04
+    观察者模式  发布订阅模式  publish / subscribe
+    
+    售楼小姐        被观察者   发布者  publisher
+    我              观察者    订阅者   subscriber
+    
+-->

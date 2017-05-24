@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul {
+            width: 200px;
+            height: 400px;
+            background-color: pink;
+            
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li id="li1">itme 1</li>
+    <li id="li2">itme 2</li>
+    <li id="li3">itme 3</li>
+    <li id="li4">itme 4</li>
+    <li id="li5">itme 5</li>
+</ul>
+<script>
+    var ul = document.querySelector("ul");
+    ul.onclick = function (e){
+        var li = e.target;
+        switch (li.id){
+            case "li1":
+                console.log("1");
+                break;
+            case "li2":
+                console.log("2");
+                break;
+            case "li3":
+                console.log("3");
+                break;
+            case "li4":
+                console.log("4");
+                break;
+            case "li5":
+                console.log("5");
+                break;
+            default:
+                console.log("你什么都没有点中");
+                break;
+        }
+    }
+</script>
+</body>
+</html>

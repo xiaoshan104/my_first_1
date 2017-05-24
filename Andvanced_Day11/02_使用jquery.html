@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        div{
+            width : 200px;
+            height : 200px;
+            background-color : pink;
+            
+        }
+    </style>
+    <script type="text/javascript" src="./jquery-3.2.1.js"></script>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<script>
+    $("div:nth-child(2n+1)").html("哈哈哈哈")
+    $("div").click(function (){
+        $(this).hide();
+    })
+</script>
+</body>
+</html>

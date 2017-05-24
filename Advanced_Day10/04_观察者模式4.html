@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>观察者模式</title>
+</head>
+<body>
+<button id="btn1">发布信息1</button>
+<button id="btn2">发布信息2</button>
+<script>
+    /*被观察者  发布者  ：*/
+    var publisher = {
+        registerObserver(event, observer){
+            if(typeof observer != "function") return;
+            if(!this[event]) this[event] = [];
+            this[event].push(observer)
+        },
+        publish(event, msg){
+            if(!this[event]) return;
+            this[event].forEach(function (observer){
+                observer(msg);
+            })
+        }
+    }
+    //注册观察者  1
+    publisher.registerObserver("wubaiwan", function (msg){
+        console.log("观察者 1 得到的信息:" + msg);
+    })
+    //注册观察者  2
+    publisher.registerObserver("wubaiwan", function (msg){
+        console.log("观察者 2 得到的信息:" + msg);
+    })
+    //注册观察者  3
+    publisher.registerObserver("wubaiwan", function (msg){
+        console.log("观察者 3 得到的信息:" + msg);
+    })
+    
+    btn1.onclick = function (){
+        publisher.publish("wubaiwan", "100平 只需要500万");
+    }
+    btn2.onclick = function (){
+        publisher.publish("yiqianwan", "200平 500万");
+    }
+
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月24日14:04
+    观察者模式  发布订阅模式  publish / subscribe
+    
+    售楼小姐        被观察者   发布者  publisher
+    我              观察者    订阅者   subscriber
+    
+-->
