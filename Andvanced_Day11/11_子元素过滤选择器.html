@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本过滤选择器</title>
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+    <script>
+        $(function (){
+//            console.log($("li:first-child"))
+//            console.log($("li:last-child"))
+//            $("li:nth-child(3)").css("backgroundColor", "pink")
+//            $("li:nth-child(even)").css("backgroundColor", "pink")
+//            $("li:nth-child(odd)").css("backgroundColor", "pink")
+            // n 从 0开始
+//            $("li:nth-child(2n - 3)").css("backgroundColor", "pink")
+            //只选前三个
+//            $("li:nth-child(-n+3)").css("backgroundColor", "pink")
+//            $("li:nth-last-child(2n + 1)").css("backgroundColor", "pink")
+//            $("li:nth-last-child(-n+3)").css("backgroundColor", "pink")
+            //从倒数第二个开始选
+//            $("li:nth-last-child(n+2)").css("backgroundColor", "pink")
+//            $("li:only-child").css("backgroundColor", "pink")
+
+            $("li:nth-of-type(2n+1)").css("backgroundColor", "pink");
+
+        })
+    
+    </script>
+</head>
+<body>
+<ul>
+    <p></p>
+    <li>第 1 个项目</li>
+    <li>第 2 个项目</li>
+    <li>第 3 个项目</li>
+    <li>第 4 个项目</li>
+    <li>第 5 个项目</li>
+    <li>第 6 个项目</li>
+</ul>
+<ul>
+    <li>第 11 个项目</li>
+    <li>第 22 个项目</li>
+    <li>第 33 个项目</li>
+    <p></p>
+    <li>第 44 个项目</li>
+    <li>第 55 个项目</li>
+</ul>
+<ul>
+    <li>abc</li>
+</ul>
+</body>
+</html>

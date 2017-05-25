@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+    <script>
+        $(function(){
+//            $("p:contains(abc)").css("backgroundColor", "pink")
+//            console.log($("div:empty"))
+            //has 的参数是选择器
+//            console.log($("div:has(p)").css("color", "red"))
+            //找到能给别的元素或文本当爹的div
+            console.log($("div:parent"))
+        });
+    
+    </script>
+</head>
+<body>
+<div></div>
+<div>
+    <p>文本abc</p>
+</div>
+<div>
+    abc
+</div>
+
+<img src="#" alt="">
+</body>
+</html>

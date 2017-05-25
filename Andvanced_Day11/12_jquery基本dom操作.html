@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+    <script>
+        $(function(){
+//            $("div").html("<a href='http://www.baidu.com'>百度</a>")
+//            $("div").text("<a href='http://www.baidu.com'>百度</a>")
+//            var htmlText = $("div:eq(1)").html();
+//            var htmlText = $("div:eq(1)").html();
+//            console.log(htmlText);
+           
+           /*$("div:nth-child(1)").attr("class", "c1");
+             var id = $("div:nth-child(1)").attr("class");
+             console.log(id);*/
+           //操作元素的属性。之传入一个参数，表示属性名，获取。两个参数，表示的设置
+//           $("div").attr("title", "这个是一个div")
+
+           /* $("div")
+                .attr("id", "id1")
+                .attr("class", 'd1')
+                .html("你好")*/
+           $("div").attr({
+               id : "id1",
+               class : "c1",
+               title : "div你好"
+           }).html("内容")
+        });
+    
+    </script>
+</head>
+<body>
+<div >第一个</div>
+<div><a href="#">abc</a></div>
+<div>第三个</div>
+</body>
+</html>
