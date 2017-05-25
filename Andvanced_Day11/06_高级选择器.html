@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>高级选择器</title>
+    
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+    <script>
+        $(function (){
+            //find相当于以前的后代选择器。 find方法中接收选择器
+            /*var $all = $("div").find("p");
+            console.log($all);*/
+            
+            //查找到 $("ul*)的所有的子元素  children(选择器)
+           /* var cs =  $("ul").children("#li1");
+            console.log(cs);*/
+           
+           //下一个兄弟选择器  +  css3也支持
+//            $("#li1 + li").css("color", 'red');
+//            $("#li1").next("li").css("color", "green")
+            
+            //后面所有的兄弟  css3也支持
+//            $("#li1 ~ li p").css('color', "red");
+//            $("#li1").nextAll("li").css('color', "red");
+            
+              //上一个兄弟
+//            $("#li1").prev().html("上一个")
+              //上面所有的兄弟
+//            $("#li1").prevAll("p").html("上一个")
+        
+            $("#li1").siblings("li").html("aaaaaa")
+        });
+    
+    </script>
+</head>
+<body>
+<div>
+    <p>
+        <a href="http://www.baidu.com">百度一下</a>
+    </p>
+</div>
+<ul>
+    <p></p>
+    <li>你好</li>
+    <li><a href="#">网址 1</a></li>
+    <li id="li1">网址 2</li>
+    <p>abcddd</p>
+    <li>网址 3
+        <p>afdasljfladsjflsa</p>
+    </li>
+    <li><a href="#">网址 4</a></li>
+</ul>
+</body>
+</html>

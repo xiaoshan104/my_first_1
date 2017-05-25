@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+    <script>
+        $(function(){
+//            $("[id]").html("大家都有id");  //找到有id的元素
+//            console.log($(".p1 [id]"));  // class是p1的后代中有id
+//            $("div[class=d1]").html("id 是box的元素")  //  div.d1
+//            console.log($("p[id!=box]")); //没有id和id！=box的都会找到
+//            console.log($("[id^=box1]"));  //以什么什么开始
+//            console.log($("[id$=1]"));  //以什么结尾
+//            console.log($("[id*=box]"));  //包含子字符串
+//            console.log($("[class*=a1]"));
+//            console.log($("[class~=a1]"));  // class的属性值中包含 单词 a1
+        });
+    
+    </script>
+</head>
+<body>
+<div id="box" class="a1b1 c1"></div>
+<div id="aabbox" class="a1 b1"></div>
+<p  class="d1"></p>
+<div id="box1" class="a1 c1"></div>
+<div></div>
+<p class="p1">
+    <a href="" id="a1"></a>
+    <a href="" ></a>
+</p>
+</body>
+</html>

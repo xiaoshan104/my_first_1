@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+    <script>
+       
+        $(function (){
+            //id选择器
+            var $div1 = $("#div1");
+            $div1.css("color", "red")
+            
+            //标签选择器
+            var $divs = $("div");
+            $divs.css("background-color", "pink")
+            
+            // 类选择器
+            var $c1s = $(".c1")
+            $c1s.css("font-size", 30)
+        })
+    </script>
+</head>
+<body>
+<div class="c1">a</div>
+<div id="div1">b</div>
+<div>c</div>
+<div class="c1">d</div>
+<div>e</div>
+</body>
+</html>

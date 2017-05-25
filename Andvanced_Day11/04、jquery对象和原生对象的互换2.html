@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width : 200px;
+            height : 200px;
+            background-color : pink;
+            
+        }
+    </style>
+    <script type="text/javascript" src="./jquery-3.2.1.js"></script>
+    <script>
+        $(function (){
+            /*//  $(dom原生对象)
+            var box = document.getElementById("box");
+            $(box).html("你好")*/
+            $("div").click(function (){
+                //事件中的this仍然表示的是元素的dom对象。
+                $(this).css("backgroundColor", "blue")
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="box"></div>
+<div id="box1"></div>
+
+</body>
+</html>

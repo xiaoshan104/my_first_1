@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="./jquery-3.2.1.js"></script>
+    <script>
+        $(function (){
+            //获取到的对象是jquery对象，只能使用jquery中提供的方法
+            var $divs = $("div");
+            //把jquery对象转成原生的dom对象.  jquery对象[下标]
+            $divs[0].innerHTML = "原生的"
+            $divs[1].innerHTML = "原生的2"
+            console.log($divs.length);
+            // jquery对象.get(下标)  也可以获取到原生的dom对象
+            $divs.get(0).innerHTML = "abccccc"
+        })
+    
+    </script>
+</head>
+<body>
+<div id="box"></div>
+<div id="box1"></div>
+
+</body>
+</html>
