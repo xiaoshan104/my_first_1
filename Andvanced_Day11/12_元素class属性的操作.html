@@ -3,8 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <title>元素class属性的操作</title>
+    <style>
+        .d1{
+            width : 200px;
+            height : 200px;
+            border: 1px solid #000;
+        }
+        .d2{
+            background-color: pink;
+        }
+        .f32{
+            font-size: 32px;
+        }
+        .hide{
+            /*display: none;*/
+            background-color: blue;
+        }
+    </style>
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+    <script>
+        $(function(){
+            $("button:eq(0)").click(function (){
+                $("div").addClass("d1");
+            })
+            $("button:eq(1)").click(function (){
+                $("div").addClass("d2");
+            })
+            $("button:eq(2)").click(function (){
+                $("div").addClass("f32");  //追加class
+            })
+            $("button:eq(3)").click(function (){
+                $("div").removeClass("d2"); //删除指定 class
+            })
+            $("button:eq(4)").click(function (){
+                $("div").toggleClass("hide")  // 切换class
+            })
+            $("button:eq(5)").click(function (){
+                console.log($("div").hasClass("d1")); //判断class是否存在
+            })
+            //jQuery对象的方法。
+            $('div').each(function (index, value){
+//                console.log(index, value);
+                $(value).html(index)
+            })
+            
+        });
+    
+    </script>
 </head>
 <body>
-
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+<button>移除样式</button>
+<button>切换样式</button>
+<button>判断是否存在指定的class</button>
+<div>div你好</div>
+<div>div你好</div>
+<div>div你好</div>
 </body>
 </html>

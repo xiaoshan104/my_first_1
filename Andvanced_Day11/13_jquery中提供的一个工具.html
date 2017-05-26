@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+    <script>
+        $(function(){
+            /*var obj = {
+                name : "lisi",
+                age : 20,
+                sex : "nan"
+            }*/
+//            var btns = document.querySelectorAll("button");
+//            var $btns = $("button");
+            
+            //工具方法，可以操作任何能够使用下标访问的对象。遍历
+            //参数1：要遍历的对象 参数2：每遍历一个元素，回到一次
+            $.each(s,function (index, ele){
+                console.log(index, ele);
+            })
+        });
+    </script>
+</head>
+<body>
+<button></button>
+<button></button>
+<button></button>
+<button></button>
+</body>
+</html>
