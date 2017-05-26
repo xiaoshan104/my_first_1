@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width : 200px;
+            height : 200px;
+            background-color : pink;
+            
+        }
+    </style>
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+    <script>
+        $(function(){
+            //绑定事件的简写。
+            $("button").click(function (){
+            
+            })
+            $("div").mouseenter(function (){
+                $(this).width(100).height(50);
+            })
+            $("div").mouseleave(function (){
+                $(this).width(400).height(150);
+            })
+        });
+    
+    </script>
+</head>
+<body>
+<button>按钮</button>
+<div></div>
+</body>
+</html>

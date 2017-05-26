@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin-bottom: 10px;
+            
+        }
+        
+        p {
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            
+        }
+    </style>
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+    <script>
+        // 事件类型.命名空间
+        $(function (){
+            $('div').on("mouseover.my", function (){
+                console.log("div的mouseover事件");
+                $(this).width(500);
+            });
+            $('div').on("mouseout.my", function (){
+                console.log("div的mouseover事件");
+                $(this).width(200);
+            });
+
+            $("p").on("mousedown.my1", function (){
+                console.log("p的mousedown事件");
+                $(this).width(300)
+            })
+            $("p").on("mouseup", function (){
+                console.log("p的mousedown事件");
+                $(this).width(600)
+            })
+            
+            $("button").click(function (){
+                $("div").off(".my")  //删除指定命名空间下的所有事件  namespace
+                $("p").off(".my1")
+            })
+
+        });
+    </script>
+</head>
+<body>
+<button>按钮</button>
+<div>div</div>
+<div>div</div>
+<p>p</p>
+<p>p</p>
+</body>
+</html>

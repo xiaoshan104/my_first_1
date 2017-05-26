@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+    <script>
+        $(function (){
+            //每一个a标签，都会分别被一个div包裹
+//            $("a").wrap($("<div>"));
+            // 所有的a标签，用同一个div包裹
+//            $("a").wrapAll($("<div>"));
+            //分别用div去包裹每个a标签的内容。
+//            $("a").wrapInner($("<div>"))
+            //把父元素去掉
+//            $("i").unwrap();
+            $("a").wrapAll($("<div>"))
+        });
+    </script>
+</head>
+<body>
+<a href="#"><i>百度一下</i></a>
+<p>我在两个a的中间</p>
+<a href="#"><i>腾讯一下</i></a>
+</body>
+</html>

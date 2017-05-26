@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+    <script>
+        $(function (){
+            /*$('div').on("my", function (){
+                console.log("这是自定义事件");
+            })
+            setInterval(function (){
+                $("div").trigger("my");
+            }, 1000)*/
+            $('input').focus(function (){
+                console.log("你点击了a");
+            })
+            
+            setTimeout(function (){
+//                $("input").trigger("focus");
+                $("input").triggerHandler("focus");
+            }, 3000)
+            
+        });
+    </script>
+</head>
+<body>
+<div></div>
+<a href="http://www.baidu.com">百度一下</a>
+<input type="text">
+</body>
+</html>

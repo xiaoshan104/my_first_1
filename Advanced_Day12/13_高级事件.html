@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+    <script>
+        $(function (){
+            var i = 0;
+            //用代码去模拟事件
+            $("div")
+                .click(function (){
+                    console.log(i++);
+                })
+                .hover(function (){
+                    $(this).width(500);
+                }, function (){
+                    $(this).width(200)
+                })
+
+            setInterval(function (){
+                //模拟点击事件
+//                $("div").trigger("click");
+                $("div").trigger("mouseover")
+            }, 1000)
+            setInterval(function (){
+                //模拟点击事件
+//                $("div").trigger("click");
+                $("div").trigger("mouseout")
+            }, 1500)
+        });
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

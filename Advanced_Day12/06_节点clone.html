@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+
+</head>
+<body>
+<div class="d1">
+    <button>按钮</button>
+</div>
+<script>
+    $("button").click(function (){
+        alert("abc")
+    })
+    //返回值就是clone到的元素. 参数1：表示外层元素是否复制事件和数据。  参数2：表示是否深度复制事件
+    var clonedDiv = $(".d1").clone(true);
+    clonedDiv.appendTo($(document.body))
+</script>
+</body>
+</html>

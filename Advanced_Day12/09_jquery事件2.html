@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width : 200px;
+            height : 200px;
+            background-color : pink;
+        }
+    </style>
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+    <script>
+        $(function(){
+            $("div").on("click", "button:nth-child(-n+2)",  function (){
+                alert("abc")
+            })
+        });
+    
+    </script>
+</head>
+<body>
+<div>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+</div>
+</body>
+</html>
