@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 10px;
+        }
+    </style>
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+</head>
+<body>
+<div></div>
+<div></div>
+<script>
+    //    $("div").css("backgroundColor", "red");
+    /*var color = $("div").css("backgroundColor");
+    console.log(color);
+    console.log($("div").css("width"));*/
+    //如果传递一个数组，则会返回数组中的所有的属性和属性值
+    /*var values = $("div").css(["width", "height", "margin"])
+     $.each(values, function (pro, value){
+     console.log(pro, value);
+     })*/
+    
+    //传入一个对象，可以设置多个属性。
+    $("div:eq(0)").css({
+        width: "500px",
+        height: "400px",
+        backgroundColor : "black"
+    })
+</script>
+
+</body>
+</html>
