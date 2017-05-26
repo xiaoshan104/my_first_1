@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            
+            margin: 0;
+        }
+        
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            overflow: scroll;
+        }
+        p{
+            width : 100px;
+            height : 2000px;
+            background-color : gray;
+            
+        }
+    
+    </style>
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+    <script>
+        $(function (){
+            /*$("div").click(function (){
+                var top = $(this).scrollTop();
+                console.log(top);
+            })*/
+            var i = 0;
+            setInterval(function (){
+                $("div").scrollTop(i += 10)
+            }, 100)
+        });
+    
+    </script>
+</head>
+<body>
+<div>
+    <p></p>
+</div>
+</body>
+</html>

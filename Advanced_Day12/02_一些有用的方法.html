@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            
+            margin: 0;
+        }
+        div{
+            width : 500px;
+            height : 500px;
+            background-color : gray;
+            margin-top: 100px;
+            position: relative;
+            padding: 40px;
+            border: 20px solid #000;
+        }
+        p {
+            position: absolute;
+            top: 200px;
+            left:20px;
+            /*margin-top:200px;*/
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+    <script>
+        $(function (){
+            //获取元素距离当前文档的距离
+            /*var set = $("div").offset();
+             console.log(set);*/
+            var pos = $("p").position();
+            console.log(pos);
+        });
+    
+    </script>
+</head>
+<body>
+<div>
+    <p></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            box-sizing: border-box;
+            padding: 100px;
+            border: 30px solid #000;
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+            margin: 10px;
+        }
+    </style>
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+</head>
+<body>
+<div></div>
+<div></div>
+<script>
+    $("div").click(function (){
+        var w = $(this).width();
+        console.log(w);
+       /* $(this).width(500)
+        $(this).height(500)  //  css(width, 500)*/
+       
+    })
+</script>
+
+</body>
+</html>
