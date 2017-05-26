@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点操作</title>
+    <style>
+    
+    </style>
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+    <script>
+        $(function (){
+            $("ul>li:nth-child(2)").click(function (){
+                alert("你好");
+            })
+            //remove会返回删除的那个节点
+//            var li = $("ul>li:nth-child(2)").remove();
+//            var li = $("ul>li:nth-child(2)").detach();
+//            li.appendTo($("ul"));
+            //不干掉自己，只干掉自己的后代
+//            $("ul>li:nth-child(1)").empty();
+            $("ul").empty()   // .innerHTML = ""
+        });
+    
+    </script>
+</head>
+<body>
+<ul>
+    
+    <li>第 1 个item <a href="#">aaa</a></li>
+    <li>第 2 个item</li>
+    <li>第 3 个item</li>
+    <li>第 4 个item</li>
+</ul>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月26日11:04
+    remove : 删除元素自己，但是这个元素上注册的事件会丢失
+    detach : 删除元素自己，但是这个元素上注册的事件不会丢失
+    
+    empty : 只删除后代元素
+-->

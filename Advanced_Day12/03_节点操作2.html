@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <title>节点操作</title>
     <style>
-        .p1 {
-            color: red;
-        }
+    
     </style>
     <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
     <script>
         $(function (){
-        
+            /*var $li = $("<li>新的li</li>")
+             $("ul").prepend($li);*/
+//            $("<li>新的li</li>").prependTo($("ul"));
+            var li = $("<li>新的li</li>")
+//            $("ul>li:eq(2)").after(li);
+            $("ul>li:eq(1)").before(li);
         });
     
     </script>
@@ -25,3 +28,15 @@
 </ul>
 </body>
 </html>
+<!--
+    作者：李振超  2017年5月26日11:04
+    a.append(b)  把b添加到a中，b会成为a的最后一个儿子
+    a.appendTo(b) 把a添加到b中， a会成为b的最后一个儿子
+    
+    a.prepend(b) 把b添加到a中，b会成为的a的第一个儿子
+    a.prependTo(b)
+    
+    
+    a.after(b) : 把b添加到a的后面，b会成为a的下一个兄弟
+    a.before(b) :把b添加到a的前面  b会成为a的上一个兄弟
+-->
