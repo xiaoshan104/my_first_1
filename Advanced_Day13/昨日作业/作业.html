@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        #side_menu{
+            width : 600px;
+            height : 350px;
+            
+        }
+        #menu_list{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            left: 200px;
+            top: 100px;
+        }
+        #menu_list > li{
+            width : 200px;
+            height : 50px;
+        }
+        #menu_list > li > p{
+            box-sizing: border-box;
+            display: block;
+            width: 200px;
+            height: 100%;
+            background-color: pink;
+            border-bottom: 1px solid white;
+        }
+        #menu_list > li > div{
+            box-sizing: border-box;
+            width : 400px;
+            height : 350px;
+            background-color : white;
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: none;
+            border: 1px solid #CCCCCC;
+            
+        }
+    </style>
+    <script type="text/javascript" src="../libs/jquery-3.2.1.js"></script>
+    <script>
+        $(function(){
+            $("#menu_list > li").hover(function (e){
+                console.log(e);
+                $(this).children("p").css({
+                    backgroundColor : "gray"
+                }).next("div").css({
+                    display : "block"
+                })
+                
+            }, function (e){
+                console.log(e);
+                $(this).children("p").css({
+                    backgroundColor : "pink"
+                }).next("div").css({
+                    display : "none"
+                })
+            })
+        });
+    </script>
+</head>
+<body>
+<div id="side_menu">
+    <ul id="menu_list">
+        <li>
+            <p></p>
+            <div>内容1</div>
+        </li>
+        <li>
+            <p></p>
+            <div>内容2</div>
+        </li>
+        <li>
+            <p></p>
+            <div>内容3</div>
+        </li>
+        <li>
+            <p></p>
+            <div> 内容4</div>
+        </li>
+        <li>
+            <p></p>
+            <div>内容5</div>
+        </li>
+        <li>
+            <p></p>
+            <div>内容6</div>
+        </li>
+        <li>
+            <p></p>
+            <div>内容7</div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
