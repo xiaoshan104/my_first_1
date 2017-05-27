@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getScript方法</title>
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+    <script>
+        $(function(){
+            /*
+            * 通过异步的方式加载js文件，一旦加载成功，立即执行文件中的代码
+            * */
+            $.getScript("./test.js", function (src){
+                console.log(src);
+            })
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

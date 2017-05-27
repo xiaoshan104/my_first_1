@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>post方法</title>
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+    <script>
+        $(function(){
+            $.post("./data2.json", "user=zs",function (response, status, xhr){
+//                $("div").html(response.name)
+                console.log(response);
+            }, "json");
+        });
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>
+<!--
+    作者：李振超  2017年5月27日14:58
+    $.post()
+    参数1：url
+    参数2：data 传递给服务的参数.
+    参数3：成功之后的回调
+            (result, status, xhr)
+    参数4：返回的数据类型   如果省略，数据类型会自动的探测
+-->

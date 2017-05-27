@@ -6,11 +6,13 @@
     <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
     <script>
         $(function(){
+            //load的方法一般用来加载html页面。  当然用他加载别的数据也没有任何问题的。
             $("div.header").load("./header.html style, #header, script", function (response, status, xhr){
                 console.log(response);
                 console.log(status);
                 console.log(xhr);
             });
+            
         });
     </script>
 </head>
