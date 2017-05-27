@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width : 200px;
+            height : 200px;
+            background-color : pink;
+            border-bottom: 10px;
+            position: absolute;
+        }
+    </style>
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+    <script>
+        $(function(){
+            $("button").click(function (){
+                $("div").animate({  //对象内部写入目的值
+                    left : "+=30",
+                    top : "+=20",
+                    opacity: 0.3
+                }, 1000, "linear", function (){
+                    console.log("动画运行结束了");
+                })
+                
+            })
+        });
+    </script>
+</head>
+<body>
+<button>开始动画</button>
+<div></div>
+<div></div>
+</body>
+</html>
+<!--
+animate：
+参数1：css属性组成的对象
+参数2：动画的周期
+参数3：动画算子    jquery原生只支持2中 swing linear 默认是swing
+参数4：动画结束的时候的回调函数
+
+-->

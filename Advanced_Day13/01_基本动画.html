@@ -3,10 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+    <script>
+
+        $(function (){
+            $("button:eq(0)").on("click", function (){
+                // slow:600 normal:400 fast:200
+                $("div").hide("fast");
+            })
+            $("button:eq(1)").on("click", function (){
+
+                $("div").show(2000);
+            })
+            $("button:eq(2)").on("click", function (){
+                $("div").toggle(2000);
+            })
+
+            $("button:eq(3)").on("click", function (){
+                $("div").fadeIn(1000)
+            })
+            $("button:eq(4)").on("click", function (){
+                $("div").fadeOut(1000)
+            })
+            $("button:eq(5)").on("click", function (){
+                $("div").fadeToggle(1000)
+            })
+            $("button:eq(6)").on("click", function (){
+                $("div").fadeTo(1000, 0.3, function (){ //当动画结束的时候的回调函数
+                    console.log("动画结束了");
+                })
+            })
+
+            $("button:eq(7)").on("click", function (){
+                $("div").slideDown(1000);
+            })
+
+            $("button:eq(8)").on("click", function (){
+                $("div").slideUp(1000);
+            })
+            $("button:eq(9)").on("click", function (){
+                $("div").slideToggle(1000)
+            })
+
+        });
+    </script>
 </head>
 <body>
-<button>显示</button>
 <button>隐藏</button>
+<button>显示</button>
+
 <button>显示和隐藏的切换</button>
 <br>
 <button>淡入</button>
@@ -18,5 +71,7 @@
 <button>收起</button>
 <button>展开和收起</button>
 
+<div></div>
+<div></div>
 </body>
 </html>
