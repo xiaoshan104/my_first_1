@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax方法</title>
+    <script type="text/javascript" src="./libs/jquery-3.2.1.js"></script>
+    <script>
+        $(function(){
+            $.ajax({
+                url: "./data2.json",
+                method: "GET",
+                dataType : "jsonp",
+                jsonp:"call",
+                jsonpCallback : "abc",
+                success : function (data){
+                    console.log(data);
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
