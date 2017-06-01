@@ -14,3 +14,4 @@ app.get('/page', function (req, res){
     res.send('这个是个新的网页');
 });
 app.listen(3000);
+// router  路由
