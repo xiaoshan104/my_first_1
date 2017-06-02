@@ -1,0 +1,49 @@
+.wh {
+  width: 200px;
+  height: 200px;
+}
+
+.bg(@b:pink) {
+  background-color: @b;
+  font-size: 100px;
+}
+
+.color {
+  color: yellow;
+}
+
+//注释
+/*也是注释*/
+@imgName: "a";
+div {
+  .bg(pink);
+  .color;
+  background: url("../@{imgName}.jpg");
+  > p {
+    width: 100px;
+    height: 50px;
+    .bg(gray);
+
+    &:hover {
+      .bg(red);
+    }
+
+    > a {
+      text-decoration: none;
+    }
+
+  }
+}
+
+@s: bg;
+.@{s}_c {
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+}
+
+.@{s}_d {
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+}
