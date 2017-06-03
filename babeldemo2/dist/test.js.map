@@ -1,0 +1,1 @@
+{"version":3,"sources":["../test.js"],"names":["a","b"],"mappings":";;AAAA,IAAIA,IAAI,EAAR;AACA,IAAIC,IAAI,EAAR","file":"test.js","sourcesContent":["let a = 20;\nlet b = 10;\n"]}
