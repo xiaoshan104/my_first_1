@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function foo(name, age){
+        var obj = {
+            name: "李四",
+            age: 20,
+            sex: "男"
+        };
+        ({name, age} = obj);
+        console.log(name, age);
+        var {foo = 20, sex = "女"} = obj;  //解构的时候也可以有默认值
+        console.log(foo, sex);
+
+    }
+    function foo1(){
+        var obj = {
+            name: "李四",
+            age: 20,
+            sex: "男"
+        };
+        //属性名和变量名不一致时候的解构。  语法： 属性名 : 变量名
+        let {name: n, age: a, sex: s, foo: f = 10} = obj;
+        console.log(n, a, s, f);
+    }
+    foo1();
+</script>
+</body>
+</html>
+<!--
+对象解构
+
+-->

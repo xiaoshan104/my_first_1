@@ -6,25 +6,14 @@
 </head>
 <body>
 <script>
-    "use strict"
-    /*function foo(){
-     console.log(this);  //严格模式 this 是undefined
-     }
-     foo()*/
-    var obj = {
-        age: 10,
-        foo: function (){
-            console.log(this);
-            setInterval(() =>{
-                console.log(this.age++);
-            }, 1000);
-        },
-        say : ()=>{
-            console.log(this);
+    var foo = function (){
+        
+        var f = () =>{
+            console.log(arguments);
         }
+        f();
     }
-//    obj.foo();
-    obj.say.call(obj);
+    foo(10)
 </script>
 </body>
 </html>

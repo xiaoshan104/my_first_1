@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*var pro = "name";
+     var methodName = "sayHello1"
+     var obj = {
+     [pro]: "lisi",
+     [methodName] (){
+     
+     }
+     };
+     
+     console.log(obj);*/
+    function createPerson(proName, methodName){
+        return {
+            [proName + "_m"]: "李四", //动态计算属性名
+            [methodName](){  //动态计算方法名
+                console.log("abc");
+            }
+        }
+    }
+    
+    var p = createPerson("name", "eat");
+    console.log(p);
+    var p1 = createPerson("age", "speak");
+    console.log(p1);
+</script>
+</body>
+</html>
+<!--
+声明字面量的时候，属性名的动态添加
+
+
+-->

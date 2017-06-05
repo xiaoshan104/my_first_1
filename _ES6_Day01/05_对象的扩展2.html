@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    console.log(+0 === -0);
+    console.log(Object.is(+0, -0));  // false
+//    console.log(typeof NaN);
+    console.log(NaN === NaN)
+    console.log(Object.is(NaN, NaN));  // true
+
+    var p1 = {
+        name : "李四",
+        age : 30,
+        girls : ["a", "b"],
+        say(){
+        
+        }
+    }
+    var p2 = {}
+    Object.assign(p2, p1);
+    
+    p1.girls.push("c");
+    console.log(p2.girls.length);
+    console.log(p1.girls === p2.girls);
+</script>
+</body>
+</html>
+<!--
+    Object.is()
+        is是为了取代 === .
+            +0 -0   is:false
+            NaN NaN is:true
+    Object.assign()
+    
+
+-->

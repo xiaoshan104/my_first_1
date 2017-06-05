@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //    var obj = {
+    //        name: "李四",
+    //        age: 20,
+    //        sex: "男"
+    //    }
+    //    //声明了三个变量，变量的值来自于对象的同名属性
+    //    let {sex, name} = obj;
+    //    console.log(sex);
+    //    console.log(name);
+    //    //    console.log(age);
+    //    //    console.log(foo);
+    function foo(name, age){
+        var obj = {
+            name: "李四",
+            age: 20,
+            sex: "男"
+        };
+        ({name, age} = obj);  //以前声明的变量，通过解构的方式赋值
+        console.log(name, age);
+    }
+    foo("aaa", 200);
+</script>
+</body>
+</html>
+<!--
+对象解构
+
+-->
