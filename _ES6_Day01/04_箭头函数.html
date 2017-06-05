@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数</title>
+</head>
+<body>
+<script>
+    /*var foo = (a, b = 30) =>{
+     console.log("箭头函数", a, b)
+     }
+     foo(10)*/
+    
+    /*var add = (a, b) => a + b; //  { return a+b}
+     var sum = add(10, 30);
+     console.log(sum);
+     
+     var foo = () => console.log("ab");
+     var r = foo();
+     console.log(r);*/
+
+    var add = a => a + 5;
+    console.log(add(100));
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  5 Jun 201711:07
+    
+    胖箭头函数=>   拉姆达表达式 ->
+    1. 如果函数体你只有一行代码，则大括号可以省略.这个函数会自动
+        把这个行代码计算的值返回
+    2. 如果不是一行代码，则大括号不可以省略
+    
+    3. 如果形参只有一个参数，则圆括号也可以省略. 其余情况下，圆括号都不可以省略。
+    
+    
+    
+-->

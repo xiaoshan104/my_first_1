@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>未命名参数问题</title>
+</head>
+<body>
+<script>
+    var arr = [100, 4, 6, 20];
+    /*var max = Math.max.apply(Math, arr);
+    console.log(max);*/
+    var max = Math.max(1000,...arr, 2000);
+    console.log(max);
+</script>
+</body>
+</html>
+<!--
+剩余参数：
+ 1. 把没有形参接受参数全部给剩余参数。
+ 2. 剩余参数，在函数内部就可以当做一个普通的数组使用。
+ 3. 剩余参数必须是形参列表中的最后一个参数
+ 4. 剩余参数一定是出现在形参中。
+ 
+ 展开运算符：
+    1. 也叫展开运算符
+    2. ... 可以用在数组、set集合前，把里面的元素展开一个个的传递给参数。
+    
+
+
+
+-->

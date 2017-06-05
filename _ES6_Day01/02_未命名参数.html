@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>未命名参数问题</title>
+</head>
+<body>
+<script>
+    function foo(a, b = 10, ...other){
+        //other:就是一个数组
+       other.forEach(function (ele, index){
+           console.log(ele, index);
+       })
+    }
+    foo(10, 20, 30, 40, "a", "abc");
+</script>
+</body>
+</html>
+<!--
+剩余参数：
+ 1. 把没有形参接受参数全部给剩余参数。
+ 2. 剩余参数，在函数内部就可以当做一个普通的数组使用。
+ 3. 剩余参数必须是形参列表中的最后一个参数
+ 4. 剩余参数一定是出现在形参中。
+
+
+
+-->

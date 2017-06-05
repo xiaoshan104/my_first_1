@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*function foo(a = 100, b){
+        a = 1000;
+        console.log("a:" + a);
+        console.log("arguments[0]:" + arguments[0]);
+    }
+    foo(10, 20)*/
+    
+    let value = 1;
+    function getValue(){
+        value++;
+        return value;
+    }
+    function foo(a, b = getValue()){
+        console.log(a, b);
+    }
+    foo(10)
+    foo(10)
+</script>
+</body>
+</html>
+<!--
+1. 非严格模式下，arguments永远与形参的值保持一致。
+2. 在严格模式，arguments永远是保持的形参的最初的值。
+3. es6永远运行在严格模式下
+
+4. 默认值也可以是表达式。表达式可以出现前面的形参
+5. 默认值中的方法或者表达式，是在函数执行的时候采取调用。 动态赋默认值
+
+-->

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数</title>
+</head>
+<body>
+<script>
+    "use strict"
+    /*function foo(){
+     console.log(this);  //严格模式 this 是undefined
+     }
+     foo()*/
+    var obj = {
+        age: 10,
+        foo: function (){
+            console.log(this);
+            setInterval(() =>{
+                console.log(this.age++);
+            }, 1000);
+        },
+        say : ()=>{
+            console.log(this);
+        }
+    }
+//    obj.foo();
+    obj.say.call(obj);
+</script>
+</body>
+</html>
+<!--
+    作者：李振超  5 Jun 201711:07
+    
+    胖箭头函数=>   拉姆达表达式 ->
+    1. 如果函数体你只有一行代码，则大括号可以省略.这个函数会自动
+        把这个行代码计算的值返回
+    2. 如果不是一行代码，则大括号不可以省略
+    
+    3. 如果形参只有一个参数，则圆括号也可以省略. 其余情况下，圆括号都不可以省略。
+    
+    4. 如果仅仅直接返回一个对象，则应该在这个对象用一个 ()包括
+    
+    5. 箭头函数中没有this绑定的问题。
+        1. 箭头函数永远与他的外层的函数的this保持一致
+        2. 如果外层没有函数，则this表示window
+            把this当成一个变量，他会在作用域链中查找。
+            
+        换种理解方式：
+            箭头函数中根本就没有this，他使用的this是从他的作用域链中找到的。
+     6. 箭头函数不适合做对象的方法
+     
+-->
