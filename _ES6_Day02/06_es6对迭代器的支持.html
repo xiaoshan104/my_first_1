@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //迭代器函数： 函数名前添加一个 *
+    function *createIterator(){
+        yield 1;
+        yield 10;
+        yield 100;
+        yield 1000;
+        yield 10000;
+    }
+    var it = createIterator();
+
+    var obj = it.next();
+    while (!obj.done){
+        console.log(obj.value);
+        obj = it.next();
+    }
+    
+    /*var obj = it.next();
+     console.log(obj.value, obj.done);
+     */
+
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    Object.prototype[Symbol.iterator] = function *(){
+        var keys = Reflect.ownKeys(this);
+        for(var i = 0; i < keys.length; i++){
+            yield [keys[i], this[keys[i]]];
+        }
+    }
+
+    var arr = {
+        [Symbol()] : "a",
+        name: "lisi",
+        age: 20,
+        say(){
+
+        }
+    };
+    /*var it = arr[Symbol.iterator]();
+     for (var obj = it.next(); !obj.done; obj = it.next()){
+     console.log(obj.value);
+     }*/
+    /*for (var v of arr){
+        console.log(v[0], v[1]);
+    }*/
+    
+    var regExp = /a/gi;
+    for(var e of document){
+        console.log(e);
+    }
+
+</script>
+</body>
+</html>
+<!--
+元素带迭代器的： 数组、字符串、set map
+
+-->
