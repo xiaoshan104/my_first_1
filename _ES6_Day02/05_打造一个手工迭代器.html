@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>打造一个手功工迭代器</title>
+</head>
+<body>
+<script>
+
+    //封装一个方法，这个方法返回一个迭代器
+    function createIterator(arr){
+        var index = 0;
+        var done = false;
+        var value;
+        return {
+            next(){
+                if (index >= arr.length){   // done = index >= arr.length ? true : false
+                    done = true;
+                }
+                value = arr[index];  // value = arr[index++]
+                index++;
+                return {done, value}
+            }
+        }
+    }
+
+    var arr = ["a", "b", "c", "d"];
+    var it = createIterator(arr);
+    
+    var obj = it.next();
+    while(!obj.done){
+        console.log(obj.value);
+        obj = it.next();
+    }
+   
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = [
+        ["a", 122], ["b", 244]
+    ]
+    let map = new Map(arr);
+    map.set("c", 355);
+    map.set("d", 666);
+    
+    /*map.forEach(function (value, key, own){
+        console.log(own);
+        console.log(value, key);
+    });*/
+    
+    //for of遍历出来的是键值对
+    for(var kv of map){
+        console.log(kv[0], kv[1]);
+    }
+    
+    /*["1", "10", "a"].forEach(function (v, k, own){
+        console.log(v, k, own);
+    })*/
+    
+    console.log(map);
+</script>
+</body>
+</html>
+<!--
+Map存储的也是键值对。 (字典 )
+键可以是任何的类型。键不允许重复。
+
+
+-->

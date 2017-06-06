@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var map = new Map();
+    map.set("a", 1);  // 如果key不存在，则添加一个键值对，否则，覆盖旧的值
+    map.set("b", 10);
+    map.set("c", 20);
+    map.set("d", 20);
+    map.set("d", 50);
+    
+    var v = map.get("aaa");  //根据指定的键来获取他的值
+    console.log(map.has("aaa")); //判断键是否存
+    console.log(v);
+    map.delete("a");  //删除指定key的键值对
+    map.clear();
+    console.log(map);
+</script>
+</body>
+</html>
+<!--
+Map存储的也是键值对。 (字典 )
+键可以是任何的类型。键不允许重复。
+
+
+-->
