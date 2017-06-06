@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*let s1 = Symbol("s1"); //添加描述符
+     let s2 = Symbol("s2");
+     console.log(s1);
+     console.log(s2);
+     console.log(s1 == s2);
+     console.log(typeof s1);*/
+    var obj = {
+        [{}]: "李四",
+        [["abc", 1]]: "哈哈哈",
+        [Symbol("1")]: "我是sybmol属性的值1",
+        [Symbol("2")]: "我是sybmol属性的值2"
+    }
+    /*for (var pro in obj){
+        console.log(pro, typeof pro);
+    }*/
+    var ss = Object.getOwnPropertySymbols(obj);  //返回的是一个数组，存储的是所有Symbol类型的属性名
+    ss.forEach(function (ele, index){
+        console.log(ele);
+    })
+    console.log(obj);
+</script>
+</body>
+</html>
+<!--
+1. 只要是通过Symbol得到的Symbol类型的数据，他们肯定不等。
+2. 在ES6之前，属性名只能是字符串类型的数据.
+   在ES6中，Symbol类型的数据也可以作为属性名. 只能通过动态计算的方式去添加。
+3. for in没有办法遍历出来属性名是Symbol类型的属性
+4. Object.getOwnPropertySymbols(obj);返回的是一个数组，存储的是所有Symbol类型的属性名
+
+
+-->

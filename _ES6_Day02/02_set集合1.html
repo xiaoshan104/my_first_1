@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = [1, 4, 6, 8, 1, 6];
+    var set = new Set(arr);
+    console.log(set); //
+    //自带的forEach
+    /*set.forEach(function (value, key){
+        console.log(value, key);
+    })*/
+    
+    /*for(var ele of set){
+        console.log(ele);
+    }*/
+    
+</script>
+</body>
+</html>
+<!--
+Set：存储的数据是有序、不允许重复
+
+创建set集合的时候，传入一个数组，则可以把数组中的元素存入到结集合中
+1. set集合无法通过下标获取
+-->

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var set = new Set();
+    set.add("ba");
+    set.add("b");
+    set.add("b");
+    set.add("5");
+    set.add(5)
+    set.add({});
+    console.log(set.size);  //获取set集合的长度。
+    set.add(NaN)
+    set.add(NaN)
+    set.add(+0)
+    set.add(-0)
+    set.add(true);
+    set.add("true")
+    console.log(set);
+</script>
+</body>
+</html>
+<!--
+Set：存储的数据是有序、不允许重复
+
+-->

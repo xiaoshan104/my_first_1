@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    var obj = {
+        [{}]: "对象1",  //[Object object]
+        [Symbol()]: "s1",
+        [Symbol()](){
+            console.log("哈哈哈")
+        }
+        
+    }
+//    obj[{age: 20}] = "对象2";
+//    obj[[{}]] = "对象3"
+    obj[Symbol()] = "s2";
+    console.log(obj);
+    //获取所有的非Symbol的属性的名
+    console.log(Object.getOwnPropertyNames(obj));
+
+    console.log(Reflect.ownKeys(obj));
+    var ps = Reflect.ownKeys(obj);
+    ps.forEach(function (pro, index){
+        if(typeof obj[pro] == "function"){
+            obj[pro]();
+        }
+    })
+</script>
+</body>
+</html>
+<!--
+1. 只要是通过Symbol得到的Symbol类型的数据，他们肯定不等。
+2. 在ES6之前，属性名只能是字符串类型的数据.
+   在ES6中，Symbol类型的数据也可以作为属性名. 只能通过动态计算的方式去添加。
+3. for in没有办法遍历出来属性名是Symbol类型的属性
+4. Object.getOwnPropertySymbols(obj);返回的是一个数组，存储的是所有Symbol类型的属性名
+5. Object.getOwnPropertyNames(obj) 获取所有的非Symbol类型的属性名
+6. Reflect.ownKeys(obj)  获取所有的属性的属性名
+
+
+-->

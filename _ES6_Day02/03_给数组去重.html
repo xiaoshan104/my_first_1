@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = [1, 2, 1, 5, 3, 2, 1];
+    /*for(var i = 0; i < arr.length; i++){
+         var ele = arr[i];
+         for(j = i + 1; j < arr.length; j++){
+            if(ele == arr[j]){
+                arr.splice(j, 1);
+            }
+         }
+     }
+     */
+    
+    function toHeavy(arr){
+        var set = new Set(arr);
+        /*arr.length = 0;
+        arr.push(...set);*/
+        return new Array(...set);
+    }
+    
+</script>
+</body>
+</html>
+<!--
+//    arr.splice(0, arr.length)
+
+-->
