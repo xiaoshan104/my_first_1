@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var obj = {
+        name : "李四"
+    }
+    Object.defineProperty(obj, "name", {
+        configurable : false
+    })
+    
+    Object.defineProperty(obj, "age", {
+        //如果是false，属性不允许删除
+        configurable : true,
+        //如果是false，不允许修改值
+        writable : false,
+        //如果是false，不允许遍历
+        enumerable : true,
+        value : 20
+    });
+    
+    delete obj.name;
+    delete obj.age
+    obj.age = 40
+    console.log(obj);
+    for(var p in obj){
+        console.log(p);
+    }
+</script>
+</body>
+</html>
+<!--
+数据属性
+
+
+访问器属性
+
+-->

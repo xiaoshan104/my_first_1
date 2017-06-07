@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../_ES6_Day03/hello.js"],"names":["a","b"],"mappings":";;AAAA,IAAIA,IAAI,EAAR;AACA,IAAMC,IAAI,EAAV","file":"hello.js","sourcesContent":["let a = 10;\nconst b = 20;\n\n"]}

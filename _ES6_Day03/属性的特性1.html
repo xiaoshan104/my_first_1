@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var obj = {
+        name : "李四"
+    }
+    //可以同时定义多个属性
+    Object.defineProperties(obj, {
+        age : {
+            configurable : false,
+            writable : true,
+            value : 20
+        },
+        sex : {
+            enumerable : true,
+            value : "男"
+        }
+    })
+    
+    obj.age = 30;
+    delete obj.age;
+    obj.sex = "女"
+    console.log(obj);
+    for(var p in obj){
+        console.log(p);
+    }
+</script>
+</body>
+</html>
+<!--
+数据属性
+
+
+访问器属性
+
+-->
