@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6中的继承</title>
+</head>
+<body>
+<script>
+    class Father{
+        constructor(name){
+            this.name = name;
+        }
+        say(){
+            console.log("父类中的方法：" + this.name);
+        }
+        static run(){
+            console.log("父类中的静态方法");
+        }
+    }
+    
+    class Son extends Father{
+        constructor(name, age){
+            super(name);  //  相当于以前的函数借调。 借调父类的构造函数。必须放在首行
+            this.age = age;
+        }
+        say(){
+            console.log("子类的方法" + this.name + "  " + this.age);
+            super.say();  //可以在子类的方法中，去调用父类的方法
+        }
+        eat(){
+        
+        }
+        static run(){
+            console.log("aaa");
+        }
+    }
+    Son.run();
+    Father.run();
+    var s = new Son("abc", 20);
+    s.say();
+</script>
+</body>
+</html>

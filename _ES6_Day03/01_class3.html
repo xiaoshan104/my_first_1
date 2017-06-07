@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class</title>
+</head>
+<body>
+<script>
+
+    class Person{
+        constructor(age){
+            this.age = age;
+        }
+
+        say(){
+            Person.run();
+        }
+        //静态方法
+        static run(){
+            console.log("跑" + this.age)
+        }
+
+    }
+    var p1 = new Person(30);
+    p1.run();
+
+</script>
+</body>
+</html>
+<!--
+1. class声明也不提前.  class必须先声明再使用
+
+2. class中定义的方法只能通过 对象.say()来使用，不能 new Say()
+
+3. 类也可以作为参数传递
+
+4. 静态方法没有办法访问到对象中的属性
+
+5. 没有办法通过对象去访问到静态的方法
+
+
+-->

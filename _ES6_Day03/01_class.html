@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class</title>
+</head>
+<body>
+<script>
+    class Person{
+        //把属性在构造器中添加
+        constructor(name, age){
+            this.name = name;
+            this.age = age;
+        }
+        //添加方法，其实就是把方法添加到了原型中。
+        say(){
+            console.log("我是原型上的方法")
+        }
+        speak(){
+
+        }
+        eat(food){
+
+        }
+    }
+    var p1 = new Person("李四", 20);
+    console.log(p1.name);
+    console.log(p1.age);
+    p1.say()
+    console.log(typeof Person);
+    
+    
+</script>
+</body>
+</html>
+<!--
+1. class声明也不提前.  class必须先声明再使用
+
+2. class中定义的方法只能通过 对象.say()来使用，不能 new Say()
+
+
+-->

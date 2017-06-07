@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class</title>
+</head>
+<body>
+<script>
+
+    //匿名类表达式
+    var Person = class{
+        //把属性在构造器中添加
+        constructor(name, age){
+            this.name = name;
+            this.age = age;
+        }
+
+        say(){
+            console.log("我的名字是：" + this.name);
+        }
+
+    }
+    function createPerson(PersonClass){
+        return new PersonClass("李四", 20)
+    }
+
+    var p2 = new class{
+        constructor(age){
+            this.age = age;
+        }
+
+        speak(){
+            console.log(this.age);
+        }
+    }()
+    p2.speak()
+</script>
+</body>
+</html>
+<!--
+1. class声明也不提前.  class必须先声明再使用
+
+2. class中定义的方法只能通过 对象.say()来使用，不能 new Say()
+
+3. 类也可以作为参数传递
+
+
+-->
