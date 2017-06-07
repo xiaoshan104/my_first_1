@@ -5,6 +5,28 @@
     <title>Title</title>
 </head>
 <body>
-
+<script>
+    var obj = {
+        name : "李四",
+        _age : 0
+    }
+    
+    Object.defineProperty(obj, "age", {
+        get : function (){
+            return this._age;
+        },
+        set : function (age){
+           if(age > 100 || age < 0){
+               this._age = 18;
+           }else{
+               this._age = age;
+           }
+        }
+        
+    })
+    obj.age = 200;
+    console.log(obj.age);
+    console.log(obj);
+</script>
 </body>
 </html>
