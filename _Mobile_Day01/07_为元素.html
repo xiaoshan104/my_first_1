@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div::after{
+            content: "哈哈哈";
+            display: block;
+            width : 200px;
+            height : 200px;
+            background-color : pink;
+        }
+        div::before{
+            content: "嘿嘿";
+            display: block;
+            width : 200px;
+            height : 200px;
+            background-color : gray;
+        }
+        p{
+            width: 200px;
+        }
+        p::first-letter{
+            font-size: 100px;
+        }
+        p::first-line{
+            background-color: pink;
+        }
+        p::selection{
+            color: red;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<p>百度一下百度一下百度一下百度一下百度一下百度一下百度一下百度一下百度一下百度一下百度一下百度一下百度一下</p>
+<div>
+    <a href="#">aaa百度一下</a>
+</div>
+
+</body>
+</html>

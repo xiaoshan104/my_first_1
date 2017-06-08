@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" id="form1">
+    <input type="text" name="user" value="abc" disabled><br>
+    <input type="text" list="data" name="lang"><br>
+    <input type="email" name="email" required pattern="\w{5,}@.+\.com"
+           title="请按照如下格式填写邮箱：xxxxxx"><br>
+    <input type="submit">
+</form>
+<input type="text" name="pwd" form="form1" disabled>
+<script>
+    var input = document.querySelector("input");
+    input.onclick = function (){
+        alert("aaaa")
+    }
+</script>
+</body>
+</html>
+<datalist id="data">
+    <option value="java">java大法好</option>
+    <option value="javaScript">javaScript更牛叉</option>
+    <option value="c">c比较难</option>
+    <option value="c#">微软的贼船不要上</option>
+    <option value="c++">比c还难</option>
+</datalist>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [type=chekbox]{
+        
+        }
+        div{
+            width : 200px;
+            height : 200px;
+            margin-bottom: 10px;
+            border: 1px solid #000;
+        }
+        
+        div:active{
+            background-color: pink;
+        }
+        input:focus{
+            background-color: yellow;
+        }
+        :disabled{
+            background-color: #00B7FF;
+        }
+        [type^=check]:checked{
+            display: block;
+            width : 50px;
+            height : 50px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<input type="checkbox">游戏
+<input type="text" disabled>
+<button disabled>abc</button>
+<div></div>
+<div class="A b"></div>
+<div id="box_a"></div>
+</body>
+</html>
