@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width : 1200px;
+            height : 200px;
+            background-image: linear-gradient(60deg, red, green 30% , blue);
+        }
+        div:nth-child(2){
+            background-image: repeating-linear-gradient(to right, black 0px, black 50px, white 50px, white 100px);
+            /*background-image: linear-gradient(to right, black, black 10%, white 10%, white 20%, black 20%, black 30%);*/
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+</body>
+</html>
+<!--
+因为渐变其实是通过代码的方式生成的一个 imgage，所以
+渐变要赋值给 background或background-image
+
+-->

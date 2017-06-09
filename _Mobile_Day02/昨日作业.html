@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>红色</p> <input type="range">
+<p>绿色</p> <input type="range">
+<p>蓝色</p> <input type="range">
+<p>透明度</p> <input type="range">
+<script>
+    var ps = document.querySelectorAll("p");
+    var inputs = document.querySelectorAll("input");
+
+    function changeBg(){
+        document.body.style.backgroundColor
+            = `rgba(${inputs[0].value}, ${inputs[1].value}, ${inputs[2].value}, ${inputs[3].value})`;
+    }
+
+    for (let i = 0; i < inputs.length; i++){
+        if (i < 3){
+            inputs[i].max = 255;
+            inputs[i].value = 0;
+        }else{
+            inputs[i].max = 1;
+            inputs[i].value = 1;
+        }
+
+        inputs[i].onchange = changeBg;
+    }
+
+    changeBg();
+</script>
+</body>
+</html>

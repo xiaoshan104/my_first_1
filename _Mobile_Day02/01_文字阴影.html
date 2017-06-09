@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{
+            font-size: 50px;
+            text-shadow: 5px 5px 10px blue, -5px -5px 10px gray;
+        }
+        div{
+            width : 100px;
+            height : 200px;
+            border: 1px solid #000;
+            word-break: keep-all;
+            overflow: hidden;
+            /*text-overflow: clip; !*如果overflow是hidden，则默认值 clip*!*/
+            text-overflow: ellipsis; /*如果overflow是hidden，则默认值 clip*/
+        }
+    </style>
+</head>
+<body>
+<p>你好</p>
+<div>helloworldhelloworl dhelloworld </div>
+<div>中日韩语言不允许换行中 日韩语言不允许换行中 日韩语言不允许换行中日韩语言不允许换行 </div>
+</body>
+</html>
+<!--
+word-break:
+normal: 因为单词内部换行  中文，总是换行
+
+break-all: 对非中日韩语言，总是换行
+
+keep-all : 所有的语言，单词都不允许换行
+
+-->

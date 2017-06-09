@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width : 200px;
+            height : 200px;
+            background-color : pink;
+            border: 26px solid;
+            border-image-source: url("./border.png");
+            border-image-slice: 26;
+            border-image-width: 26px;
+            
+            margin-bottom:10px;
+        }
+        div:nth-child(1){
+            border-image-repeat: stretch;
+        }
+        div:nth-child(2){
+            border-image-repeat: repeat;
+        }
+        div:nth-child(3){
+            border-image-repeat: round;
+        }
+        div:nth-child(4){
+            border-image-repeat: space;
+            
+        }
+        div:nth-child(5){
+            border-image-repeat: stretch space ;
+            
+        }
+        div:nth-child(6){
+            border-image: url("./border.png") 26 26 repeat;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>
