@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 600px;
+            height: 200px;
+            position: relative;
+            margin: 100px auto;
+        }
+        
+        div > span {
+            display: block;
+            width: 150px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            background-color: pink;
+            font-size: 150px;
+            position: relative;
+            float: left;
+            transform-style: preserve-3d;
+            perspective: 500px;
+            
+        }
+        
+        div > span:nth-child(2n+1) {
+            background-color: bisque;
+        }
+        
+        div > span::before, div > span::after {
+            content: attr(text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: 0px 0px;
+            transition: all 500ms;
+        }
+        
+        div > span::before {
+            color: gray;
+            opacity: 0.6;
+        }
+        
+        div > span::after {
+            color: white;
+        }
+        
+        div:hover > span::after {
+            transform: rotateY(-30deg) skewY(10deg);
+        }
+        
+        div:hover > span::before {
+            transform:  skewY(10deg);
+        }
+    </style>
+</head>
+<body>
+<div>
+    <span text="育">育</span>
+    <span text="知">知</span>
+    <span text="同">同</span>
+    <span text="创">创</span>
+</div>
+</body>
+</html>
