@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>z形运动</title>
+    <style>
+        #box {
+            width: 400px;
+            height: 400px;
+            background-color: gray;
+            margin: 0 auto;
+        }
+        
+        #square {
+            width: 40px;
+            height: 40px;
+            background-color: pink;
+            animation: move 5 0s 1s linear;
+        }
+        
+        @keyframes move {
+            33% {
+                transform: translate(360px, 0);
+            }
+            66% {
+                transform: translate(0, 360px);
+                
+            }
+            100% {
+                transform: translate(360px, 360px);
+            }
+            
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="square"></div>
+</div>
+</body>
+</html>

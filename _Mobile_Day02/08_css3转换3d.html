@@ -9,39 +9,50 @@
             margin: 0;
         }
         
-        div {
+        #outer {
             width: 200px;
             height: 200px;
-            margin: 100px;
-            background-color: pink;
+            margin: 400px;
+            perspective: 100px;
+            transform-style: preserve-3d;/**/
+            background-color: rgba(100, 100, 100, 1);
+            transform: rotateY(70deg);
+            /*opacity: 0.5;*/
         }
         
-        div:nth-child(1):hover {
-        
+        #outer > div {
+            width: 200px;
+            height: 200px;
+            background: url("gangguan-jolin.jpg");
+            background-size: 100% 100%;
+            transform: rotateX(40deg);
         }
         
-        div:nth-child(2):hover {
-        }
-        
-        div:nth-child(3):hover {
-        }
-
-        div:nth-child(4):hover {
+        #outer > div:hover {
+            /*transform: rotate3D(1, 1, 1, 20deg);*/
+            /*transform: translate3D(0, 0, 150px);*/
+            /*transform: rotateX(60deg);*/
+           
         }
     
     </style>
 </head>
 <body>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
+<div id="outer">
+    <div></div>
+</div>
+<script>
+    /*var div = document.querySelector("#outer > div");
+     var deg = 0;
+     setInterval(function (){
+     //        div.style.transform = `rotateY(${deg++}deg)`
+     div.style.transform = `rotate3D(${deg++}deg, , )`
+     }, 3)*/
+</script>
 </body>
 </html>
 <!--
-    translate
-        translateX
-        translateY
+
     
     
 -->

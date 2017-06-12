@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+        }
+        
+        #cube {
+            position: relative;
+            margin: 100px auto;
+            transform-style: preserve-3d;
+            transform: rotateY(30deg) rotateX(30deg);
+            
+        }
+        #cube > div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 100px;
+            text-align: center;
+            line-height: 400px;
+            opacity: .6;
+        }
+        .left{
+            background-color: pink;
+            transform: rotateY(-90deg) translateZ(200px);
+        }
+        .right{
+            background-color: #1e3364;
+            transform: rotateY(90deg) translateZ(200px);
+        }
+        .down{
+            background-color: yellow;
+            transform: rotateX(-90deg) translateZ(200px);
+        }
+        .up{
+            background-color: yellow;
+            transform: rotateX(90deg) translateZ(200px);
+        }
+        .forward{
+             background-color: gold;
+             transform:  translateZ(200px);
+         }
+        .back{
+            background-color: gold;
+            transform: rotateY(180deg)  translateZ(200px);
+        }
+    </style>
+</head>
+<body>
+<div id="cube">
+    <div class="up">上</div>
+    <div class="down">下</div>
+    <div class="forward">前</div>
+    <div class="back">后</div>
+    <div class="left">左</div>
+    <div class="right">右</div>
+</div>
+</body>
+</html>
