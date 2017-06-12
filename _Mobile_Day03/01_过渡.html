@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transition</title>
+    <style>
+        div{
+            width : 200px;
+            height : 200px;
+            background-color : pink;
+            transition-property: all;   /*all所有的属性都过渡*/
+            transition-duration: 3s;   /*s ms*/
+            transition-timing-function: cubic-bezier(.43,-0.81,.62,.36);
+            transition-delay: 2s;
+        }
+        div:hover{
+            transform: translateX(1000px);
+            /*width: 400px;
+            height: 600px;*/
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>
+<!--
+http://cubic-bezier.com/#1,.04,.05,.97
+
+-->
