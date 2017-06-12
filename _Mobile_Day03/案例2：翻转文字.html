@@ -47,13 +47,13 @@
         div > span::after {
             color: white;
         }
-        
-        div:hover > span::after {
+
+        div:active > span::after {
             transform: rotateY(-30deg) skewY(10deg);
         }
-        
-        div:hover > span::before {
-            transform:  skewY(10deg);
+
+        div:active > span::before {
+            transform: skewY(10deg);
         }
     </style>
 </head>
@@ -64,5 +64,19 @@
     <span text="同">同</span>
     <span text="创">创</span>
 </div>
+<script>
+    /*var bs = document.querySelectorAll("span::before");
+    
+    console.log(bs);
+    var div = document.querySelector("div");
+    div.onclick = function (){
+        console.log("bbb");
+        for (var i = 0; i < bs.length; i++){
+            console.log("aaa");
+            bs[i].style.transform = `rotateY(-30deg) skewY(10deg)`;
+        }
+    }
+*/
+</script>
 </body>
 </html>

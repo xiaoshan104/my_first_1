@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运动</title>
+    <style>
+        #outer {
+            width: 600px;
+            height: 600px;
+            background-color: gray;
+            position: relative;
+        }
+        
+        #outer > div {
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            position: absolute;
+        }
+        .move {
+            animation-name: z-move;
+            animation-duration: 9s;
+            animation-iteration-count: 3;/* 正数或infinite  可以是浮点数*/
+            animation-delay: 0s;  /* 默认是0*/
+            animation-direction: normal;
+            animation-fill-mode: both;
+            animation-timing-function: linear;
+        }
+        
+        
+        @keyframes z-move {
+            0% {
+                left: 0px;
+                top: 0;
+            }
+            30% {
+                left: 550px;
+                top: 0;
+            }
+            70% {
+                left: 0;
+                top: 550px;
+            }
+            100% {
+                left: 550px;
+                top: 550px;
+            }
+        }
+    </style>
+</head>
+<body>
+<button>运行</button>
+<button>暂停</button>
+<div id="outer">
+    <div></div>
+</div>
+<script>
+    var div = document.querySelector("#outer > div");
+    div.onclick = function (){
+        div.className = "move";
+    }
+    var btns = document.querySelectorAll("button");
+    btns[0].onclick = function (){
+        div.style.animationPlayState = "running";
+    }
+    btns[1].onclick = function (){
+        div.style.animationPlayState = "paused";
+    }
+</script>
+</body>
+</html>
