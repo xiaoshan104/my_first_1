@@ -1,0 +1,189 @@
+/*---样式清除开始----*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-weight: inherit;
+    font-style: normal;
+    vertical-align: baseline;
+    background: transparent;
+    border: 0;
+    outline: 0;
+}
+
+/* HTML5 RESETS FOR OLDER BROWSERS */
+article, aside, figure, figure img, hgroup, footer, header, nav, section {
+    display: block;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: green;
+}
+a:hover{
+    color: red;
+}
+
+/*---样式清除结束------*/
+html, body {
+    width: 100%;
+
+}
+
+#wrap {
+    width: 1080px;
+    margin: 50px auto 0;
+}
+
+#header {
+    width: 160px;
+    position: relative;
+    transition: all 0.5s;
+}
+
+#header > h1 {
+    width: 120px;
+    height: 120px;
+    background: url("../img/food-sense.png");
+    text-indent: -199999px;
+    margin-bottom: 30px;
+}
+
+#header ul {
+    width: 100%;
+}
+
+#header ul > li {
+    margin-bottom: 8px;
+}
+
+#header ul > li:last-child {
+    margin-bottom: 0;
+}
+
+#header a {
+    display: inline-block;
+    padding: 10px 0 10px 50px;
+    height: 32px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    transition: all 0.5s ;
+}
+#header a:hover{
+    background-position: 12px 0;
+}
+
+
+#header .tastemakers {
+    background-image: url("../img/nav-tastemakers.png");
+}
+
+#header .blog {
+    background-image: url("../img/nav-blog.png");
+}
+
+#header .alist {
+    background-image: url("../img/nav-alist.png");
+}
+
+#header .contribute {
+    background-image: url("../img/nav-contribute.png");
+}
+
+#header .about {
+    background-image: url("../img/nav-about.png");
+}
+
+@media screen and (max-width: 1175px) and (min-width: 991px) {
+    #wrap {
+        width: 896px;
+    }
+}
+
+@media screen and (max-width: 991px) /*and (min-width: 414px)*/ {
+    #wrap {
+        width: 712px;
+    }
+
+    #header {
+        width: 712px;
+    }
+
+    #header nav {
+        width: 528px;
+        position: absolute;
+        right: 0;
+        top: 20px;
+    }
+
+    #header ul {
+        width: 100%;
+    }
+
+    #header ul > li {
+        display: inline-block;
+    }
+
+    #header a {
+        padding: 45px 10px 0;
+        background-position: 50% 0px;
+    }
+    #header a:hover{
+        background-position: 50% 10px;
+    }
+}
+
+@media screen and (max-width: 768px)/* and (min-width: 414px) */ {
+    #wrap {
+        width: 480px;
+    }
+
+    #header a {
+        background: none no-repeat 0 0 !important;
+        padding: 0 10px 0 0;
+        font-size: 12px;
+    }
+
+    #header nav {
+        width: 380px;
+        left: 140px;
+        top: 50px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    #wrap {
+        width: 320px;
+    }
+
+    #header {
+        width: 320px;
+        padding-top: 40px;
+    }
+
+    #header > h1 {
+        width: 100%;
+        background-position: 50% -60px;
+        background-repeat: no-repeat;
+        background-size: 120px;
+    }
+
+    #header nav {
+        top: 0;
+        left: 20px;
+        position: absolute;
+        margin: 0 auto;
+    }
+}

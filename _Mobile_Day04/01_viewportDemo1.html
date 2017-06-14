@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<!--
+理想视口：屏幕宽度
+为了计算布局视口：
+布局视口 = 理想视口 / initial-scale
+
+-->
+      
+<title>Title</title>
+<style>
+
+* {
+    padding: 0;
+    margin: 0;
+}
+html, body{
+    width: 100%;
+}
+
+div {
+    width: 100%;
+    height: 200px;
+    background-color: pink;
+    font-size: 32px;
+}
+</style>
+</head>
+<body>
+<div>你好</div>
+<script>
+console.log("布局视口：" + document.documentElement.clientWidth);
+console.log("可视视口" + window.innerWidth);
+</script>
+</body>
+</html>

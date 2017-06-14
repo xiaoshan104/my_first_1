@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    margin: 20px auto;
+    width: 800px;
+    height: 400px;
+    background-color: beige;
+    
+    display: flex; /*设置当前容器为 flex container*/
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: stretch;
+}
+
+p{
+    width: 130px;
+    /*height: 80px;*/
+    background-color: pink;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+p:nth-child(2n) {
+    background-color: coral;
+}
+/*
+
+*/
+p:nth-child(1) {
+    width: 200px;
+}
+
+p:nth-child(2) {
+    width: 300px;
+}
+
+p:nth-child(3) {
+    width: 100px;
+}
+</style>
+</head>
+<body>
+<div>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    <p>5</p>
+    <p>6</p>
+    
+</div>
+</body>
+</html>

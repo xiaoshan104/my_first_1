@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    margin: 20px auto;
+    width: 700px;
+    height: 400px;
+    background-color: beige;
+    
+    display: flex; /*设置当前容器为 flex container*/
+    /*flex-direction: column-reverse;!*设置弹性盒主轴的方向*!*/
+    /*flex-wrap: nowrap;!*侧轴的方向   是否换行  nowrap*!*/
+    flex-flow: row wrap;
+    justify-content: space-evenly;/*flex items的排布方式  对剩余空间的分配*/
+    align-items: flex-start;  /*主要针对单行的  对多行也有效果*/
+    align-content: stretch;/* 这个是在侧轴有多行的情况，对单行无效*/
+}
+
+p{
+    width: 130px;
+    /*height: 80px;*/
+    background-color: pink;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+p:nth-child(2n) {
+    background-color: coral;
+}
+
+p:nth-child(1) {
+    width: 300px;
+    
+}
+
+p:nth-child(2) {
+    width: 100px;
+}
+
+p:nth-child(3) {
+    width: 200px;
+}
+</style>
+</head>
+<body>
+<div>
+    <p>1</p>
+    <p>2</p>
+    <p>f</p>
+    <p>f</p>
+    <p>f</p>
+    <p>f</p>
+</div>
+</body>
+</html>
