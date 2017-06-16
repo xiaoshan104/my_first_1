@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>Title</title>
+<style>
+div{
+    width : 300px;
+    height : 500px;
+    background-color : pink;
+}
+</style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+var div = document.querySelector("div");
+/*div.addEventListener("touchstart", function (e){
+    var ts = e.changedTouches;  // 返回值是： TouchList
+    console.log(ts.length);
+
+}, false)*/
+
+/*div.addEventListener("touchmove", function (e){
+    var ts = e.changedTouches;  // 返回值是： TouchList
+    console.log(ts.length);
+
+}, false)*/
+div.addEventListener("touchend", function (e){
+    var ts = e.changedTouches;  // 返回值是： TouchList
+    console.log(ts.length);
+
+})
+</script>
+</body>
+</html>
