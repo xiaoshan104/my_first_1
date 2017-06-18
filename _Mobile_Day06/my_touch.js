@@ -29,6 +29,26 @@
         /*向右滑动*/
         panRight(callback){
 
+            var that = this;
+            var startX;
+            function fn(e){
+                var touch = e.changedTouches.item(0)
+                switch (e.type){
+                    case "touchstart":
+                        startX = touch.pageX;
+                        break;
+                    case "touchend":
+                        var endX = touch.pageX;
+                        if(endX - startX > 25){
+                            callback(that.ele);
+                        }
+                        break;
+                }
+            }
+
+            this.ele.addEventListener("touchstart", fn);
+            this.ele.addEventListener("touchend", fn);
+
         }
     }
 

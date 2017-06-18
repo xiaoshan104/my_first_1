@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<script type="text/javascript" src="./hammer.min.js"></script>
+<meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<style>
+div{
+    width : 200px;
+    height : 200px;
+    background-color : pink;
+}
+</style>
+</head>
+<body>
+<div></div>
+<script>
+var div = document.querySelector("div");
+
+/*创建一个Hammer对象*/
+var h = new Hammer(div);
+/*使能所有方向的pan有效*/
+h.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+h.on("tap", function (e){
+    console.log("轻点....");
+})
+h.on("panleft", function (e){
+    console.log("左滑...");
+})
+h.on("panright", function (e){
+    console.log("右滑动...");
+})
+h.on("panup", function (e){
+    console.log("上滑...");
+})
+h.on("pandown", function (e){
+    console.log("下滑...");
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<style>
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#outer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all 0.8s;
+}
+
+#outer div {
+    width: 100%;
+    height: 100%;
+    background-color: pink;
+    font-size: 200px;
+}
+
+#outer div:nth-child(2n) {
+    background-color: gray;
+}
+</style>
+<script type="text/javascript" src="./hammer.min.js"></script>
+</head>
+<body>
+<div id="outer">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+</div>
+
+<script>
+var height = document.body.offsetHeight;
+var h = new Hammer(document.body);
+h.get('pan').set({direction: Hammer.DIRECTION_ALL});
+h.on("panup", fn);
+h.on("pandown", fn);
+h.on("panend", fn);
+var lastType;
+function fn(e){
+    switch (e.type){
+        case "panup":
+            lastType = e.type;
+            break;
+        case "pandown":
+            lastType = e.type;
+            break;
+        case "panend":
+            if (lastType == "panup"){
+                if (outer.offsetTop == -height * 9) return;
+
+                outer.style.top = outer.offsetTop - height + "px";
+            }else if (lastType == "pandown"){
+                if (outer.offsetTop == 0) return;
+                outer.style.top = outer.offsetTop + height + "px";
+                console.log(outer.offsetTop);
+            }
+            break;
+    }
+
+}
+</script>
+</body>
+</html>
